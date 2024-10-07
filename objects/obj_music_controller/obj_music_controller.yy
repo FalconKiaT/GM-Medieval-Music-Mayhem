@@ -32,6 +32,8 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"is_music_playing","filters":[],"listItems":[],"multiselect":false,"name":"is_music_playing","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"music_timestamp","filters":[],"listItems":[],"multiselect":false,"name":"music_timestamp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"cur_arrow_index","filters":[],"listItems":[],"multiselect":false,"name":"cur_arrow_index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"mapping_tolerance","filters":[],"listItems":[],"multiselect":false,"name":"mapping_tolerance","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

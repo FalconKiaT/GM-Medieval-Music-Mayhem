@@ -35,8 +35,10 @@
   "name":"Fall 2024 CPI 111 Project",
   "resources":[
     {"id":{"name":"obj_music_controller","path":"objects/obj_music_controller/obj_music_controller.yy",},},
+    {"id":{"name":"obj_up_arrow","path":"objects/obj_up_arrow/obj_up_arrow.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"mus_monkeys","path":"sounds/mus_monkeys/mus_monkeys.yy",},},
+    {"id":{"name":"spr_up_arrow","path":"sprites/spr_up_arrow/spr_up_arrow.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
