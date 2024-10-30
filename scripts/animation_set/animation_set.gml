@@ -11,11 +11,11 @@ function animation_set(ani, image, speed){
 	//update animation
     if (is_array(SpriteArray))
     {
-        if (array_length(SpriteArray) >= (ani_sprite+1))
+        if (array_length(SpriteArray) >= (aniSprite+1))
         {
-            if (!is_string(ani_sprite)) Animation = ani_sprite;
-            if (!is_string(ani_image)) AniImage = ani_image;
-            if (!is_string(ani_speed)) AniSpeed = ani_speed;
+            if (!is_string(aniSprite)) Animation = aniSprite;
+            if (!is_string(aniImage)) AniImage = aniImage;
+            if (!is_string(aniSpeed)) AniSpeed = aniSpeed;
         }
 	}
 }

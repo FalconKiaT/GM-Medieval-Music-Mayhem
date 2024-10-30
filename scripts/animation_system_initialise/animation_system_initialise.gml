@@ -1,4 +1,5 @@
 //Call script in object's create event to initialize its variables for animation
+//Place in create of object you want to animate
 function animation_system_initialise(){
 	//controlling variables
 	Animation = 0; //current animation sprite index starting from 0
