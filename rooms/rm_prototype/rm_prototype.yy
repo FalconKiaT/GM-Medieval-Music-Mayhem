@@ -1,17 +1,17 @@
 {
   "$GMRoom":"v1",
-  "%Name":"Prototype_room",
+  "%Name":"rm_prototype",
   "creationCodeFile":"",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_27112EBF","path":"rooms/Prototype_room/Prototype_room.yy",},
-    {"name":"inst_4DBC76E1","path":"rooms/Prototype_room/Prototype_room.yy",},
-    {"name":"inst_76D42AA5","path":"rooms/Prototype_room/Prototype_room.yy",},
-    {"name":"inst_5FB8CAE0","path":"rooms/Prototype_room/Prototype_room.yy",},
-    {"name":"inst_1D671280","path":"rooms/Prototype_room/Prototype_room.yy",},
-    {"name":"inst_1132ACD4","path":"rooms/Prototype_room/Prototype_room.yy",},
+    {"name":"inst_27112EBF","path":"rooms/rm_prototype/rm_prototype.yy",},
+    {"name":"inst_4DBC76E1","path":"rooms/rm_prototype/rm_prototype.yy",},
+    {"name":"inst_76D42AA5","path":"rooms/rm_prototype/rm_prototype.yy",},
+    {"name":"inst_5FB8CAE0","path":"rooms/rm_prototype/rm_prototype.yy",},
+    {"name":"inst_1D671280","path":"rooms/rm_prototype/rm_prototype.yy",},
+    {"name":"inst_1132ACD4","path":"rooms/rm_prototype/rm_prototype.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -27,7 +27,7 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"temp_bg","path":"sprites/temp_bg/temp_bg.yy",},"stretch":true,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"Prototype_room",
+  "name":"rm_prototype",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",
