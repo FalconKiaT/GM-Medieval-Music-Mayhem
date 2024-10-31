@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"mus_monkeys",
+  "%Name":"snd_mus_mongrel_dance",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":125.0743,
-  "name":"mus_monkeys",
+  "duration":111.56898,
+  "name":"snd_mus_mongrel_dance",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_monkeys.mp3",
+  "soundFile":"snd_mus_mongrel_dance.mp3",
   "type":0,
   "volume":1.0,
 }

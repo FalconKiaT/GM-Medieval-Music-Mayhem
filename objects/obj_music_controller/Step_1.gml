@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Count music timer
 // You can write your code in this editor
 
 // Music timestamp for mapping
