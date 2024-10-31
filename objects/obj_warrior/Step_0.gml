@@ -1,7 +1,17 @@
-/// @description Insert description here
-// You can write your code in this editor
-animation_system_update()
+if(keyboard_check(vk_left))
+{
+	hspeed = -moveSpd;
+	AnimationSet("RUN_LEFT");
+}
+else if(keyboard_check(vk_right))
+{
+	hspeed = moveSpd;
+	AnimationSet("RUN_RIGHT");
+}else
+{
+	hspeed = 0;
+	AnimationSet("IDLE");
+}
 
-//draw sprite
-draw_sprite_ext(SpriteArray[0, 0], floor(0), 352, 352, 
-	1, 1, 0, 1, 1);
+//Run set animations
+AnimationStep();

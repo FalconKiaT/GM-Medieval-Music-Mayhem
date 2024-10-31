@@ -1,7 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
-animation_system_initialise();
-animation_run = animation_system_add_animation(spr_run, spr_run, -1)
+AnimationInit(); //set up animation
 
-// animation_set(ani, image, speed)
-animation_set(animation_run, 0, 1)
+//Define an idle animation using only the first frame of the sprite
+AnimationAdd("IDLE",noone,noone,1,0,0);
+AnimationAdd("RUN_LEFT",-image_xscale,image_yscale,0.4,1,8);
+AnimationAdd("RUN_RIGHT",image_xscale,image_yscale,0.4,1,8);
