@@ -8,8 +8,8 @@
   "name":"obj_results_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"NoSprite",
-    "path":"folders/Objects/NoSprite.yy",
+    "name":"Meta",
+    "path":"folders/Objects/Meta.yy",
   },
   "parentObjectId":null,
   "persistent":false,
