@@ -203,6 +203,8 @@
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},},
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
+    {"id":{"name":"temp_bg_menu","path":"sprites/temp_bg_menu/temp_bg_menu.yy",},},
+    {"id":{"name":"temp_bg_results","path":"sprites/temp_bg_results/temp_bg_results.yy",},},
     {"id":{"name":"temp_bg","path":"sprites/temp_bg/temp_bg.yy",},},
     {"id":{"name":"temp_crowd","path":"sprites/temp_crowd/temp_crowd.yy",},},
     {"id":{"name":"temp_curtains","path":"sprites/temp_curtains/temp_curtains.yy",},},

@@ -1,2 +1,2 @@
 
-room_goto(rm_prototype)
+room_goto(rm_mainMenu)

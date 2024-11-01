@@ -1,5 +1,5 @@
 
-health -= 20 /(room_speed);
+
 
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {

@@ -1,11 +1,11 @@
 
 
 enum GAME_STATES{
-	 PLAY,
-	 PAUSE,
-	 OVER,
-	 DIALOGUE,
-	 WIN
+	 PLAY =0,
+	 PAUSE =1,
+	 OVER=2,
+	 DIALOGUE=3,
+	 WIN=4
 	
 	
 }
