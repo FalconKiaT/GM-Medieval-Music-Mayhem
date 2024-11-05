@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menu_manager",
+  "%Name":"obj_btn_settings",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menu_manager",
+  "name":"obj_btn_settings",
   "overriddenProperties":[],
   "parent":{
-    "name":"Meta",
-    "path":"folders/Objects/Meta.yy",
+    "name":"Main Menu Buttons",
+    "path":"folders/Objects/Buttons/Main Menu Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_btn_settings",
+    "path":"sprites/spr_btn_settings/spr_btn_settings.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
