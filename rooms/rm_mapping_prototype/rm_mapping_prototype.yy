@@ -29,8 +29,8 @@
   ],
   "name":"rm_mapping_prototype",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Testing",
+    "path":"folders/Rooms/Testing.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
