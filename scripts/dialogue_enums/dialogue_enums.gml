@@ -7,9 +7,9 @@ enum DIALOGUE_STATE
 {
 	OPENING,
 	ACTIVE,
-	PAUSED,
 	CLOSING,
 	INACTIVE,
+	NULL,
 }
 
 // Enum to check what type of dialogue box is being shown
@@ -32,4 +32,5 @@ enum DIALOGUE_ID
 {
 	NULL,
 	DEMO,
+	ONE_LINE,
 }

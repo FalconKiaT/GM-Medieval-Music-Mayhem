@@ -16,9 +16,13 @@ event_user(0);
 switch (dialogue_current_state)
 {
 	case DIALOGUE_STATE.OPENING:
-		
+		// Dont run animation if paused
+		if (is_dialogue_paused)
+		{
+			break;
+		}
 		// Animate the dialogue box opening
-		var scale_speed = 1 / (game_get_speed(gamespeed_fps) * opening_anim_duration);
+		var scale_speed = 1 / (game_get_speed(gamespeed_fps) * const_opening_anim_duration);
 		opening_anim_scaler += scale_speed;
 		// Check if we finished
 		if (opening_anim_scaler >= 1)
@@ -31,8 +35,13 @@ switch (dialogue_current_state)
 		break;
 		
 	case DIALOGUE_STATE.CLOSING:
+		// Dont run animation if paused
+		if (is_dialogue_paused)
+		{
+			break;
+		}
 		// Animate the dialogue box closing
-		var scale_speed = 1 / (game_get_speed(gamespeed_fps) * opening_anim_duration);
+		var scale_speed = 1 / (game_get_speed(gamespeed_fps) * const_opening_anim_duration);
 		opening_anim_scaler -= scale_speed;
 
 		// Check if we've finished closing
@@ -41,10 +50,14 @@ switch (dialogue_current_state)
 			// Fully closed
 			opening_anim_scaler = 0;
 			dialogue_current_state = DIALOGUE_STATE.INACTIVE;
+			public_is_dialogue_visible = false;
 			// Any additional actions when fully closed
 		}
 		break;
 }
+
+// Run timers
+event_user(3);
 
 // Set the typist state
 var _state = dialogue_general_typist.get_state();
@@ -59,15 +72,22 @@ else if (_state >= 1)
 	text_printing_state = PRINTING_STATE.FINISHED;
 }
 
-// Check user input
-// Player has clicked left on the mouse, check the state of the dialogue
-// We dont need to check the text state since we do that through a 
-// function in the typist defined in create
-// Function to check if the player clicked the skip text / advance button
+// Function to check if the player performed the skip text / advance input
 if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 {
 	// check for skip advance
 	try_text_skip_advance();
 }
+
+// DEBUGGING
+if (keyboard_check_pressed(ord("P"))) 
+{
+    public_pause_dialogue();
+}
+if (keyboard_check_pressed(ord("O"))) 
+{
+    public_resume_dialogue();
+}
+
 
 
