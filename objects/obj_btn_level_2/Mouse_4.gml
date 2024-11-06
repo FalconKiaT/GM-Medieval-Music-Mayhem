@@ -1,8 +1,8 @@
 //play the second level if unlocked, else flash red
 
-if(global.max_level >= 3)
+if(global.max_level >= 2)
 {
-	room_goto(rm_prototype); //replace with lvl 2
+	image_blend = make_colour_rgb(200, 200, 200); //black tint
 }
 else
 {

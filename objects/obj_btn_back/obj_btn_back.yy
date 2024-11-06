@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_btn_level_2",
+  "%Name":"obj_btn_back",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_btn_level_2",
+  "name":"obj_btn_back",
   "overriddenProperties":[],
   "parent":{
-    "name":"Level Select Buttons",
-    "path":"folders/Objects/Buttons/Level Select Buttons.yy",
+    "name":"Main Menu Buttons",
+    "path":"folders/Objects/Buttons/Main Menu Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btn_level_2",
-    "path":"sprites/spr_btn_level_2/spr_btn_level_2.yy",
+    "name":"spr_btn_back",
+    "path":"sprites/spr_btn_back/spr_btn_back.yy",
   },
   "spriteMaskId":null,
   "visible":true,

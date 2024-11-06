@@ -1,7 +1,7 @@
 //play the first level
-//show_debug_message("MAX LEVEL " + string(global.max_level))	
-
+	
 if(global.max_level >= 1)
 {
+	image_blend = make_colour_rgb(255, 255, 255); //make button white again
 	room_goto(rm_prototype);
 }

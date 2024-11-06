@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menu_manager",
+  "%Name":"obj_global_manager",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menu_manager",
+  "name":"obj_global_manager",
   "overriddenProperties":[],
   "parent":{
     "name":"Meta",
     "path":"folders/Objects/Meta.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,

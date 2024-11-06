@@ -9,4 +9,5 @@ enum GAME_STATES{
 	
 	
 }
+//global variables
 global.current_game_state = GAME_STATES.PLAY;
