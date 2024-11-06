@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"unlock_skip_script",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"unlock_skip_script",
+  "parent":{
+    "name":"Dialogue",
+    "path":"folders/Scripts/Dialogue.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
