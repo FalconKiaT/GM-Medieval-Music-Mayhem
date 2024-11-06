@@ -2,28 +2,6 @@
 
 // <------------------------> EVENTS <------------------------>
 
-// Function to shake the dialogue box with varying amounts of intensity, 0 is none and the higher, the number the more intense
-function shake_dialog_box(_intensity, _duration)
-{
-	// Check if its not already shaking
-	if (is_dialogue_shaking)
-	{
-		// Oops, already shaking, dont do anything
-		show_debug_message("ERROR! Dialogue is already shakin, ignoring...");
-		return;
-	}
-	
-	// Shake
-	is_dialogue_shaking = true;
-	dialogue_shake_intensity = _intensity;
-	// FIXME: Lock dialogue skip if running???
-	alarm[1] = game_get_speed(gamespeed_fps) * _duration;
-}
-
-// Add shake dialogue box event
-// Format: [shake_dialogue_box, intensity, duration]
-scribble_typists_add_event("shake_dialogue_box", shake_dialog_box_script);
-
 // Function to lock the skip
 function lock_skip()
 {
@@ -44,6 +22,28 @@ function unlock_skip()
 // Format: [unlock_skip]
 scribble_typists_add_event("unlock_skip", unlock_skip_script);
 
+// Function to shake the dialogue box with varying amounts of intensity, 0 is none and the higher, the number the more intense
+function shake_dialog_box(_intensity, _duration)
+{
+	// Check if its not already shaking
+	if (is_dialogue_shaking)
+	{
+		// Oops, already shaking, dont do anything
+		show_debug_message("ERROR! Dialogue is already shaking, ignoring... Thrown in shake_dialog_box() -> User Event 2 -> obj_dialogue_controller");
+		return;
+	}
+	// Shake
+	dialogue_shake_intensity = _intensity;
+	screen_shake_timer = 0;
+	lock_skip();
+	screen_shake_current_duration = _duration;
+	is_dialogue_shaking = true;
+	is_screen_shake_timer_running = true;
+}
+
+// Add shake dialogue box event
+// Format: [shake_dialogue_box, intensity, duration]
+scribble_typists_add_event("shake_dialogue_box", shake_dialog_box_script);
 
 // Function to set the portait to the left
 function portrait_set_left()
@@ -121,7 +121,7 @@ function change_character_portrait(target)
 	if (is_undefined(sprite_obj))
 	{
 		// Failed to find in dictionary
-		show_debug_message("Sprite not found: " + string(trimmed_string) + "\nError thrown at User Event 2 In Dialogue Controller");
+		show_debug_message("Sprite not found: " + string(trimmed_string) + "\nError thrown at change_character_portrait(target) -> User Event 2 -> obj_dialogue_controller");
 		return;
 	}
 	

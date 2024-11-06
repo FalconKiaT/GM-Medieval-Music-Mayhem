@@ -1,10 +1,16 @@
 /// @description Set up Dialogue Target Functions
 
+// IAN HACK: I dont know if we reallu should go all out and incorporate a file reader...
+// so im just going to do this undertale style for now xd
+
 // Function to set up the demo dialogue
 function set_up_demo()
 {
+	// The first dialogue box layout must be set through code
+	dialogue_current_type = DIALOGUE_TYPE.PORTRAIT_LEFT
+	
 	// Example of the configuration being done through the typewritter
-	add_page("[set_portrait_right][change_character, spr_wiz_neutral][skip_to_next_page]"); 
+	add_page("[change_character, spr_wiz_neutral][skip_to_next_page]"); 
 
 	// Showcase skip
 	add_page("Hello! And welocome to the dialogue system showcase!");
@@ -13,7 +19,7 @@ function set_up_demo()
 	add_page("[set_portrait_left]There's also an induced delay between skips to make sure the player doesnt accidentally skip the next dialogue should they wish not to do so");
 	
 	// Showcase shake animation and dramatic delay effect
-	add_page("[lock_skip]How[delay, 500] about[delay, 500] some [delay, 500][shake_dialogue_box, 3, 4]SHAKING!!!![delay, 5000][unlock_skip]");
+	add_page("[lock_skip]How[delay, 500] about[delay, 500] some [delay, 500][shake_dialogue_box, 3, 4]SHAKING!!!!");
 	add_page("Pretty intense huh?");
 	add_page("Did you also notice you couldnt skip ahead while it was happening?");
 	
@@ -71,6 +77,15 @@ function set_up_demo()
 	add_page("Bye Bye!"); 
 }
 
+// Set up one dialogue line test
+function set_up_one_line()
+{
+	// Print only one line to dialogue
+	dialogue_current_type = DIALOGUE_TYPE.PORTRAIT_LEFT
+	add_page("[change_character, spr_wiz_neutral][skip_to_next_page]"); 
+	add_page("Wassgood Im only one line long dayum. Now im goneeeeeeee....");
+}
+
 // Function to reset the page array
 function reset_page_array()
 {
@@ -95,6 +110,10 @@ function set_up_dialogue_id(target)
 	{
 		case DIALOGUE_ID.DEMO:
 			set_up_demo();
+			break;
+		
+		case DIALOGUE_ID.ONE_LINE:
+			 set_up_one_line();
 			break;
 		
 		default:
