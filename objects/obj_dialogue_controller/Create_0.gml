@@ -1,0 +1,329 @@
+/// @description Set up variables
+
+// <------------------------> CONSTANTS <------------------------>
+
+// Dialogue Space Settings
+const_dialogue_box_height = 200;
+const_inbetween_space = 30; // The space between the portrait square and the text box
+
+// Outer Margains
+const_left_margain = 40;
+const_bottom_margain = 40;
+const_right_margain = 40;
+
+// Text box inner margains and values
+const_inner_text_box_margain = 20;
+
+// Portrait inner margains
+const_inner_portrait_margain = 10;
+
+// Text Box Constants
+const_inner_text_box_height = const_dialogue_box_height - 2 * const_inner_text_box_margain;
+const_next_arrow_offset = new vector(sprite_get_width(spr_next_arrow) + 12, sprite_get_height(spr_next_arrow) + 10)
+const_next_arrow_sprite_width = sprite_get_width(spr_next_arrow);
+const_next_arrow_sprite_height = sprite_get_height(spr_next_arrow);
+
+// Portrait box constants
+const_portrait_box_width = const_dialogue_box_height;
+const_inner_portrait_width = const_dialogue_box_height - 2 * const_inner_portrait_margain;
+const_inner_portrait_height = const_dialogue_box_height - 2 * const_inner_portrait_margain;
+
+// Dialogue Box Sprite Constants
+const_dialogue_box_sprite_width = sprite_get_width(spr_dialogue_box);
+const_dialogue_box_sprite_height = sprite_get_height(spr_dialogue_box);
+
+// Typewritter variables
+const_skip_cooldown = 0.4; // In seconds
+
+// <------------------------> MUTATING VARIABLES <------------------------>
+
+// <------------------------> STATES <------------------------>
+dialogue_current_state = DIALOGUE_STATE.INACTIVE;
+dialogue_current_type = DIALOGUE_TYPE.ONLY_TEXT; 
+text_printing_state = PRINTING_STATE.FINISHED; // State of the typewritter
+is_checking_for_input = false; // bool to block user skip while false
+is_skip_advance_on_cooldown = false;
+is_skip_locked_by_event = false;
+
+// <------------------------> ANCHORS <------------------------>
+
+// Screen Anchors
+bottom_left_anchor = new vector(0,0);
+bottom_right_anchor = new vector(0,0);
+
+// Dialogue Zone Anchors
+diagzone_top_left = new vector(0,0);
+diagzone_top_right = new vector(0,0);
+diagzone_bottom_left = new vector(0,0);
+diagzone_bottom_right = new vector(0,0);
+
+// <------------------------> TEXT BOX COORDS AND VALUES <------------------------>
+
+// Text Box Coordinates and values
+inner_text_box_top_left = new vector(0,0);
+outer_text_box_top_left = new vector(0,0);
+next_arrow_top_left = new vector(0,0);
+inner_text_box_width = 0;
+outer_text_box_width = 0;
+
+// <------------------------> PORTRAIT BOX COORDS AND VALUES <------------------------>
+
+// Portrait Box coordinates and values
+outer_portrait_top_left = new vector(0,0);
+inner_portrait_top_left = new vector(0,0);
+
+// <------------------------> SPRITE VALUES <------------------------>
+
+// Current sprite to draw from
+current_potrait_sprite = spr_wiz_neutral;
+// Is current sprite flipped
+is_sprite_flipped = false;
+// Base animation speed
+base_anim_speed = 0.2
+
+// <------------------------> PORTRAIT SPRITE DIRECTIOND DICTIONARY <------------------------>
+
+// Dictionary of sprite and booleans to know which way they face and check if we need to flip them
+sprite_directions_dict = ds_map_create();
+
+// Add sprites and their respective directions (true for left, false for right)
+
+// King
+sprite_directions_dict[? spr_king_happy] = true;
+sprite_directions_dict[? spr_king_neutral] = true;
+sprite_directions_dict[? spr_king_upset_angry] = true;
+
+// Player
+sprite_directions_dict[? spr_wiz_angry] = false;
+sprite_directions_dict[? spr_wiz_neutral] = false;
+sprite_directions_dict[? spr_wiz_shocked] = false;
+
+// <------------------------> PORTRAIT SPRITE SOUNDS DICTIONARY <------------------------>
+
+// Dictionary to set the typewritter sound when we switch characters they play different sounds when they speak
+character_sound_dict = ds_map_create();
+character_sound_dict[? spr_king_happy] = snd_king_dialogue;
+character_sound_dict[? spr_king_neutral] = snd_king_dialogue;
+character_sound_dict[? spr_king_upset_angry] = snd_king_dialogue;
+
+// Player
+character_sound_dict[? spr_wiz_angry] = snd_player_dialogue;
+character_sound_dict[? spr_wiz_neutral] = snd_player_dialogue;
+character_sound_dict[? spr_wiz_shocked] = snd_player_dialogue;
+
+
+// <------------------------> STRING TO SPRITE DICTIONARY <------------------------>
+
+// This dictionary is needed because the scribble library can only handle parameters with strings
+sprite_string_dict = ds_map_create();
+
+sprite_string_dict[? "spr_king_happy"] = spr_king_happy;
+sprite_string_dict[? "spr_king_neutral"] = spr_king_neutral;
+sprite_string_dict[? "spr_king_upset_angry"] = spr_king_upset_angry;
+
+sprite_string_dict[? "spr_wiz_angry"] = spr_wiz_angry;
+sprite_string_dict[? "spr_wiz_neutral"] = spr_wiz_neutral;
+sprite_string_dict[? "spr_wiz_shocked"] = spr_wiz_shocked;
+
+
+// <------------------------> OPENING ANIMATION VALUES <------------------------>
+
+// Opening animation variables
+opening_anim_duration = 0.2; // In seconds
+opening_anim_scaler = 0; // Dont set
+
+// <------------------------> TYPIST SETTINGS <------------------------> 
+
+// Typist variables for the text typewritter
+text_speed = 1;
+text_smooth = 0; // from [0 to 1]. On 0 character appears instantly, on 1 it slowly fades in
+main_typist_min_pitch = 1;
+main_typist_max_pitch = 2;
+main_typist_overlap = 0;
+main_typist_gain = 1;
+dialogue_general_typist = scribble_typist();
+dialogue_general_typist.in(text_speed, text_smooth);
+
+// Function that executes when the typist finishes printing the text
+dialogue_general_typist.function_on_complete(function(_text_element, _typist)
+{
+	// TODO: On complete, show next arrow
+	text_printing_state = PRINTING_STATE.FINISHED;
+});
+
+// TYPEWRITTER EVENTS SET UP FURTHER BELOW
+
+// <------------------------> DIALOGUE PAGES SETUP <------------------------> 
+
+// We must set up the dialogue functions first
+event_user(1);
+
+// Page Variables
+current_page_idx = 0;
+page_list[0] = "TEMP TEXT PLACEHOLDER, SHOULD BE OVERWRITTEN"
+page_amount = 0;
+
+// Dialogue Events variables
+is_dialogue_shaking = false;
+dialogue_shake_intensity = 0;
+
+
+
+// ****************************************************************** DEBUGGING DELETE ME
+// Test run
+dialogue_current_state = DIALOGUE_STATE.OPENING;
+dialogue_current_type = DIALOGUE_TYPE.PORTRAIT_RIGHT;
+is_skip_advance_on_cooldown = false;
+text_printing_state = PRINTING_STATE.PRINTING;
+set_up_dialogue_id(DIALOGUE_ID.DEMO);
+// ******************************************************************
+
+// <------------------------> OBJECT WIDE FUNCTIONS <------------------------>
+
+// Function to open the dialog box from the game 
+// TODO: Test if this works
+function public_trigger_dialogue(target)
+{
+	// Make sure its of type DIALOGUE_ID
+	if (typeof(target) != DIALOGUE_ID)
+	{
+		show_error("Error: target has to be of type  DIALOGUE_ID!", true);
+        return;
+	}
+	
+	// Set the dialogue ID
+	set_up_dialogue_id(target);
+	
+	// Start opening the dialogue box
+	dialogue_current_state = DIALOGUE_STATE.OPENING;
+}
+
+// Function to close the dialogue box even if its writting
+function public_force_close_dialogue_box()
+{
+	// TODO: Edge cases will definitly be present here, check one day
+	dialogue_current_state = DIALOGUE_STATE.CLOSING;
+	text_printing_state = PRINTING_STATE.FINISHED;
+	is_dialogue_shaking = false;
+	is_skip_locked_by_event = false;
+}
+
+// Function to get the dialogue state as to not access the state variable directly
+function public_get_dialogue_state()
+{
+	return dialogue_current_state
+}
+
+// Function used internally to close the dialogue window when the pages are exhausted
+function close_dialogue_box()
+{
+	dialogue_current_state = DIALOGUE_STATE.CLOSING;
+}
+
+
+// TODO: Consider adding buttons for later in the game
+
+// Function to be called when the game is paused
+function public_pause_dialogue()
+{
+	dialogue_general_typist.pause();
+	is_skip_locked_by_event = true;
+}
+
+
+// Function to be called when the game is resumed
+function public_resume_dialogue()
+{
+	dialogue_general_typist.unpause();
+	is_skip_locked_by_event = false;
+}
+
+function check_and_perform_sprite_flip()
+{
+	if (dialogue_current_type == DIALOGUE_TYPE.PORTRAIT_LEFT)
+	{
+		// Check if we need to flip it left
+		if (sprite_directions_dict[? current_potrait_sprite])
+		{
+			// The sprite is looking left, flip it to look right
+			is_sprite_flipped = true;
+		}
+		else
+		{
+			// It was already looking at the right, dont flip
+			is_sprite_flipped = false;
+		}
+	}
+	else if (dialogue_current_type == DIALOGUE_TYPE.PORTRAIT_RIGHT)
+	{
+		// Check if we need to flip it right
+		if (sprite_directions_dict[? current_potrait_sprite])
+		{
+			// It was already looking at the left, dont flip
+			is_sprite_flipped = false;
+		}
+		else
+		{
+			// The sprite is looking right, flip it to look left
+			is_sprite_flipped = true;
+		}
+	}
+}
+
+// <------------------------> UPDATE FUNCTION DECLARATIONS <------------------------>
+
+// Function to execute to either skip or advance text
+function try_text_skip_advance()
+{
+	// Dont do anything if on cooldown, skip is locked by an event or paused
+	var check1 = is_skip_advance_on_cooldown || is_skip_locked_by_event;
+	var check2 = dialogue_current_state == DIALOGUE_STATE.PAUSED;
+	if (check1 || check2)
+	{
+		return;
+	}
+	
+	// Check for user input
+	var _do_advance = false;
+	_do_advance = mouse_check_button_pressed(mb_left); // Check for left mouse click
+	_do_advance = _do_advance || keyboard_check_pressed(vk_space); // Check for space bar
+	_do_advance = _do_advance ||keyboard_check_pressed(vk_enter); // Check for enter
+	
+	// Dont do anything if no valid input was made
+	if (!_do_advance)
+	{
+		return
+	}
+
+	// Player clicked, do something depending on the state
+	if (text_printing_state == PRINTING_STATE.PRINTING)
+	{
+		// Skip to text printing complete
+		dialogue_general_typist.skip();
+		// Skip cooldown
+		is_skip_advance_on_cooldown = true;
+		alarm[0] = game_get_speed(gamespeed_fps) * const_skip_cooldown;
+	}
+	else if (text_printing_state == PRINTING_STATE.FINISHED)
+	{
+		// Check if there's a next Page
+		current_page_idx += 1
+		if (current_page_idx >= page_amount)
+		{
+			// Close
+			array_resize(page_list, 0);
+			current_page_idx = 0;
+			page_amount = 0;
+			close_dialogue_box();
+		}
+		// Else, Go to next page	
+	}
+}
+
+// <------------------------> CUSTOM TYPEWRITTER EVENTS <------------------------>
+// Call the set up event
+event_user(2)
+
+
+
+
