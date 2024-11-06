@@ -84,6 +84,7 @@ scribble_typists_add_event("set_portrait_right", portrait_set_right_script);
 // Function to set the dialogue box to only display text
 function set_only_text()
 {
+	dialogue_general_typist.sound(snd_general_dialogue, main_typist_overlap, main_typist_min_pitch, main_typist_max_pitch, main_typist_gain);
 	dialogue_current_type = DIALOGUE_TYPE.ONLY_TEXT;
 }
 

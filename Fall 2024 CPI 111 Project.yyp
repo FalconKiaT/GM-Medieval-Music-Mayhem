@@ -249,6 +249,7 @@
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
     {"id":{"name":"snd_coin_falling_test","path":"sounds/snd_coin_falling_test/snd_coin_falling_test.yy",},},
     {"id":{"name":"snd_coin_found_test","path":"sounds/snd_coin_found_test/snd_coin_found_test.yy",},},
+    {"id":{"name":"snd_general_dialogue","path":"sounds/snd_general_dialogue/snd_general_dialogue.yy",},},
     {"id":{"name":"snd_king_dialogue","path":"sounds/snd_king_dialogue/snd_king_dialogue.yy",},},
     {"id":{"name":"snd_mus_mongrel_dance","path":"sounds/snd_mus_mongrel_dance/snd_mus_mongrel_dance.yy",},},
     {"id":{"name":"snd_player_dialogue","path":"sounds/snd_player_dialogue/snd_player_dialogue.yy",},},

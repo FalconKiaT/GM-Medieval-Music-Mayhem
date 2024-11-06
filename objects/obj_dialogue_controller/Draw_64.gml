@@ -12,7 +12,7 @@ var _flip_float = is_sprite_flipped ? -1 : 1; // Will be -1 if is_sprite_flipped
 
 // Check for animating the portrait moving
 var img_index = 0;
-if (text_printing_state == PRINTING_STATE.FINISHED)
+if (text_printing_state == PRINTING_STATE.FINISHED || dialogue_general_typist.get_delay_paused())
 {
 	img_index = 0
 }
