@@ -189,9 +189,9 @@ dialogue_shake_intensity = 0;
 
 // ****************************************************************** DEBUGGING DELETE ME
 // Test run
-dialogue_current_state = DIALOGUE_STATE.OPENING;
-is_skip_advance_on_cooldown = false;
-set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
+//dialogue_current_state = DIALOGUE_STATE.OPENING;
+//is_skip_advance_on_cooldown = false;
+//set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
 // ******************************************************************
 
 // <------------------------> OBJECT WIDE FUNCTIONS <------------------------>
