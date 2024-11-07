@@ -1,15 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menu_manager",
+  "%Name":"obj_btn_level_select",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menu_manager",
+  "name":"obj_btn_level_select",
   "overriddenProperties":[],
   "parent":{
-    "name":"Meta",
-    "path":"folders/Objects/Meta.yy",
+    "name":"Main Menu Buttons",
+    "path":"folders/Objects/Buttons/Main Menu Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_btn_lvl_select",
+    "path":"sprites/spr_btn_lvl_select/spr_btn_lvl_select.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
