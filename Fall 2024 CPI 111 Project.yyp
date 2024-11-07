@@ -293,8 +293,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_dialogue_test","path":"rooms/rm_dialogue_test/rm_dialogue_test.yy",},},
     {"roomId":{"name":"rm_mapping_prototype","path":"rooms/rm_mapping_prototype/rm_mapping_prototype.yy",},},
+    {"roomId":{"name":"rm_dialogue_test","path":"rooms/rm_dialogue_test/rm_dialogue_test.yy",},},
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
     {"roomId":{"name":"rm_prototype","path":"rooms/rm_prototype/rm_prototype.yy",},},
     {"roomId":{"name":"rm_results","path":"rooms/rm_results/rm_results.yy",},},

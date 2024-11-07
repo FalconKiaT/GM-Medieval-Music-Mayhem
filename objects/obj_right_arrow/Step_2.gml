@@ -10,5 +10,6 @@ if (image_alpha < 0.2) {
 			ds_queue_dequeue(global.current_spawned_right_arrows)
 		}
 	instance_create_layer(x, y, "Feedback", obj_feedback_miss)
+	health -= 10
 	instance_destroy()
 }
