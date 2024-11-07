@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"portrait_set_left_script",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"portrait_set_left_script",
+  "parent":{
+    "name":"Dialogue",
+    "path":"folders/Scripts/Dialogue.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
