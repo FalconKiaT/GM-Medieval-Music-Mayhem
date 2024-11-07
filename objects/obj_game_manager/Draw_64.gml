@@ -47,12 +47,23 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 
 			
 		draw_surface(pause_sur, 0,0);	
+		score_health_gui()
+		
 		// Menu 
 		draw_set_alpha(0.8);
 		draw_rectangle_color(0,0,room_width,room_height,c_black,c_black,c_black,c_black,false);
 		draw_set_alpha(1.0)
-		draw_text(room_width/2,10,"Pause Menu");
+		draw_sprite_ext(spr_button, image_index,room_width/2,room_height/2,pause_width/sprite_width,pause_height/sprite_height, 0, c_white, 1)
+		// Menu GUI
+		for(var i = 0; i < text_array_length; i++){
+			text_color = c_white;
+			if (pos_pause == i){
+				text_color = c_yellow;
+			}
+			draw_text_color(room_width/2 + text_border, room_height/2-100 +text_border + text_dist*i, option[i], text_color,text_color,text_color,text_color,1);
 			
+		}
+		
 			
 	}
 
@@ -68,7 +79,10 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 else
 {
 	// This brings back all instances as they were in the room
-	audio_resume_all()
+	if (pos_pause !=1){
+		// check if the game restarted so the audio restarts too
+		audio_resume_all()
+	}
 	instance_activate_all();
 	
 	// menu gone
