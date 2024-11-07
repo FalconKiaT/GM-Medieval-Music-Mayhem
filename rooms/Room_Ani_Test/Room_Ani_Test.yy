@@ -17,8 +17,8 @@
   ],
   "name":"Room_Ani_Test",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Testing",
+    "path":"folders/Rooms/Testing.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
