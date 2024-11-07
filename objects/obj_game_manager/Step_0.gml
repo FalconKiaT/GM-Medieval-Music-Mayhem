@@ -22,39 +22,48 @@ if(keyboard_check_pressed(vk_escape)){
 	
 }
 
-// Pause menu inputs
-up_key = keyboard_check_pressed(vk_up);
-down_key = keyboard_check_pressed(vk_down);
-enter_key = keyboard_check_pressed(vk_enter);
 
-// running menu inputs
-pos_pause += down_key-up_key;
+if (global.current_game_state == GAME_STATES.PAUSE){
+	// Pause menu inputs
+	up_key = keyboard_check_pressed(vk_up);
+	down_key = keyboard_check_pressed(vk_down);
+	enter_key = keyboard_check_pressed(vk_enter);
 
-if (pos_pause >= text_array_length){
-	pos_pause = 0;
-}
-if (pos_pause <0 ){
-	pos_pause = text_array_length-1;	
+	// running menu inputs
+	pos_pause += down_key-up_key;
 	
-}
 
-if (enter_key){
-	switch(pos_pause){
+	if (pos_pause >= text_array_length){
+		pos_pause = 0;
+	}
+	if (pos_pause <0 ){
+		pos_pause = text_array_length-1;	
+	}
 	
-		case 0:
-			global.current_game_state = _pervious_game_state;
-			break;
-		case 1:
-			global.current_game_state = _pervious_game_state;
-			room_restart();
-			break;
-		case 2:
+	if (down_key || up_key){
+		
+		audio_play_sound(Menu_Selection_Click,1,false);
+	}
+	if (enter_key){
+		switch(pos_pause){
+	
+			case 0:
+				global.current_game_state = _pervious_game_state;
+				break;
+			case 1:
+				global.current_game_state = _pervious_game_state;
+				audio_stop_all();
+				score = 0;
+				room_restart();
+				break;
+			case 2:
 			
-			game_end();
-			break;
+				game_end();
+				break;
 	
 	
 	
 	
+		}
 	}
 }
