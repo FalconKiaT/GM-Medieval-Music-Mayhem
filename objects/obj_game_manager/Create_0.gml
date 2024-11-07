@@ -10,6 +10,7 @@ enum GAME_STATES{
 	
 }
 
+
 // Game state
 var _pervious_game_state
 global.current_game_state = GAME_STATES.PLAY;
@@ -42,3 +43,7 @@ text_array_length = array_length(option)
 
 	// position in pause menu
 pos_pause=0
+
+//global variables
+global.current_game_state = GAME_STATES.PLAY;
+
