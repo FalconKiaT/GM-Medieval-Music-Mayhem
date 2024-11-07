@@ -53,7 +53,7 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 		draw_set_alpha(0.8);
 		draw_rectangle_color(0,0,room_width,room_height,c_black,c_black,c_black,c_black,false);
 		draw_set_alpha(1.0)
-		draw_sprite_ext(spr_button, image_index,room_width/2,room_height/2,pause_width/sprite_width,pause_height/sprite_height, 0, c_white, 1)
+		
 		// Menu GUI
 		for(var i = 0; i < text_array_length; i++){
 			text_color = c_white;

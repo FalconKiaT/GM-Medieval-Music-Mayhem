@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Basic",
-    "path":"folders/Sprites/Arrows/Basic.yy",
+    "name":"Arrows",
+    "path":"folders/Sprites/Arrows.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
