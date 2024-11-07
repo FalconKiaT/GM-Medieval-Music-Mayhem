@@ -41,7 +41,7 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 	}
 	
 	if (down_key || up_key){
-		
+		// Author: NenadSimic for the sound effect CC Attribution 3.0 Unported 
 		audio_play_sound(Menu_Selection_Click,1,false);
 	}
 	if (enter_key){
