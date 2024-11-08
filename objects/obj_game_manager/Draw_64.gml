@@ -5,11 +5,12 @@ function score_health_gui(){
 		draw_set_halign(fa_center)
 		draw_text((room_width)-50,54,"Score: \n" + string(score))
 		// add detection for levels for now
-		draw_sprite_ext(spr_king_neutral,0,obj_enemy.x-100,obj_enemy.y-100,0.2,0.2,0,c_white,1)
+		
 	
 		draw_healthbar(room_width/2-200,room_height/2+150,room_width/2+200,room_height/2+150+12,health,c_black,c_red,c_green,0,false,false)
 	}
 }
+
 score_health_gui()
 // remove later temp game over
 if (global.current_game_state == GAME_STATES.OVER){

@@ -21,11 +21,13 @@ if(keyboard_check_pressed(vk_escape)){
 		
 		}
 		else if (global.current_game_state == GAME_STATES.PAUSE){
-			
-			global.current_game_state = _pervious_game_state;
 			show_debug_message("unpaused")
 			show_debug_message(global.current_game_state)
+			global.current_game_state = _pervious_game_state;
+			
+			
 		}
+		
 	}
 }
 
