@@ -12,7 +12,7 @@ else if(keyboard_check(vk_up))
 {
 	AnimationSet("UP");
 }
-else
+else if(keyboard_check(vk_down))
 {
 	AnimationSet("IDLE");
 }
