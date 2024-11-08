@@ -40,7 +40,7 @@ function AnimationDestroy(){
 // add a looping animation
 function AnimationAdd(animationTagName, scaleX, scaleY, maxAnimationSpeed, startFrame, endFrame){
 	animation_map[? animationTagName] = [AnimationType.LOOPED, animationTagName, scaleX, scaleY, maxAnimationSpeed, startFrame, endFrame, noone, noone];
-	show_debug_message("MAX anim speed " + string(maxAnimationSpeed));
+		//show_debug_message("MAX anim speed " + string(maxAnimationSpeed));
 }
 
 // add an animation that plays x times before playing another
