@@ -96,7 +96,7 @@ function set_up_level1_(){
 	add_page("[change_character, spr_king_neutral] I have failed to protect us...")
 	add_page("Huh... who is that?")
 	add_page("[change_character, spr_king_happy][shake_dialogue_box, 10, 1] AHA!")
-	add_page("Oh! we are save! I have found someone with extraordinary potential. OHOHOHO!")
+	add_page("Oh! we are saved! I have found someone with extraordinary potential. OHOHOHO!")
 	add_page("YOU! ")
 	
 	add_page("[set_portrait_right][change_character, spr_wiz_shocked][skip_to_next_page]")
