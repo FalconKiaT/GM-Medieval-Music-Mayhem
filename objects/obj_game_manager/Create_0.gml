@@ -1,4 +1,9 @@
-
+//checks what room its in to determine game state
+if (room_exists(rm_mock_level1_prototype)){
+	
+	global.current_game_state = GAME_STATES.PLAY;
+	
+}
 
 show_debug_message(global.current_game_state)
 
