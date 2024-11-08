@@ -210,6 +210,9 @@ function public_trigger_dialogue(target)
 		case "ONE_LINE":
 			set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
 			break;
+		case "LEVEL1":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL1);
+			break;
 		
 		default:
 			show_debug_message("ERROR! Dialogue ID not recognized! Thrown at obj_dialogue_controller -> Create ->  public_trigger_dialogue(target)")

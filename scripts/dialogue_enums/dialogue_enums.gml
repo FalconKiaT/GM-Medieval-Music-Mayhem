@@ -33,4 +33,5 @@ enum DIALOGUE_ID
 	NULL,
 	DEMO,
 	ONE_LINE,
+	LEVEL1,
 }

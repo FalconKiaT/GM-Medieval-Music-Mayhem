@@ -86,6 +86,41 @@ function set_up_one_line()
 	add_page("Wassgood Im only one line long dayum. Now im goneeeeeeee....");
 }
 
+// Level One Dialogue
+function set_up_level1_(){
+	dialogue_current_type =  DIALOGUE_TYPE.ONLY_TEXT;
+	
+	add_page("[set_only_text]Uncontrollable Chaos![delay,1000] The wizard kingdom has fallen...");
+	add_page("[set_portrait_left][change_character, spr_king_upset_angry][skip_to_next_page]")
+	add_page("[lock_skip][shake_dialogue_box, 3, 4] Oh no, my kingdom...[delay,1000] ")
+	add_page("[change_character, spr_king_neutral] I have failed to protect us...")
+	add_page("Huh... who is that?")
+	add_page("[change_character, spr_king_happy][shake_dialogue_box, 10, 1] AHA!")
+	add_page("Oh! we are save! I have found someone with extraordinary potential. OHOHOHO!")
+	add_page("YOU! ")
+	
+	add_page("[set_portrait_right][change_character, spr_wiz_shocked][skip_to_next_page]")
+	add_page("AH!")
+	add_page("[set_only_text][skip_to_next_page]")
+	add_page("[shake]DUN![/shake] ")
+	add_page("[shake]DUN![/shake]" )
+	add_page("[shake]DUN![/shake]" )
+	add_page("[set_portrait_left][change_character, spr_king_happy][skip_to_next_page]")
+	add_page("You must save the wizard Kingdom!")
+	add_page("[set_portrait_right][change_character, spr_wiz_angry][skip_to_next_page]")
+	add_page("Why should I?")
+	add_page("[set_portrait_left][change_character, spr_king_neutral][skip_to_next_page]")
+	add_page("Hrmhm, oh of course. I'll dub ye the ultimate wizard as a reward.")
+	add_page("[set_portrait_right][change_character, spr_wiz_neutral][skip_to_next_page]")
+	add_page("I'll take it.")
+	add_page("[set_portrait_left][change_character, spr_king_happy][skip_to_next_page]")
+	add_page("Great! Now, quick let us battle to determine your current skill.")
+	
+	
+	
+}
+
+
 // Function to reset the page array
 function reset_page_array()
 {
@@ -115,7 +150,9 @@ function set_up_dialogue_id(target)
 		case DIALOGUE_ID.ONE_LINE:
 			 set_up_one_line();
 			break;
-		
+		case DIALOGUE_ID.LEVEL1:
+			set_up_level1_();
+			break;
 		default:
 			show_error("ERROR! THIS DIALOGUE ID HASNT BEEN CONFIGURED YET!", false)
 			return;
