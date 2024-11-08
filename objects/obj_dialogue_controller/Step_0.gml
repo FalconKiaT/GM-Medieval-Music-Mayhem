@@ -80,14 +80,18 @@ if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 }
 
 // DEBUGGING
-if (keyboard_check_pressed(ord("P"))) 
+if (enable_debug_tools)
 {
-    public_pause_dialogue();
+	if (keyboard_check_pressed(ord("P"))) 
+	{
+		public_pause_dialogue();
+	}
+	if (keyboard_check_pressed(ord("O"))) 
+	{
+		public_resume_dialogue();
+	}
 }
-if (keyboard_check_pressed(ord("O"))) 
-{
-    public_resume_dialogue();
-}
+
 
 
 
