@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player",
-  "eventList":[],
+  "%Name":"obj_level_one_dialogue",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_player",
+  "name":"obj_level_one_dialogue",
   "overriddenProperties":[],
   "parent":{
-    "name":"Room",
-    "path":"folders/Objects/Room.yy",
+    "name":"Level_dialogue",
+    "path":"folders/Objects/Meta/Level_dialogue.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_player_right",
-    "path":"sprites/spr_player_right/spr_player_right.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
