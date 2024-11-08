@@ -15,13 +15,15 @@ enum GAME_STATES{
 	 DIALOGUE=3,
 	 WIN=4,
 	 MENU=5,
+	 STATE_NULL =6,
+	 
 	
 	
 }
 
 
 // Game state
-global.current_game_state = GAME_STATES.PLAY;
+global.current_game_state = GAME_STATES.STATE_NULL;
 
 // Some deafult resolutions 
 global.res_width = 1600;

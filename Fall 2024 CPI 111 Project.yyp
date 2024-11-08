@@ -332,6 +332,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
+    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_mapping_prototype","path":"rooms/rm_mapping_prototype/rm_mapping_prototype.yy",},},
     {"roomId":{"name":"rm_dialogue_test","path":"rooms/rm_dialogue_test/rm_dialogue_test.yy",},},
     {"roomId":{"name":"rm_prototype","path":"rooms/rm_prototype/rm_prototype.yy",},},
@@ -339,7 +340,6 @@
     {"roomId":{"name":"Room_Ani_Test","path":"rooms/Room_Ani_Test/Room_Ani_Test.yy",},},
     {"roomId":{"name":"rm_levelSelect","path":"rooms/rm_levelSelect/rm_levelSelect.yy",},},
     {"roomId":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},},
-    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_dialogue_level1_","path":"rooms/rm_dialogue_level1_/rm_dialogue_level1_.yy",},},
   ],
   "templateType":"game",

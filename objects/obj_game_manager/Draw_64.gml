@@ -9,7 +9,10 @@ function score_health_gui(){
 	}
 }
 score_health_gui()
-
+// remove later
+if (global.current_game_state == GAME_STATES.OVER){
+	draw_text((room_width)/2,room_height/2,"GAME OVER")
+}
 
 // Pause system
 // This system is made so that we do not have to load a new room and only work with the one we are in

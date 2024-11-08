@@ -1,3 +1,10 @@
+
+// Checks level
+if (room_exists(rm_mock_level1_prototype)){
+	global.current_game_state = GAME_STATES.PLAY;
+	
+}
+// before pause state
 _pervious_game_state= global.current_game_state;
 
 
@@ -25,6 +32,5 @@ text_array_length = array_length(option)
 	// position in pause menu
 pos_pause=0
 
-//global variables
-global.current_game_state = GAME_STATES.PLAY;
+
 
