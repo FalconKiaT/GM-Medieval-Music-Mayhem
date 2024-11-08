@@ -5,7 +5,8 @@ enum GAME_STATES{
 	 PAUSE =1,
 	 OVER=2,
 	 DIALOGUE=3,
-	 WIN=4
+	 WIN=4,
+	 MENU=5,
 	
 	
 }

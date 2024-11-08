@@ -18,12 +18,18 @@ if(keyboard_check_pressed(vk_escape)){
 	}
 	else if (global.current_game_state == GAME_STATES.PAUSE){
 		global.current_game_state = _pervious_game_state;
+		if (_pervious_game_state == GAME_STATES.DIALOGUE){
+			obj_dialogue_controller.public_resume_dialogue()
+		}
 	}
 	
 }
 
 
 if (global.current_game_state == GAME_STATES.PAUSE){
+	if (_pervious_game_state == GAME_STATES.DIALOGUE){
+		obj_dialogue_controller.public_pause_dialogue()
+	}
 	// Pause menu inputs
 	up_key = keyboard_check_pressed(vk_up);
 	down_key = keyboard_check_pressed(vk_down);
@@ -58,7 +64,9 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 				room_restart();
 				break;
 			case 2:
-			
+				global.current_game_state = GAME_STATES.MENU;
+				audio_stop_all();
+				
 				game_end();
 				break;
 	

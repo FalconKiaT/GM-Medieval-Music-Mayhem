@@ -93,3 +93,27 @@ else
 	pause_sur = -1;
 	
 }
+
+// Game over System
+if (global.current_game_state == GAME_STATES.OVER ){
+	
+	if (!surface_exists(pause_sur)){
+	// This stops all instances in the room
+		audio_stop_all();
+		instance_deactivate_all(true);
+		
+		// caputures this game moment 
+		pause_sur = surface_create(room_width,room_height);
+		surface_set_target(pause_sur);
+		draw_surface(application_surface,0,0);
+		surface_reset_target();
+	}
+	else{
+
+			
+		draw_surface(pause_sur, 0,0);	
+		score_health_gui()
+		
+	}
+	
+}
