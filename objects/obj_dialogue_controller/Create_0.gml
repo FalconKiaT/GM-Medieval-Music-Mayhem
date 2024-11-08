@@ -221,7 +221,7 @@ function public_trigger_dialogue(target)
 	
 	// Start opening the dialogue box
 	dialogue_current_state = DIALOGUE_STATE.OPENING;
-	public_is_dialogue_visible = true;
+	is_dialogue_visible = true;
 }
 
 // Function to close the dialogue box even if its writting

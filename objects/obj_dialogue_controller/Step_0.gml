@@ -50,7 +50,7 @@ switch (dialogue_current_state)
 			// Fully closed
 			opening_anim_scaler = 0;
 			dialogue_current_state = DIALOGUE_STATE.INACTIVE;
-			public_is_dialogue_visible = false;
+			is_dialogue_visible = false;
 			// Any additional actions when fully closed
 		}
 		break;
