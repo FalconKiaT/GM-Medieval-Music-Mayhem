@@ -287,6 +287,7 @@
     {"id":{"name":"snd_mus_mongrel_dance","path":"sounds/snd_mus_mongrel_dance/snd_mus_mongrel_dance.yy",},},
     {"id":{"name":"snd_player_dialogue","path":"sounds/snd_player_dialogue/snd_player_dialogue.yy",},},
     {"id":{"name":"bg_white","path":"sprites/bg_white/bg_white.yy",},},
+    {"id":{"name":"IMG_4635","path":"sprites/IMG_4635/IMG_4635.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"spr_btn_back","path":"sprites/spr_btn_back/spr_btn_back.yy",},},
     {"id":{"name":"spr_btn_exit","path":"sprites/spr_btn_exit/spr_btn_exit.yy",},},
