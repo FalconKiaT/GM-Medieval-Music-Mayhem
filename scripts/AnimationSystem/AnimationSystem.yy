@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"AnimationSystem",
   "parent":{
-    "name":"Animation System (NEW)",
-    "path":"folders/Scripts/Animation System (NEW).yy",
+    "name":"Animation System",
+    "path":"folders/Scripts/Animation System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
