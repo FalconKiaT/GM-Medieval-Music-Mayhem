@@ -10,7 +10,7 @@ if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 
 // Toggles the pause state during gameplay
 if(keyboard_check_pressed(vk_escape)){
-	if (global.current_game_state != GAME_STATES.OVER){
+	if (global.current_game_state != GAME_STATES.OVER || global.current_game_state != GAME_STATES.WIN){
 		
 		if (global.current_game_state != GAME_STATES.PAUSE){
 			show_debug_message("paused")
@@ -81,3 +81,10 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 	}
 }
 
+// debug for ending song
+if(keyboard_check_pressed(vk_f1)){
+	global.current_game_state = GAME_STATES.WIN;
+	alarm[0] = game_get_speed(gamespeed_fps) * 10;// timer
+	
+	
+}

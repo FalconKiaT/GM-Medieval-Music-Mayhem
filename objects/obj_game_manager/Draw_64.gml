@@ -16,6 +16,12 @@ score_health_gui()
 if (global.current_game_state == GAME_STATES.OVER){
 	draw_text((room_width)/2,room_height/2,"GAME OVER")
 }
+// remove later temp win
+if (global.current_game_state == GAME_STATES.WIN){
+	
+	draw_text((room_width)/2,room_height/2,"WIN")
+	draw_text((room_width)/2,room_height/2+20,"Score: \n" + string(score))
+}
 
 // Pause system
 // This system is made so that we do not have to load a new room and only work with the one we are in
@@ -101,7 +107,7 @@ else
 }
 
 // Game over System
-if (global.current_game_state == GAME_STATES.OVER ){
+if (global.current_game_state == GAME_STATES.OVER || global.current_game_state == GAME_STATES.WIN){
 	
 	if (!surface_exists(pause_sur)){
 	// This stops all instances in the room
