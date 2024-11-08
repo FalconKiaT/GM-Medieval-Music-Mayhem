@@ -200,16 +200,21 @@ dialogue_shake_intensity = 0;
 // TODO: Test if this works
 function public_trigger_dialogue(target)
 {
-	// Make sure its of type DIALOGUE_ID
-	// FIXME: Check this safe guard works
-	if (typeof(target) != typeof(DIALOGUE_ID))
-	{
-		show_error("Error: target has to be of type  DIALOGUE_ID!", true);
-        return;
-	}
-	
 	// Set the dialogue ID
-	set_up_dialogue_id(target);
+	switch (target)
+	{
+		case "DEMO":
+			set_up_dialogue_id(DIALOGUE_ID.DEMO);
+		break;
+		
+		case "ONE_LINE":
+			set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
+			break;
+		
+		default:
+			show_debug_message("ERROR! Dialogue ID not recognized! Thrown at obj_dialogue_controller -> Create ->  public_trigger_dialogue(target)")
+			return;
+	}
 	
 	// Start opening the dialogue box
 	dialogue_current_state = DIALOGUE_STATE.OPENING;
