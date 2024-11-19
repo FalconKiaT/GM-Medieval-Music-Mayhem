@@ -4,12 +4,14 @@ function score_health_gui(){
 	
 		draw_set_halign(fa_center)
 		draw_text((room_width)-50,54,"Score: \n" + string(score))
+		// add detection for levels for now
+		
 	
 		draw_healthbar(room_width/2-200,room_height/2+150,room_width/2+200,room_height/2+150+12,health,c_black,c_red,c_green,0,false,false)
 	}
 }
-score_health_gui()
 
+score_health_gui()
 
 // Pause system
 // This system is made so that we do not have to load a new room and only work with the one we are in
@@ -94,26 +96,3 @@ else
 	
 }
 
-// Game over System
-if (global.current_game_state == GAME_STATES.OVER ){
-	
-	if (!surface_exists(pause_sur)){
-	// This stops all instances in the room
-		audio_stop_all();
-		instance_deactivate_all(true);
-		
-		// caputures this game moment 
-		pause_sur = surface_create(room_width,room_height);
-		surface_set_target(pause_sur);
-		draw_surface(application_surface,0,0);
-		surface_reset_target();
-	}
-	else{
-
-			
-		draw_surface(pause_sur, 0,0);	
-		score_health_gui()
-		
-	}
-	
-}

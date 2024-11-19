@@ -4,32 +4,36 @@
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {
 	global.current_game_state = GAME_STATES.OVER;//game over
-	alarm[0] = game_get_speed(gamespeed_fps) * 10;// change room_speed forgot the other one
+	
+	alarm[0] = game_get_speed(gamespeed_fps) * 5;// timer
 }
 
 // Toggles the pause state during gameplay
 if(keyboard_check_pressed(vk_escape)){
-	
-	if (global.current_game_state != GAME_STATES.PAUSE){
-		_pervious_game_state = global.current_game_state;
-		global.current_game_state = GAME_STATES.PAUSE;
+	if (global.current_game_state != GAME_STATES.OVER || global.current_game_state != GAME_STATES.WIN){
+		
+		if (global.current_game_state != GAME_STATES.PAUSE){
+			show_debug_message("paused")
+			show_debug_message(global.current_game_state)
+			_pervious_game_state = global.current_game_state;
+			global.current_game_state = GAME_STATES.PAUSE;
 		
 		
-	}
-	else if (global.current_game_state == GAME_STATES.PAUSE){
-		global.current_game_state = _pervious_game_state;
-		if (_pervious_game_state == GAME_STATES.DIALOGUE){
-			obj_dialogue_controller.public_resume_dialogue()
 		}
+		else if (global.current_game_state == GAME_STATES.PAUSE){
+			show_debug_message("unpaused")
+			show_debug_message(global.current_game_state)
+			global.current_game_state = _pervious_game_state;
+			
+			
+		}
+		
 	}
-	
 }
 
 
 if (global.current_game_state == GAME_STATES.PAUSE){
-	if (_pervious_game_state == GAME_STATES.DIALOGUE){
-		obj_dialogue_controller.public_pause_dialogue()
-	}
+	
 	// Pause menu inputs
 	up_key = keyboard_check_pressed(vk_up);
 	down_key = keyboard_check_pressed(vk_down);
@@ -75,4 +79,12 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 	
 		}
 	}
+}
+
+// debug for ending song
+if(keyboard_check_pressed(vk_f1)){
+	global.current_game_state = GAME_STATES.WIN;
+	alarm[0] = game_get_speed(gamespeed_fps) * 10;// timer
+	
+	
 }

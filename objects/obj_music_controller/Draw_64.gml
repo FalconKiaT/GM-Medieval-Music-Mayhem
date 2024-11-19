@@ -3,6 +3,5 @@
 
 
 draw_text(100, 100, global.music_timestamp)
-draw_text(10, 40, "Score: " + string(score))
-draw_text(10, 70, "Health: " + string(health))
+
 

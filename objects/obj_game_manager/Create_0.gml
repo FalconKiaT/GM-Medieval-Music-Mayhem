@@ -1,24 +1,14 @@
-
-// possible game states
-enum GAME_STATES{
-	 PLAY =0,
-	 PAUSE =1,
-	 OVER=2,
-	 DIALOGUE=3,
-	 WIN=4,
-	 MENU=5,
+//checks what room its in to determine game state
+if (room_exists(rm_mock_level1_prototype)){
 	
+	global.current_game_state = GAME_STATES.PLAY;
 	
 }
 
+show_debug_message(global.current_game_state)
 
-// Game state
-var _pervious_game_state
-global.current_game_state = GAME_STATES.PLAY;
-
-// Some deafult resolutions 
-global.res_width = 1600;
-global.res_height = 900;
+// before pause state
+_pervious_game_state= global.current_game_state;
 
 
 
@@ -45,6 +35,5 @@ text_array_length = array_length(option)
 	// position in pause menu
 pos_pause=0
 
-//global variables
-global.current_game_state = GAME_STATES.PLAY;
+
 

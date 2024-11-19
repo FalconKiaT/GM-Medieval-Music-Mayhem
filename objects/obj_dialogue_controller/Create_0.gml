@@ -210,6 +210,9 @@ function public_trigger_dialogue(target)
 		case "ONE_LINE":
 			set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
 			break;
+		case "LEVEL1":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL1);
+			break;
 		
 		default:
 			show_debug_message("ERROR! Dialogue ID not recognized! Thrown at obj_dialogue_controller -> Create ->  public_trigger_dialogue(target)")
@@ -218,7 +221,7 @@ function public_trigger_dialogue(target)
 	
 	// Start opening the dialogue box
 	dialogue_current_state = DIALOGUE_STATE.OPENING;
-	public_is_dialogue_visible = true;
+	is_dialogue_visible = true;
 }
 
 // Function to close the dialogue box even if its writting
