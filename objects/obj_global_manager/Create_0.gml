@@ -1,4 +1,5 @@
 /// @description Initialize global variables
+// might be better in a script
 
 //settings
 global.volume = 100; //a value 0-100 denoting game volume
@@ -23,8 +24,15 @@ enum GAME_STATES{
 
 
 // Game state
-global.current_game_state = GAME_STATES.PLAY;
+global.current_game_state = GAME_STATES.MENU;
 
 // Some deafult resolutions 
 global.res_width = 1600;
 global.res_height = 900;
+
+// The current level
+global.current_level=0;
+
+
+// level scoring
+global.level_one_high_score =0;

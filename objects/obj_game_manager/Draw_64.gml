@@ -12,16 +12,6 @@ function score_health_gui(){
 }
 
 score_health_gui()
-// remove later temp game over
-if (global.current_game_state == GAME_STATES.OVER){
-	draw_text((room_width)/2,room_height/2,"GAME OVER")
-}
-// remove later temp win
-if (global.current_game_state == GAME_STATES.WIN){
-	
-	draw_text((room_width)/2,room_height/2,"WIN")
-	draw_text((room_width)/2,room_height/2+20,"Score: \n" + string(score))
-}
 
 // Pause system
 // This system is made so that we do not have to load a new room and only work with the one we are in
@@ -106,26 +96,3 @@ else
 	
 }
 
-// Game over System
-if (global.current_game_state == GAME_STATES.OVER || global.current_game_state == GAME_STATES.WIN){
-	
-	if (!surface_exists(pause_sur)){
-	// This stops all instances in the room
-		audio_stop_all();
-		instance_deactivate_all(true);
-		
-		// caputures this game moment 
-		pause_sur = surface_create(room_width,room_height);
-		surface_set_target(pause_sur);
-		draw_surface(application_surface,0,0);
-		surface_reset_target();
-	}
-	else{
-
-			
-		draw_surface(pause_sur, 0,0);	
-		score_health_gui()
-		
-	}
-	
-}
