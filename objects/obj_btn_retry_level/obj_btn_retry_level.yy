@@ -1,15 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_results_manager",
+  "%Name":"obj_btn_retry_level",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_results_manager",
+  "name":"obj_btn_retry_level",
   "overriddenProperties":[],
   "parent":{
-    "name":"Meta",
-    "path":"folders/Objects/Meta.yy",
+    "name":"Results Buttons",
+    "path":"folders/Objects/Buttons/Results Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_btn_reset",
+    "path":"sprites/spr_btn_reset/spr_btn_reset.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
