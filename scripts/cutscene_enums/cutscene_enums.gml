@@ -1,12 +1,7 @@
-// Enums used to track the state of the cutscene playing
+// Enums for states in the cutscene
 enum CUTSCENE_STATE
 {
 	INACTIVE,
-	PLAYING,
 	PAUSED,
-}
-
-enum CUTSCENE_ID
-{
-	DEMO,
+	PLAYING
 }

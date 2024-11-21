@@ -1,3 +1,4 @@
+// Feather disable GM2017
 /// @description Set up Custom Typewritter Events
 
 // <------------------------> EVENTS <------------------------>

@@ -1,3 +1,4 @@
+// Feather disable GM2017
 function score_health_gui(){
 	
 	if (global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.PAUSE ){
