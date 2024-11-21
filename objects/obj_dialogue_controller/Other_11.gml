@@ -1,3 +1,5 @@
+// Feather disable GM2017
+
 /// @description Set up Dialogue Target Functions
 
 // IAN HACK: I dont know if we reallu should go all out and incorporate a file reader...
