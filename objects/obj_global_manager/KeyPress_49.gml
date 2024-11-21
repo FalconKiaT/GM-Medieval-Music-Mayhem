@@ -1,0 +1,1 @@
+room_goto(rm_mock_level1_prototype)
