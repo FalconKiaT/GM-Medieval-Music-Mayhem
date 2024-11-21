@@ -1,6 +1,6 @@
 {
   "$GMObject":"",
-  "%Name":"obj_dialogue_controller",
+  "%Name":"obj_cutscene_controller",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -11,7 +11,7 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_dialogue_controller",
+  "name":"obj_cutscene_controller",
   "overriddenProperties":[],
   "parent":{
     "name":"Meta",
