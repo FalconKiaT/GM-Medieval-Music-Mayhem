@@ -1,3 +1,4 @@
+// Feather disable GM2017
 /// @description Set up variables
 
 /* IAN NOTE:
@@ -5,6 +6,17 @@
  * pre-appended with the word "public."
  * Please dont trigger or modify anything that isnt labeled with public :(
  */
+ 
+// <------------------------> NOTIFICATION SYSTEM <------------------------>
+receiver = new Receiver();
+
+receiver.add(MESSAGES.GAME_PAUSED, function() {
+    public_pause_dialogue();
+});
+
+receiver.add(MESSAGES.GAME_RESUMED, function() {
+    public_resume_dialogue();
+});
 
 // <------------------------> CONSTANTS <------------------------>
 
@@ -222,6 +234,8 @@ function public_trigger_dialogue(target)
 	// Start opening the dialogue box
 	dialogue_current_state = DIALOGUE_STATE.OPENING;
 	is_dialogue_visible = true;
+	// Broadcast that the dialogue started opening
+	broadcast(MESSAGES.DIALOGUE_STARTED);
 }
 
 // Function to close the dialogue box even if its writting

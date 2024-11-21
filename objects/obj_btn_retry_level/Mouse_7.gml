@@ -1,3 +1,4 @@
+// Feather disable GM2017
 //returns the button back to black again
 image_blend = make_color_rgb(200, 200, 200);
 // determines which room to go to

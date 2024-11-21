@@ -1,3 +1,4 @@
+// Feather disable GM2017
 /// @description Compute + User Input
 
 
@@ -51,7 +52,8 @@ switch (dialogue_current_state)
 			opening_anim_scaler = 0;
 			dialogue_current_state = DIALOGUE_STATE.INACTIVE;
 			is_dialogue_visible = false;
-			// Any additional actions when fully closed
+			// Broadcast that dialogue ended
+			broadcast(MESSAGES.DIALOGUE_FINISHED);
 		}
 		break;
 }
