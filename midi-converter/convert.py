@@ -32,6 +32,7 @@ for file in files:
     for msg in mid.tracks[0]:
         if msg.type == "note_on":  
             current_tick += msg.time
+            print(f"{mid.ticks_per_beat}")
             current_time = mido.tick2second(current_tick, mid.ticks_per_beat, tempo)
             match(msg.note):
                 case 60:
