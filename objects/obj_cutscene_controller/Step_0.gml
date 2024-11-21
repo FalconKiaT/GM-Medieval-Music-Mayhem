@@ -51,8 +51,7 @@ switch (dialogue_current_state)
 			opening_anim_scaler = 0;
 			dialogue_current_state = DIALOGUE_STATE.INACTIVE;
 			is_dialogue_visible = false;
-			// Broadcast that dialogue ended
-			broadcast(MESSAGES.DIALOGUE_FINISHED);
+			// Any additional actions when fully closed
 		}
 		break;
 }

@@ -92,7 +92,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1100.0.686",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Fall 2024 CPI 111 Project",
   "resources":[
@@ -104,7 +104,6 @@
     {"id":{"name":"TGMX_Documentation","path":"notes/TGMX_Documentation/TGMX_Documentation.yy",},},
     {"id":{"name":"TGMX_Terms_of_Use","path":"notes/TGMX_Terms_of_Use/TGMX_Terms_of_Use.yy",},},
     {"id":{"name":"TGMX_Update_Log","path":"notes/TGMX_Update_Log/TGMX_Update_Log.yy",},},
-    {"id":{"name":"example_listener","path":"objects/example_listener/example_listener.yy",},},
     {"id":{"name":"o_SharedTweener","path":"objects/o_SharedTweener/o_SharedTweener.yy",},},
     {"id":{"name":"obj_btn_back","path":"objects/obj_btn_back/obj_btn_back.yy",},},
     {"id":{"name":"obj_btn_exit","path":"objects/obj_btn_exit/obj_btn_exit.yy",},},
