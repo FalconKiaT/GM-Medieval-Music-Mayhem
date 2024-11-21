@@ -1,0 +1,1 @@
+image_index = 0; //make button unpressed sprite

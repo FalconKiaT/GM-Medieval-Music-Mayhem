@@ -1,2 +1,1 @@
-//tint button black when clicked
-image_index = 1
+room_goto(rm_settings);
