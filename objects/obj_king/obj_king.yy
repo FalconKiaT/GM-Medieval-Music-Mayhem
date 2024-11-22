@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_king_neutral",
-    "path":"sprites/spr_king_neutral/spr_king_neutral.yy",
+    "name":"spr_king",
+    "path":"sprites/spr_king/spr_king.yy",
   },
   "spriteMaskId":null,
   "visible":true,
