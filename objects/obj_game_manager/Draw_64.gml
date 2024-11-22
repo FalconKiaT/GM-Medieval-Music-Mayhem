@@ -8,7 +8,7 @@ function score_health_gui(){
 		// add detection for levels for now
 		
 	
-		draw_healthbar(room_width/2-200,room_height/2+150,room_width/2+200,room_height/2+150+12,health,c_black,c_red,c_green,0,false,false)
+		draw_healthbar(room_width/2-200,room_height/2+170,room_width/2+200,room_height/2+170+12,health,c_black,c_red,c_green,0,false,false)
 	}
 }
 

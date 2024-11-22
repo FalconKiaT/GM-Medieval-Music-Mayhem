@@ -1,7 +1,11 @@
 {
   "$GMObject":"",
   "%Name":"obj_curtains",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_curtains",
   "overriddenProperties":[],
@@ -28,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"temp_curtains",
-    "path":"sprites/temp_curtains/temp_curtains.yy",
+    "name":"spr_curtains",
+    "path":"sprites/spr_curtains/spr_curtains.yy",
   },
   "spriteMaskId":null,
   "visible":true,
