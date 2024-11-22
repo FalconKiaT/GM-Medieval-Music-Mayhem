@@ -330,6 +330,7 @@
     {"id":{"name":"snd_dialogue_next_page","path":"sounds/snd_dialogue_next_page/snd_dialogue_next_page.yy",},},
     {"id":{"name":"snd_general_dialogue","path":"sounds/snd_general_dialogue/snd_general_dialogue.yy",},},
     {"id":{"name":"snd_king_dialogue","path":"sounds/snd_king_dialogue/snd_king_dialogue.yy",},},
+    {"id":{"name":"snd_menu_music","path":"sounds/snd_menu_music/snd_menu_music.yy",},},
     {"id":{"name":"snd_mus_minstrel_guild","path":"sounds/snd_mus_minstrel_guild/snd_mus_minstrel_guild.yy",},},
     {"id":{"name":"snd_mus_mongrel_dance","path":"sounds/snd_mus_mongrel_dance/snd_mus_mongrel_dance.yy",},},
     {"id":{"name":"snd_player_dialogue","path":"sounds/snd_player_dialogue/snd_player_dialogue.yy",},},

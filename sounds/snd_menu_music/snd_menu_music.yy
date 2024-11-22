@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_mus_minstrel_guild",
+  "%Name":"snd_menu_music",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":185.809,
-  "name":"snd_mus_minstrel_guild",
+  "duration":0.0,
+  "name":"snd_menu_music",
   "parent":{
     "name":"songs",
     "path":"folders/Sounds/songs.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_mus_minstrel_guild.mp3",
+  "soundFile":"snd_menu_music",
   "type":0,
   "volume":1.0,
 }
