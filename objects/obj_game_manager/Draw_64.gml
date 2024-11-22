@@ -58,6 +58,7 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 		draw_set_alpha(1.0)
 		
 		// Menu GUI
+		
 		for(var i = 0; i < text_array_length; i++){
 			text_color = c_white;
 			if (pos_pause == i){
@@ -79,8 +80,34 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 	
 	
 }
-else
+else  if (global.current_game_state == GAME_STATES.PAUSE_TIMER){
+	
+	instance_activate_all();
+	instance_create_layer(room_width/2,room_height/2,"Meta",obj_countdown)
+	audio_pause_all();
+
+	surface_free(pause_sur);
+	pause_sur = -1;
+
+
+	instance_deactivate_layer("Arrows");
+	instance_deactivate_object(obj_music_controller);
+	
+	global.current_game_state = GAME_STATES.TIMER
+}
+else  if (global.current_game_state == GAME_STATES.TIMER){
+	audio_pause_all();
+
+	surface_free(pause_sur);
+	pause_sur = -1;
+
+
+	instance_deactivate_layer("Arrows");
+}
+else if (global.current_game_state != GAME_STATES.PAUSE_TIMER || global.current_game_state != GAME_STATES.TIMER)
 {
+	
+	
 	// This brings back all instances as they were in the room
 	if (pos_pause !=1){
 		// check if the game restarted so the audio restarts too
@@ -94,6 +121,8 @@ else
 	// clears the surface
 	surface_free(pause_sur);
 	pause_sur = -1;
+	
+	
 	
 }
 

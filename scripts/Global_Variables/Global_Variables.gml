@@ -16,7 +16,11 @@ enum GAME_STATES{
 	 DIALOGUE=3,
 	 WIN=4,
 	 MENU=5,
-
+	 PAUSE_TIMER =6,
+	 TIMER =7,
+	 
+		 
+	
 	 
 	
 	
