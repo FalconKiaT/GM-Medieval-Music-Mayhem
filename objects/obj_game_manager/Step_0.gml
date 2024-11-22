@@ -1,5 +1,7 @@
 // Feather disable GM2017
 
+
+
 // Health to gameover detection
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {
@@ -12,7 +14,7 @@ if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 if(keyboard_check_pressed(vk_escape)){
 	if (global.current_game_state != GAME_STATES.OVER || global.current_game_state != GAME_STATES.WIN){
 		
-		if (global.current_game_state != GAME_STATES.PAUSE){
+		if (global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.DIALOGUE){
 			show_debug_message("paused")
 			show_debug_message(global.current_game_state)
 			_pervious_game_state = global.current_game_state;
@@ -22,8 +24,10 @@ if(keyboard_check_pressed(vk_escape)){
 		}
 		else if (global.current_game_state == GAME_STATES.PAUSE){
 			show_debug_message("unpaused")
+			
+			global.current_game_state = GAME_STATES.PAUSE_TIMER;
 			show_debug_message(global.current_game_state)
-			global.current_game_state = _pervious_game_state;
+			
 			
 			
 		}
@@ -84,7 +88,8 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 // debug for ending song
 if(keyboard_check_pressed(vk_f1)){
 	global.current_game_state = GAME_STATES.WIN;
-	alarm[0] = game_get_speed(gamespeed_fps) * 10;// timer
+	alarm[0] = game_get_speed(gamespeed_fps) * 5;// timer
 	
 	
 }
+
