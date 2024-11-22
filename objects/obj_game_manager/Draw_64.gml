@@ -9,7 +9,7 @@ function score_health_gui(){
 		draw_healthbar(1100,300,1300,323,health,c_black,c_red,c_green,0,false,false)
 		draw_sprite(spr_level_health_barUI_assets,0,1180,310)
 		// progress barr
-		draw_healthbar(418,82,room_width/2+400,102,global.music_progress,c_black,c_red,c_aqua,0,false,false)
+		draw_healthbar(418,82,room_width/2+400,102,global.music_progress,c_yellow,c_red,c_aqua,0,false,false)
 		draw_sprite(spr_level_progress_barUI_assets,0,room_width/2,92)
 	
 		
