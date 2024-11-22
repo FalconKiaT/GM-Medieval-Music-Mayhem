@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_feedback_great",
+  "%Name":"obj_bomb_up",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_feedback_great",
+  "name":"obj_bomb_up",
   "overriddenProperties":[],
   "parent":{
-    "name":"Feedback",
-    "path":"folders/Objects/Arrows/Feedback.yy",
+    "name":"Bomb",
+    "path":"folders/Objects/Arrows/Bomb.yy",
   },
-  "parentObjectId":{
-    "name":"obj_feedback_generic",
-    "path":"objects/obj_feedback_generic/obj_feedback_generic.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_feedback_great",
-    "path":"sprites/spr_feedback_great/spr_feedback_great.yy",
+    "name":"spr_bomb_up",
+    "path":"sprites/spr_bomb_up/spr_bomb_up.yy",
   },
   "spriteMaskId":null,
   "visible":true,

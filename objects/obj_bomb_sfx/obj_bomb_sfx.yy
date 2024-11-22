@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bomb_arrow",
+  "%Name":"obj_bomb_sfx",
   "eventList":[],
   "managed":true,
-  "name":"obj_bomb_arrow",
+  "name":"obj_bomb_sfx",
   "overriddenProperties":[],
   "parent":{
-    "name":"Arrows",
-    "path":"folders/Objects/Arrows.yy",
+    "name":"Bomb",
+    "path":"folders/Objects/Arrows/Feedback/Bomb.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_bomb_sfx",
+    "path":"sprites/spr_bomb_sfx/spr_bomb_sfx.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
