@@ -4,7 +4,9 @@ function score_health_gui(){
 	if (global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.PAUSE){
 		draw_set_font(font_dialogue)
 		draw_set_halign(fa_center)
+		draw_set_color(c_white)
 		draw_text(1257,240, string(score))
+		draw_set_color(c_black)
 		//heath bar
 		draw_healthbar(1100,300,1300,323,health,c_black,c_red,c_green,0,false,false)
 		draw_sprite(spr_level_health_barUI_assets,0,1180,310)

@@ -1,3 +1,5 @@
+
+
 //leaving this here just in case
 if(room_exists(rm_mainMenu)){
 	global.current_game_state = GAME_STATES.MENU

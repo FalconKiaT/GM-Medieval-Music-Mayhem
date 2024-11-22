@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_btn_reset",
-    "path":"sprites/spr_btn_reset/spr_btn_reset.yy",
+    "name":"spr_retry_button",
+    "path":"sprites/spr_retry_button/spr_retry_button.yy",
   },
   "spriteMaskId":null,
   "visible":true,
