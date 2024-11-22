@@ -93,6 +93,14 @@ function set_only_text()
 // Format: [set_only_text]
 scribble_typists_add_event("set_only_text", set_only_text_script);
 
+// Add event
+// Format: [set_no_background]
+scribble_typists_add_event("set_no_background", function(_element, _parameter_array, _character_index) 
+{
+    dialogue_current_type = DIALOGUE_TYPE.NO_BACKGROUND;
+});
+
+
 // Function to go to next page in dialogue without prompting for click
 function skip_to_next_page()
 {

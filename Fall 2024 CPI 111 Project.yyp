@@ -21,6 +21,7 @@
     {"$GMFolder":"","%Name":"Level Select Buttons","folderPath":"folders/Objects/Buttons/Level Select Buttons.yy","name":"Level Select Buttons","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Main Menu Buttons","folderPath":"folders/Objects/Buttons/Main Menu Buttons.yy","name":"Main Menu Buttons","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Results Buttons","folderPath":"folders/Objects/Buttons/Results Buttons.yy","name":"Results Buttons","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Characters","folderPath":"folders/Objects/Characters.yy","name":"Characters","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Dialogue","folderPath":"folders/Objects/Dialogue.yy","name":"Dialogue","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Meta","folderPath":"folders/Objects/Meta.yy","name":"Meta","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Level_dialogue","folderPath":"folders/Objects/Meta/Level_dialogue.yy","name":"Level_dialogue","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -354,6 +355,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
+    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_results","path":"rooms/rm_results/rm_results.yy",},},
     {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_ani_test","path":"rooms/rm_ani_test/rm_ani_test.yy",},},

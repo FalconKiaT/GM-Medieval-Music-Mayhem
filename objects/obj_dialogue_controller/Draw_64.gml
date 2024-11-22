@@ -92,6 +92,15 @@ switch (dialogue_current_type)
 		}
 		
 		break;
+		
+	case DIALOGUE_TYPE.NO_BACKGROUND:
+		// Check if the dialogue box has finished opening and check if the text has finished printing to show next arrow
+		if (dialogue_current_state == DIALOGUE_STATE.ACTIVE && text_printing_state == PRINTING_STATE.FINISHED && !(is_skip_advance_on_cooldown || is_skip_locked_by_event))
+		{
+			// Draw next arrow
+			draw_sprite_ext(spr_next_arrow, arrow_img_index, next_arrow_top_left.x, next_arrow_top_left.y, 1, 1, 0, c_white, 1);
+		}
+		break;
 	
 	default:
 		show_debug_message("ERROR! Dialogue type not defined in Draw GUI of Dialogue Controller");

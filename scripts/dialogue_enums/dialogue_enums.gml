@@ -17,7 +17,8 @@ enum DIALOGUE_TYPE
 {
 	ONLY_TEXT,
 	PORTRAIT_RIGHT,
-	PORTRAIT_LEFT
+	PORTRAIT_LEFT,
+	NO_BACKGROUND,
 }
 
 // Variable user for the state of the typewritter
