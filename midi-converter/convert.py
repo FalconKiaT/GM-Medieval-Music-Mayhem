@@ -13,10 +13,11 @@ for file in files:
 
     # Else, run conversion
     print(f"\nfor MIDI file {file}:")
-    mid = mido.MidiFile("midi-files/mongrel.MID")
+    mid = mido.MidiFile(f"midi-files/{file}")
     left_map = []
     right_map = []
     up_map = []
+    bomb_map = []
     current_tick = 0
 
     # Get tempo
@@ -32,7 +33,6 @@ for file in files:
     for msg in mid.tracks[0]:
         if msg.type == "note_on":  
             current_tick += msg.time
-            print(f"{mid.ticks_per_beat}")
             current_time = mido.tick2second(current_tick, mid.ticks_per_beat, tempo)
             match(msg.note):
                 case 60:
@@ -44,6 +44,9 @@ for file in files:
                 case 62:
                     right_map.append(current_time)
                     continue
+                case 63:
+                    bomb_map.append(current_time)
+                    continue
                 case _:
                     print("Invalid note")
         elif msg.type == "note_off":
@@ -52,3 +55,5 @@ for file in files:
     print(f"left map: {left_map}")
     print(f"up map: {up_map}")
     print(f"right map: {right_map}")
+    print(f"bomb map: {bomb_map}")
+
