@@ -1,4 +1,4 @@
-
+// Feather disable GM2017
 
 // Health to gameover detection
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)

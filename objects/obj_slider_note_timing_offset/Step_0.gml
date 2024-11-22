@@ -1,3 +1,4 @@
+// Feather disable GM2017
 //handle button interaction
 if(mouse_check_button(mb_left))
 {

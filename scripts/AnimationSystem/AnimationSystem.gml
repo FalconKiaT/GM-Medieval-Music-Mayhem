@@ -1,3 +1,4 @@
+// Feather disable GM2017
 // Animation Script
 
 enum AnimationType
