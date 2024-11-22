@@ -198,6 +198,7 @@
     {"id":{"name":"obj_up_arrow_slot","path":"objects/obj_up_arrow_slot/obj_up_arrow_slot.yy",},},
     {"id":{"name":"obj_up_arrow","path":"objects/obj_up_arrow/obj_up_arrow.yy",},},
     {"id":{"name":"obj_victory_shield","path":"objects/obj_victory_shield/obj_victory_shield.yy",},},
+    {"id":{"name":"Placeholder","path":"objects/Placeholder/Placeholder.yy",},},
     {"id":{"name":"rm_ani_test","path":"rooms/rm_ani_test/rm_ani_test.yy",},},
     {"id":{"name":"rm_dialogue_level1_","path":"rooms/rm_dialogue_level1_/rm_dialogue_level1_.yy",},},
     {"id":{"name":"rm_dialogue_test","path":"rooms/rm_dialogue_test/rm_dialogue_test.yy",},},
