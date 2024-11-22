@@ -62,7 +62,7 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 		switch(pos_pause){
 	
 			case 0:
-				global.current_game_state = _pervious_game_state;
+				global.current_game_state = GAME_STATES.PAUSE_TIMER;
 				break;
 			case 1:
 				global.current_game_state = _pervious_game_state;
