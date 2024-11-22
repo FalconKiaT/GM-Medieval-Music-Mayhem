@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"Menu_Selection_Click",
+  "%Name":"snd_dialogue_next_page",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.227687,
-  "name":"Menu_Selection_Click",
+  "duration":0.010023,
+  "name":"snd_dialogue_next_page",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"Menu_Selection_Click.wav",
+  "soundFile":"snd_dialogue_next_page.ogg",
   "type":0,
   "volume":1.0,
 }
