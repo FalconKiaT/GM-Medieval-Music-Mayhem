@@ -105,7 +105,7 @@ function AnimationStepExtended(animationSpeed)
 		}
 		
 		//access parameters for current animation
-		var startFrame = animation_map[? current_animation_tag][AnimationKey.START_FRAME];
+		var startFrame = animation_map[? current_animation_tag][AnimationKey.START_FRAME] - 1;
 		var endFrame = animation_map[? current_animation_tag][AnimationKey.END_FRAME];
 		var repeats = animation_map[? current_animation_tag][AnimationKey.REPEATS];
 		var nextAnimationTag = animation_map[? current_animation_tag][AnimationKey.NEXT_ANIMATION_TAG];
@@ -116,11 +116,11 @@ function AnimationStepExtended(animationSpeed)
 		{
 			image_index = startFrame;
 		}
-		else if(floor(image_index) > endFrame-1) //past animation end
+		else if(floor(image_index) > endFrame) //past animation end
 		{
 			image_index = startFrame;
 		}
-		else if(floor(image_index) == endFrame-1) //animation finished
+		else if(floor(image_index) == endFrame) //animation finished
 		{
 			animation_iterations++;
 			switch(animation_map[? current_animation_tag][AnimationKey.ANIMATION_TYPE])
