@@ -300,6 +300,7 @@
     {"id":{"name":"snd_mus_mongrel_dance","path":"sounds/snd_mus_mongrel_dance/snd_mus_mongrel_dance.yy",},},
     {"id":{"name":"snd_player_dialogue","path":"sounds/snd_player_dialogue/snd_player_dialogue.yy",},},
     {"id":{"name":"bg_level_background","path":"sprites/bg_level_background/bg_level_background.yy",},},
+    {"id":{"name":"bg_title_placeholder","path":"sprites/bg_title_placeholder/bg_title_placeholder.yy",},},
     {"id":{"name":"bg_white","path":"sprites/bg_white/bg_white.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"spr_btn_back","path":"sprites/spr_btn_back/spr_btn_back.yy",},},
