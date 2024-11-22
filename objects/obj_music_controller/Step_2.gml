@@ -6,7 +6,6 @@ function spawn_feedback(_x, _y, _score) {
 	
 	if (_score == 0) {
 		_feedback_obj = obj_feedback_miss
-		broadcast(ANIM_MESSAGES.NOTE_MISSED);
 	}
 	else if (_score < 30) {
 		_feedback_obj = obj_feedback_bad	

@@ -110,7 +110,7 @@ function AnimationStepExtended(animationSpeed)
 		var repeats = animation_map[? current_animation_tag][AnimationKey.REPEATS];
 		var nextAnimationTag = animation_map[? current_animation_tag][AnimationKey.NEXT_ANIMATION_TAG];
 		
-		show_debug_message(string(floor(image_index)) + " " + string(startFrame) + " " + string(endFrame))
+		//show_debug_message(string(floor(image_index)) + " " + string(startFrame) + " " + string(endFrame))
 		//checks for controlling frames
 		if(floor(image_index) < startFrame) //animation hasn't started
 		{
