@@ -12,8 +12,8 @@
   "duration":111.56898,
   "name":"snd_mus_mongrel_dance",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"songs",
+    "path":"folders/Sounds/songs.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -12,8 +12,8 @@
   "duration":0.010023,
   "name":"snd_dialogue_next_page",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"dialogue",
+    "path":"folders/Sounds/dialogue.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
