@@ -1,3 +1,4 @@
+// Feather disable GM2017
 /// @description Compute + User Input
 
 
@@ -50,8 +51,9 @@ switch (dialogue_current_state)
 			// Fully closed
 			opening_anim_scaler = 0;
 			dialogue_current_state = DIALOGUE_STATE.INACTIVE;
-			public_is_dialogue_visible = false;
-			// Any additional actions when fully closed
+			is_dialogue_visible = false;
+			// Broadcast that dialogue ended
+			broadcast(MESSAGES.DIALOGUE_FINISHED);
 		}
 		break;
 }
@@ -80,14 +82,18 @@ if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 }
 
 // DEBUGGING
-if (keyboard_check_pressed(ord("P"))) 
+if (enable_debug_tools)
 {
-    public_pause_dialogue();
+	if (keyboard_check_pressed(ord("P"))) 
+	{
+		public_pause_dialogue();
+	}
+	if (keyboard_check_pressed(ord("O"))) 
+	{
+		public_resume_dialogue();
+	}
 }
-if (keyboard_check_pressed(ord("O"))) 
-{
-    public_resume_dialogue();
-}
+
 
 
 

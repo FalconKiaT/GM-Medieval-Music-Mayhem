@@ -18,3 +18,6 @@ global.current_spawned_right_arrows = ds_queue_create()
 mapped_timestamps_up = [1, 5, 6, 10, 14, 17]
 mapped_timestamps_left = [2.5, 3, 6, 7, 7.5, 8, 13] 
 mapped_timestamps_right = [4, 5, 9, 11, 12, 12.5] 
+
+// current song
+global.song_playing = snd_mus_mongrel_dance;

@@ -6,6 +6,7 @@ function spawn_feedback(_x, _y, _score) {
 	
 	if (_score == 0) {
 		_feedback_obj = obj_feedback_miss
+		
 	}
 	else if (_score < 30) {
 		_feedback_obj = obj_feedback_bad	
@@ -30,7 +31,10 @@ function click_last_arrow(_arrow_queue) {
 		
 		_accuracy_score = 100 * sqr(clamp(1 - _note_delay, 0, 1))
 		score += _accuracy_score
+		health += ceil(10 * score / 100)
+		if (health > 100) {health = 100}
 		spawn_feedback(_current_arrow.x, _current_arrow.y, _accuracy_score)
+		
 		
 		instance_destroy(_current_arrow)
 	}
