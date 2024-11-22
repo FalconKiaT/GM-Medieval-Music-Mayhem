@@ -88,7 +88,7 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 // debug for ending song
 if(keyboard_check_pressed(vk_f1)){
 	global.current_game_state = GAME_STATES.WIN;
-	alarm[0] = game_get_speed(gamespeed_fps) * 5;// timer
+	alarm[0] = game_get_speed(gamespeed_fps) * 1;// timer
 	
 	
 }
