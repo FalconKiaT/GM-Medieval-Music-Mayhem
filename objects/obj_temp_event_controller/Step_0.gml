@@ -48,33 +48,12 @@ function spawn_arrow_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, _ar
 	return false
 }
 
-if (spawn_arrow_on_time(mapped_timestamps_up, cur_arrow_index_up, global.current_spawned_up_arrows,
-	obj_up_arrow, ARROW_DIRECTIONS.UP)) {cur_arrow_index_up += 1} // Only check for next arrow once
-																  // the current one is spawned												  
-if (spawn_arrow_on_time(mapped_timestamps_left, cur_arrow_index_left, global.current_spawned_left_arrows,
-	obj_left_arrow, ARROW_DIRECTIONS.LEFT)) {cur_arrow_index_left += 1}
-																  
-if (spawn_arrow_on_time(mapped_timestamps_right, cur_arrow_index_right, global.current_spawned_right_arrows,
-	obj_right_arrow, ARROW_DIRECTIONS.RIGHT)) {cur_arrow_index_right += 1}
-	
-// bomb arrows
-if (spawn_arrow_on_time(mapped_timestamps_up_bomb, cur_arrow_index_up, global.current_spawned_up_arrows_bombs,
+if (spawn_arrow_on_time(mapped_timestamps_up_bomb, cur_arrow_index_up, current_spawned_up_arrows,
 	obj_bomb_up, ARROW_DIRECTIONS.UP)) {cur_arrow_index_up += 1} // Only check for next arrow once
 																  // the current one is spawned												  
-if (spawn_arrow_on_time(mapped_timestamps_left_bomb, cur_arrow_index_left, global.current_spawned_left_arrows_bombs,
+if (spawn_arrow_on_time(mapped_timestamps_left_bomb, cur_arrow_index_left, current_spawned_left_arrows,
 	obj_bomb_left, ARROW_DIRECTIONS.LEFT)) {cur_arrow_index_left += 1}
 																  
-if (spawn_arrow_on_time(mapped_timestamps_right_bomb, cur_arrow_index_right, global.current_spawned_right_arrows_bombs,
+if (spawn_arrow_on_time(mapped_timestamps_right_bomb, cur_arrow_index_right, current_spawned_right_arrows,
 	obj_bomb_right, ARROW_DIRECTIONS.RIGHT)) {cur_arrow_index_right += 1}
 
-
-// Music timestamp has ended
-// number one
-if(global.song_playing == snd_mus_minstrel_guild){
-	if (global.music_timestamp >= global.music_timestamp_max){
-		is_music_playing = false; 
-		}
-}
-
-// progress bar
-global.music_progress = (global.music_timestamp/global.music_timestamp_max)*100
