@@ -62,13 +62,14 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 		draw_set_alpha(1.0)
 		
 		// Menu GUI
-		
+		draw_sprite(spr_pause_scrollUI_assets,0,room_width/2, room_height/2)
 		for(var i = 0; i < text_array_length; i++){
-			text_color = c_white;
+			sub_im = 0;
 			if (pos_pause == i){
-				text_color = c_yellow;
+				sub_im = 1;
 			}
-			draw_text_color(room_width/2 + text_border, room_height/2-100 +text_border + text_dist*i, option[i], text_color,text_color,text_color,text_color,1);
+			
+			draw_sprite_ext(option[i],sub_im,room_width/2+text_border, room_height/2+text_border+text_dist*i,1,1,0,c_white,1)
 			
 		}
 		

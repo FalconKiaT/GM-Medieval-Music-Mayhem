@@ -74,8 +74,10 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 			case 2:
 				global.current_game_state = GAME_STATES.MENU;
 				audio_stop_all();
-				
-				game_end();
+				health =100
+				instance_deactivate_all(true);
+				instance_deactivate_object(obj_game_manager)
+				room_goto(rm_mainMenu)
 				break;
 	
 	
