@@ -387,8 +387,10 @@ function try_text_skip_advance()
 		
 		default:
 			show_debug_message("ERROR! Printing state case not defined! Thrown in try_text_skip_advance() -> Create -> obj_dialogue_controller")
-			break;
+			return;
 	}
+	// Play dialogue page switch sound
+	audio_play_sound(snd_dialogue_next_page, 1, false, 1, 0, 2);
 }
 
 // <------------------------> CUSTOM TYPEWRITTER EVENTS <------------------------>
