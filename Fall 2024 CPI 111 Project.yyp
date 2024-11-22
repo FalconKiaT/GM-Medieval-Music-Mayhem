@@ -408,8 +408,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
+    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_results","path":"rooms/rm_results/rm_results.yy",},},
     {"roomId":{"name":"rm_ani_test","path":"rooms/rm_ani_test/rm_ani_test.yy",},},
     {"roomId":{"name":"rm_mapping_prototype","path":"rooms/rm_mapping_prototype/rm_mapping_prototype.yy",},},

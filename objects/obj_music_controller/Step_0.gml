@@ -57,11 +57,10 @@ if (spawn_arrow_on_time(mapped_timestamps_left, cur_arrow_index_left, global.cur
 if (spawn_arrow_on_time(mapped_timestamps_right, cur_arrow_index_right, global.current_spawned_right_arrows,
 	obj_right_arrow, ARROW_DIRECTIONS.RIGHT)) {cur_arrow_index_right += 1}
 
-// Music timestamp has end
+// Music timestamp has ended
+// number one
 if(global.song_playing == snd_mus_minstrel_guild){
 	if (global.music_timestamp >= 185.81){
 		is_music_playing = false; 
-		global.current_game_state = GAME_STATES.WIN;
-		obj_game_manager.alarm[0] = game_get_speed(gamespeed_fps) * 0.2;
 		}
 }
