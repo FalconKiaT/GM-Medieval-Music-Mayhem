@@ -35,7 +35,7 @@ global.res_width = 1600;
 global.res_height = 900;
 
 // The current level
-global.current_level=0;
+global.current_level= 0;
 
 
 // level scoring
