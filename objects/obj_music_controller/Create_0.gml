@@ -1,6 +1,8 @@
 /// @description Runtime variable definitions
 // You can write your code in this editor
 global.music_timestamp = 0
+global.music_timestamp_max = 185.81;
+global.music_progress = 0;
 
 alarm_set(0, 100) // Delay until start of the song
 

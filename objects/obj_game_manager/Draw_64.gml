@@ -1,14 +1,18 @@
 // Feather disable GM2017
 function score_health_gui(){
 	
-	if (global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.PAUSE ){
-	
+	if (global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.PAUSE){
+		draw_set_font(font_dialogue)
 		draw_set_halign(fa_center)
-		draw_text((room_width)-50,54,"Score: \n" + string(score))
-		// add detection for levels for now
-		
+		draw_text(1257,240, string(score))
+		//heath bar
+		draw_healthbar(1100,300,1300,323,health,c_black,c_red,c_green,0,false,false)
+		draw_sprite(spr_level_health_barUI_assets,0,1180,310)
+		// progress barr
+		draw_healthbar(418,82,room_width/2+400,102,global.music_progress,c_black,c_red,c_aqua,0,false,false)
+		draw_sprite(spr_level_progress_barUI_assets,0,room_width/2,92)
 	
-		draw_healthbar(room_width/2-200,room_height/2+170,room_width/2+200,room_height/2+170+12,health,c_black,c_red,c_green,0,false,false)
+		
 	}
 }
 

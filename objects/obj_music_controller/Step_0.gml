@@ -60,7 +60,10 @@ if (spawn_arrow_on_time(mapped_timestamps_right, cur_arrow_index_right, global.c
 // Music timestamp has ended
 // number one
 if(global.song_playing == snd_mus_minstrel_guild){
-	if (global.music_timestamp >= 185.81){
+	if (global.music_timestamp >= global.music_timestamp_max){
 		is_music_playing = false; 
 		}
 }
+
+// progress bar
+global.music_progress = (global.music_timestamp/global.music_timestamp_max)*100
