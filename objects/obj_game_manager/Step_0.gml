@@ -7,7 +7,7 @@ if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {
 	global.current_game_state = GAME_STATES.OVER;//game over
 	
-	alarm[0] = game_get_speed(gamespeed_fps) * 5;// timer
+	alarm[0] = game_get_speed(gamespeed_fps) * 1;// timer
 }
 
 // Toggles the pause state during gameplay

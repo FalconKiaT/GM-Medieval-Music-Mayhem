@@ -36,4 +36,6 @@ text_array_length = array_length(option)
 pos_pause=0
 
 // pause menu end
-// 
+if (room == rm_mock_level1_prototype){
+	show_debug_message("yes")
+}
