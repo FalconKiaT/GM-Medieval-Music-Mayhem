@@ -367,7 +367,6 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
     {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"roomId":{"name":"rm_results","path":"rooms/rm_results/rm_results.yy",},},
