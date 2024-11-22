@@ -22,7 +22,6 @@ enum GAME_STATES{
 	
 }
 
-
 // Game state
 global.current_game_state = GAME_STATES.MENU;
 
