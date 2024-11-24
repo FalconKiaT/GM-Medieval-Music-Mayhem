@@ -11,5 +11,5 @@ if (image_alpha < 0.2) {
 	instance_create_layer(x, y, "Feedback", obj_feedback_miss)
 	broadcast(ANIM_MESSAGES.NOTE_MISSED)
 	health -= 10
-	instance_destroy()
+	destroy_arrow()
 }
