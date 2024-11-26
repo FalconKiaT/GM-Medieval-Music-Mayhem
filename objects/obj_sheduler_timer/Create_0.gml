@@ -4,9 +4,9 @@
 if ( global.global_scheduler_timer_exists == undefined )
 {
 	// First time this object ever called create, set it up
-	global.global_scheduler_timer_exists = true;
+	global.global_scheduler_timer_exists = self;
 }
-else if (global.global_scheduler_timer_exists)
+else
 {
 	// Already exists, destroy this duplicate object
 	instance_destroy();

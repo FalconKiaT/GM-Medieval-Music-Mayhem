@@ -1,3 +1,4 @@
+
 //checks what room its in to determine game state
 if (room_exists(rm_mock_level1_prototype)){
 	

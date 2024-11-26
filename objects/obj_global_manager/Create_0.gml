@@ -2,9 +2,9 @@
 if ( !variable_global_exists("global_manager_exists") || global.global_manager_exists == undefined )
 {
 	// First time this object ever called create, set it up
-	global.global_manager_exists = true;
+	global.global_manager_exists = self;
 }
-else if (global.global_manager_exists)
+else
 {
 	// Already exists, destroy this duplicate object
 	instance_destroy();
