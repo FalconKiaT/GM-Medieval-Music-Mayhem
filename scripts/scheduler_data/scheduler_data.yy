@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scheduler_vars",
+  "%Name":"scheduler_data",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scheduler_vars",
+  "name":"scheduler_data",
   "parent":{
     "name":"Coroutine-Like",
     "path":"folders/Scripts/Utilities/Coroutine-Like.yy",

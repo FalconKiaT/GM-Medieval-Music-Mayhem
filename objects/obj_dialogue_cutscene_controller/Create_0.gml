@@ -407,7 +407,7 @@ function stop_dialogue_shake()
 	if (is_dialogue_shaking) 
 	{
 		// Variable handling is managed by the typer event at User Event 2
-		current_shake_func.override_timer(0);
+		force_finish_delayed_function(current_shake_func);
 	}
 }
 

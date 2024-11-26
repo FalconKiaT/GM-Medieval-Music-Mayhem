@@ -25,6 +25,9 @@ function run_func_after_delay_seconds_condition(_delay_seconds, _func_to_execute
 	// Create it and add it to list
 	var _timed_func = delayed_func_seconds_constructor(_delay_seconds, _func_to_execute, _func_count_condition);
     ds_list_add(global.timed_func_list, _timed_func);
+	
+	// Return the ID
+	return _timed_func.get_id();
 }
 
 // Overloaded run func but doesnt require count condition, it will always count
@@ -40,6 +43,9 @@ function run_func_after_delay_seconds(_delay_seconds, _func_to_execute)
 	// Create it and add it to list
 	var _timed_func = delayed_func_seconds_constructor(_delay_seconds, _func_to_execute, function(){return true});
     ds_list_add(global.timed_func_list, _timed_func);
+	
+	// Return the ID
+	return _timed_func.get_id();
 }
 
 
@@ -63,6 +69,9 @@ function run_func_after_delay_frames_condition(_delay_frames, _func_to_execute, 
 	// Else it was defined, create it and add it to list
 	var _timed_func = delayed_func_frames_constructor(_delay_frames, _func_to_execute, _func_count_condition);
     ds_list_add(global.timed_func_list, _timed_func);
+	
+	// Return the ID
+	return _timed_func.get_id();
 }
 
 // Overloaded run func but doesnt require count condition, it will always count
@@ -78,6 +87,9 @@ function run_func_after_delay_frames(_delay_frames, _func_to_execute)
 	// Create it and add it to list
 	var _timed_func = delayed_func_frames_constructor(_delay_frames, _func_to_execute, function(){return true});
     ds_list_add(global.timed_func_list, _timed_func);
+	
+	// Return the ID
+	return _timed_func.get_id();
 }
 
 
@@ -89,10 +101,11 @@ function delayed_func_seconds_constructor(_delay_seconds, _func_to_execute, _fun
 {
     return 
 	{
-        delay_seconds: _delay_seconds,					// The delay in seconds
-        func: _func_to_execute,							// The function to execute after the delay
-		func_count_condition: _func_count_condition,	// Function that checks the condition to advance the timer
-		room_id: room,									// Store a reference to the room it was called from
+        delay_seconds: _delay_seconds,							// The delay in seconds
+        func: _func_to_execute,									// The function to execute after the delay
+		func_count_condition: _func_count_condition,			// Function that checks the condition to advance the timer
+		func_id: scheduler_generate_random_30_digit_number(),	// Generates a random 30 digit ID to use in referencing
+		room_id: room,											// Store a reference to the room it was called from
 		
         // Method to update the timer
         advance_timer: function() 
@@ -129,6 +142,12 @@ function delayed_func_seconds_constructor(_delay_seconds, _func_to_execute, _fun
 		{
 			self.delay_seconds = _target_time;
 		},
+		
+		// Method to get the id of the func
+		get_id: function()
+		{
+			return self.func_id
+		},
     };
 }
 
@@ -138,10 +157,11 @@ function delayed_func_frames_constructor(_delay_frames, _func_to_execute, _func_
 {
     return 
 	{
-        delay_frames: _delay_frames,					// The delay in frames
-        func: _func_to_execute,							// The function to execute after the delay
-		func_count_condition: _func_count_condition,	// Function that checks the condition to advance the timer
-		room_id: room,									// Store a reference to the room it was called from
+        delay_frames: _delay_frames,							// The delay in frames
+        func: _func_to_execute,									// The function to execute after the delay
+		func_count_condition: _func_count_condition,			// Function that checks the condition to advance the timer
+		func_id: scheduler_generate_random_30_digit_number(),	// Generates a random 30 digit ID to use in referencing
+		room_id: room,											// Store a reference to the room it was called from
 		
         // Method to update the timer
         advance_timer: function() 
@@ -178,6 +198,12 @@ function delayed_func_frames_constructor(_delay_frames, _func_to_execute, _func_
 		{
 			self.delay_frames = _target_time;
 		},
+		
+		// Method to get the id of the func
+		get_id: function()
+		{
+			return self.func_id
+		},
     };
 }
 
@@ -196,4 +222,36 @@ function run_func_after_delay_struct(_timed_func)
 	
 	// Create it and add it to list
     ds_list_add(global.timed_func_list, _timed_func);
+}
+
+// Cancel a timed function by its 30 digit integer ID, wont execute its final function
+function cancel_delayed_function(_target_id)
+{
+	// iterate through lists
+	for (var i = ds_list_size(global.timed_func_list) - 1; i >= 0; i--) 
+	{
+        var timer = global.timed_func_list[| i];
+        if (timer.get_id() == _target_id) 
+		{
+            // Remove the matching entry
+            ds_list_delete(global.timed_func_list, i);
+        }
+    }
+}
+
+// Force finish a delayed function by its 30 digit integer ID, in this case force finish will make it
+// execute its finishing code
+function force_finish_delayed_function(_target_id)
+{
+	// iterate through lists
+	for (var i = ds_list_size(global.timed_func_list) - 1; i >= 0; i--) 
+	{
+        var timer = global.timed_func_list[| i];
+        if (timer.get_id() == _target_id) 
+		{
+            // Force finish the matching entry then remove
+			timer.func();
+            ds_list_delete(global.timed_func_list, i);
+        }
+    }
 }

@@ -1,5 +1,6 @@
 /// @description Run scheduled functions
 
+
 // Update timers on timed funcs
 // Only update timed funcs if the game is not paused
 if (should_timers_run())

@@ -86,7 +86,7 @@ function shake_dialog_box(_intensity, _duration)
 	});
 	
 	// Set the object field
-	current_shake_func = _timed_func;
+	current_shake_func = _timed_func.get_id();
 	
 	// Run timed function
 	run_func_after_delay_struct(_timed_func);
