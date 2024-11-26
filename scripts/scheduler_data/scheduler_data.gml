@@ -38,6 +38,6 @@ function scheduler_generate_random_30_digit_number() {
 	// Reset the seed
 	random_set_seed(_previous_seed)
     
-    // Return the 30-digit number as a string
+    // Return the 30-digit number as an integer
     return int64(number_str);
 }
