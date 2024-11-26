@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"notification_system",
   "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+    "name":"Broadcast System",
+    "path":"folders/Scripts/Utilities/Broadcast System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

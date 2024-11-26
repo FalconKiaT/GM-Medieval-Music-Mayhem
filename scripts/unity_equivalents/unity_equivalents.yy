@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"cutscene_enums",
+  "%Name":"unity_equivalents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"cutscene_enums",
+  "name":"unity_equivalents",
   "parent":{
-    "name":"Cutscene",
-    "path":"folders/Scripts/Cutscene.yy",
+    "name":"Other",
+    "path":"folders/Scripts/Utilities/Other.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

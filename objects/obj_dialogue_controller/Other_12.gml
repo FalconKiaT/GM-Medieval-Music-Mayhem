@@ -9,6 +9,14 @@ function lock_skip()
 	is_skip_locked_by_event = true;
 }
 
+// Overloaded
+// Function to lock the skip
+function lock_skip()
+{
+	is_skip_locked_by_event = true;
+}
+
+
 // Add lock skip event
 // Format: [lock_skip]
 scribble_typists_add_event("lock_skip", lock_skip_script);
@@ -22,6 +30,13 @@ function unlock_skip()
 // Add unlock skip event
 // Format: [unlock_skip]
 scribble_typists_add_event("unlock_skip", unlock_skip_script);
+
+
+
+
+
+
+
 
 // Function to shake the dialogue box with varying amounts of intensity, 0 is none and the higher, the number the more intense
 function shake_dialog_box(_intensity, _duration)
@@ -46,6 +61,14 @@ function shake_dialog_box(_intensity, _duration)
 // Format: [shake_dialogue_box, intensity, duration]
 scribble_typists_add_event("shake_dialogue_box", shake_dialog_box_script);
 
+
+
+
+
+
+
+
+
 // Function to set the portait to the left
 function portrait_set_left()
 {
@@ -62,6 +85,13 @@ function portrait_set_left()
 // Add event
 // Format: [set_portrait_left]
 scribble_typists_add_event("set_portrait_left", portrait_set_left_script);
+
+
+
+
+
+
+
 
 
 // Function to set the portait to the left
@@ -82,6 +112,12 @@ function portrait_set_right()
 scribble_typists_add_event("set_portrait_right", portrait_set_right_script);
 
 
+
+
+
+
+
+
 // Function to set the dialogue box to only display text
 function set_only_text()
 {
@@ -92,6 +128,12 @@ function set_only_text()
 // Add event
 // Format: [set_only_text]
 scribble_typists_add_event("set_only_text", set_only_text_script);
+
+
+
+
+
+
 
 // Function to go to next page in dialogue without prompting for click
 function skip_to_next_page()
@@ -112,6 +154,14 @@ function skip_to_next_page()
 // Add event
 // Format: [skip_to_next_page]
 scribble_typists_add_event("skip_to_next_page", skip_to_next_page_script);
+
+
+
+
+
+
+
+
 
 // Function to switch the character sprite being displayer
 function change_character_portrait(target)
@@ -138,6 +188,13 @@ function change_character_portrait(target)
 // Add event
 // Format: [change_character, sprite_name]
 scribble_typists_add_event("change_character", change_character_script);
+
+
+
+
+
+
+
 
 
 

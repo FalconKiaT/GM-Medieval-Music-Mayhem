@@ -41,3 +41,28 @@ pos_pause=0
 if (room_exists(rm_mock_level1_prototype)){
 	global.current_level = 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
