@@ -104,7 +104,7 @@ if (is_timeline_running)
 	// It did, stop it
 	timeline_running = false;
 	// null the timeline index
-	timeline_index = empty_timeline_dont_touch;
+	timeline_index = undefined;
 	// Reset position
 	timeline_position = 0;
 	// Set the state bool

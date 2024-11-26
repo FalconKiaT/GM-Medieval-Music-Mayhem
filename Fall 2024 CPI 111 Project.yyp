@@ -448,7 +448,6 @@
     {"id":{"name":"temp_bg_results","path":"sprites/temp_bg_results/temp_bg_results.yy",},},
     {"id":{"name":"temp_bg","path":"sprites/temp_bg/temp_bg.yy",},},
     {"id":{"name":"temp_enemy","path":"sprites/temp_enemy/temp_enemy.yy",},},
-    {"id":{"name":"empty_timeline_dont_touch","path":"timelines/empty_timeline_dont_touch/empty_timeline_dont_touch.yy",},},
     {"id":{"name":"tl_test","path":"timelines/tl_test/tl_test.yy",},},
   ],
   "resourceType":"GMProject",
