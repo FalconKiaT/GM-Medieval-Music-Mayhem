@@ -3,23 +3,34 @@
 
 // <------------------------> EVENTS <------------------------>
 
+
+
+
+
 // Function to lock the skip
 function lock_skip()
 {
 	is_skip_locked_by_event = true;
 }
 
-// Overloaded
-// Function to lock the skip
-function lock_skip()
+// Typist-required definition. DO NOT USE
+function lock_skip_typist(_element, _parameter_array, _character_index)
 {
-	is_skip_locked_by_event = true;
+	lock_skip();
 }
 
 
 // Add lock skip event
 // Format: [lock_skip]
-scribble_typists_add_event("lock_skip", lock_skip_script);
+scribble_typists_add_event("lock_skip", lock_skip_typist);
+
+
+
+
+
+
+
+
 
 // Function to unlock the skip
 function unlock_skip()
@@ -27,9 +38,15 @@ function unlock_skip()
 	is_skip_locked_by_event = false;
 }
 
+// Typist-required definition. DO NOT USE
+function unlock_skip_typist(_element, _parameter_array, _character_index)
+{
+	unlock_skip();
+}
+
 // Add unlock skip event
 // Format: [unlock_skip]
-scribble_typists_add_event("unlock_skip", unlock_skip_script);
+scribble_typists_add_event("unlock_skip", unlock_skip_typist);
 
 
 
@@ -57,9 +74,17 @@ function shake_dialog_box(_intensity, _duration)
 	is_screen_shake_timer_running = true;
 }
 
+// Typist-required definition. DO NOT USE
+function shake_dialog_box_typist(_element, _parameter_array, _character_index)
+{
+	var _intensity = real(_parameter_array[0]);
+	var _duration = real(_parameter_array[1]);
+	shake_dialog_box(_intensity, _duration);
+}
+
 // Add shake dialogue box event
 // Format: [shake_dialogue_box, intensity, duration]
-scribble_typists_add_event("shake_dialogue_box", shake_dialog_box_script);
+scribble_typists_add_event("shake_dialogue_box", shake_dialog_box_typist);
 
 
 
@@ -82,9 +107,15 @@ function portrait_set_left()
 	}
 }
 
+// Typist-required definition. DO NOT USE
+function portrait_set_left_typist(_element, _parameter_array, _character_index)
+{
+	portrait_set_left();
+}
+
 // Add event
 // Format: [set_portrait_left]
-scribble_typists_add_event("set_portrait_left", portrait_set_left_script);
+scribble_typists_add_event("set_portrait_left",  portrait_set_left_typist);
 
 
 
@@ -107,9 +138,15 @@ function portrait_set_right()
 	}
 }
 
+// Typist-required definition. DO NOT USE
+function portrait_set_right_typist(_element, _parameter_array, _character_index)
+{
+	portrait_set_right();
+}
+
 // Add event
 // Format: [set_portrait_right]
-scribble_typists_add_event("set_portrait_right", portrait_set_right_script);
+scribble_typists_add_event("set_portrait_right", portrait_set_right_typist);
 
 
 
@@ -125,9 +162,15 @@ function set_only_text()
 	dialogue_current_type = DIALOGUE_TYPE.ONLY_TEXT;
 }
 
+// Typist-required definition. DO NOT USE
+function set_only_text_typist(_element, _parameter_array, _character_index)
+{
+	set_only_text();
+}
+
 // Add event
 // Format: [set_only_text]
-scribble_typists_add_event("set_only_text", set_only_text_script);
+scribble_typists_add_event("set_only_text", set_only_text_typist);
 
 
 
@@ -151,9 +194,15 @@ function skip_to_next_page()
 	// Else, Go to next page
 }
 
+// Typist-required definition. DO NOT USE
+function skip_to_next_page_typist(_element, _parameter_array, _character_index)
+{
+	skip_to_next_page();
+}
+
 // Add event
 // Format: [skip_to_next_page]
-scribble_typists_add_event("skip_to_next_page", skip_to_next_page_script);
+scribble_typists_add_event("skip_to_next_page", skip_to_next_page_typist);
 
 
 
@@ -185,9 +234,16 @@ function change_character_portrait(target)
 	dialogue_general_typist.sound(_sound_to_set, main_typist_overlap, main_typist_min_pitch, main_typist_max_pitch, main_typist_gain);
 }
 
+// Typist-required definition. DO NOT USE
+function change_character_portrait_typist(_element, _parameter_array, _character_index)
+{
+	var _target_sprite = _parameter_array[0];
+	change_character_portrait(_target_sprite);
+}
+
 // Add event
 // Format: [change_character, sprite_name]
-scribble_typists_add_event("change_character", change_character_script);
+scribble_typists_add_event("change_character", change_character_portrait_typist);
 
 
 
