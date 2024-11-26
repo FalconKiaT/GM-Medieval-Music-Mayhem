@@ -33,6 +33,8 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"enable_debug_tools","filters":[],"listItems":[],"multiselect":false,"name":"enable_debug_tools","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"start_dialogue_on_create","filters":[],"listItems":[],"multiselect":false,"name":"start_dialogue_on_create","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"input_dialogue","filters":[],"listItems":[],"multiselect":false,"name":"input_dialogue","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"DEMO","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

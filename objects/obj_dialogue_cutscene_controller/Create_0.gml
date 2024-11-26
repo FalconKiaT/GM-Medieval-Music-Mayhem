@@ -239,23 +239,9 @@ is_dialogue_shaking = false;
 current_shake_func = undefined;
 dialogue_shake_intensity = 0;
 
-
-
-// ****************************************************************** DEBUGGING
-if (enable_debug_tools)
-{
-	// Test run
-	dialogue_current_state = DIALOGUE_STATE.OPENING;
-	is_skip_advance_on_cooldown = false;
-	set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
-}
-
-// ******************************************************************
-
 // <------------------------> OBJECT WIDE FUNCTIONS <------------------------>
 
 // Function to open the dialog box from the game 
-// TODO: Test if this works
 function public_trigger_dialogue(target)
 {
 	// Set the dialogue ID
@@ -285,6 +271,8 @@ function public_trigger_dialogue(target)
 }
 
 // Function to close the dialogue box even if its writting
+// TODO: Not working properly rn
+/*
 function public_force_close_dialogue_box()
 {
 	// FIXME: Edge cases will definitly be present here, not finished
@@ -293,6 +281,7 @@ function public_force_close_dialogue_box()
 	is_dialogue_shaking = false;
 	is_skip_locked_by_event = false;
 }
+*/
 
 // Function to get the dialogue state as to not access the state variable directly
 function public_get_dialogue_state()
@@ -463,6 +452,14 @@ function try_text_skip_advance()
 
 // Set up the custom typewritter events
 event_user(2)
+
+// <------------------------> START <------------------------>
+
+// If the boolean start_dialogue_on_create is set to true, trigger dialogue on object created
+if (start_dialogue_on_create)
+{
+	public_trigger_dialogue(input_dialogue)
+}
 
 
 
