@@ -108,8 +108,8 @@ outer_portrait_top_right = new vector(0,0);
 inner_portrait_top_left = new vector(0,0);
 
 // Current speaker name and color strings
-current_speaker_str = "NULL!"
-current_speaker_color_str = "NULL!"
+current_speaker_str = undefined
+current_speaker_color_str = undefined
 
 // <------------------------> SPRITE VALUES <------------------------>
 
@@ -236,7 +236,7 @@ page_amount = 0;
 
 // Dialogue Events variables
 is_dialogue_shaking = false;
-current_shake_func = 1;
+current_shake_func = undefined;
 dialogue_shake_intensity = 0;
 
 

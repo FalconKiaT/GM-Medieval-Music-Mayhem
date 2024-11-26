@@ -75,7 +75,7 @@ function shake_dialog_box(_intensity, _duration)
 	function()
 	{
 		// Stop shaking
-		current_shake_func = 0
+		current_shake_func = undefined;
 		is_dialogue_shaking = false;
 		dialogue_shake_intensity = 0;
 	},
