@@ -19,23 +19,3 @@ if(global.current_game_state == GAME_STATES.MENU){
 	audio_play_sound(snd_menu_music,10,true)
 }
 
-// <--------------------> IAN CODE <------------------------->
-
-// Create a list of functions created on timers
-global.timed_func_list = ds_list_create();
-
-// Function used to check if the timers should run, returns true if they should
-function should_timers_run()
-{
-	// Check for conditions
-	var _check = global.current_game_state != GAME_STATES.PAUSE;
-	var _check = _check && global.current_game_state != GAME_STATES.PAUSE_TIMER;
-	
-	// Return result
-	return _check;
-}
-
-// Create a list of functions set to run on a condition
-global.conditioned_func_list = ds_list_create();
-
-// <--------------------> END IAN CODE <------------------------->

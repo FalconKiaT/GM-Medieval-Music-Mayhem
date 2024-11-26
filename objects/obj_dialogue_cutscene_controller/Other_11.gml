@@ -21,7 +21,7 @@ function set_up_demo()
 	add_page("[set_portrait_left]There's also an induced delay between skips to make sure the player doesnt accidentally skip the next dialogue should they wish not to do so");
 	
 	// Showcase shake animation and dramatic delay effect
-	add_page("[lock_skip]How[delay, 500] about[delay, 500] some [delay, 500][shake_dialogue_box, 3, 4]SHAKING!!!!");
+	add_page("[lock_skip]How[delay, 500] about[delay, 500] some [delay, 500][shake_dialogue_box, 3, 4]SHAKING!!!![delay, 4000][unlock_skip]");
 	add_page("Pretty intense huh?");
 	add_page("Did you also notice you couldnt skip ahead while it was happening?");
 	
@@ -90,23 +90,24 @@ function set_up_one_line()
 
 // Level One Dialogue
 function set_up_level1_(){
+	
+	// Set up layout
 	dialogue_current_type =  DIALOGUE_TYPE.ONLY_TEXT;
 	
-	add_page("[set_only_text]Uncontrollable Chaos![delay,1000] The wizard kingdom has fallen...");
+	// Add pages
+	add_page("Uncontrollable Chaos![delay,1000] The wizard kingdom has fallen...");
 	add_page("[set_portrait_left][change_character, spr_king_upset_angry][skip_to_next_page]")
-	add_page("[lock_skip][shake_dialogue_box, 3, 4] Oh no, my kingdom...[delay,1000] ")
+	add_page("[lock_skip][shake_dialogue_box, 3, 4] Oh no, my kingdom...[delay,4000][unlock_skip]")
 	add_page("[change_character, spr_king_neutral] I have failed to protect us...")
 	add_page("Huh... who is that?")
-	add_page("[change_character, spr_king_happy][shake_dialogue_box, 10, 1] AHA!")
+	add_page("[change_character, spr_king_happy][shake_dialogue_box, 10, 3] AHA!")
 	add_page("Oh! we are saved! I have found someone with extraordinary potential. OHOHOHO!")
-	add_page("YOU! ")
+	add_page("YOU!")
 	
 	add_page("[set_portrait_right][change_character, spr_wiz_shocked][skip_to_next_page]")
 	add_page("AH!")
 	add_page("[set_only_text][skip_to_next_page]")
-	add_page("[shake]DUN![/shake] ")
-	add_page("[shake]DUN![/shake]" )
-	add_page("[shake]DUN![/shake]" )
+	add_page("[shake]DUN![delay, 300] DUN![delay, 300] DUN!!!![delay, 300][/shake] ")
 	add_page("[set_portrait_left][change_character, spr_king_happy][skip_to_next_page]")
 	add_page("You must save the wizard Kingdom!")
 	add_page("[set_portrait_right][change_character, spr_wiz_angry][skip_to_next_page]")
@@ -117,9 +118,6 @@ function set_up_level1_(){
 	add_page("I'll take it.")
 	add_page("[set_portrait_left][change_character, spr_king_happy][skip_to_next_page]")
 	add_page("Great! Now, quick let us battle to determine your current skill.")
-	
-	
-	
 }
 
 

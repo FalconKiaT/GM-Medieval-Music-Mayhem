@@ -92,6 +92,17 @@ switch (dialogue_current_type)
 		}
 		
 		break;
+		
+	case  DIALOGUE_TYPE.NO_BACKGROUND_ONLY_TEXT:
+		
+		// Check if the dialogue box has finished opening and check if the text has finished printing to show next arrow
+		if (dialogue_current_state == DIALOGUE_STATE.ACTIVE && text_printing_state == PRINTING_STATE.FINISHED && !(is_skip_advance_on_cooldown || is_skip_locked_by_event))
+		{
+			// Draw next arrow
+			draw_sprite_ext(spr_next_arrow, arrow_img_index, next_arrow_top_left.x, next_arrow_top_left.y, 1, 1, 0, c_white, 1);
+		}
+
+		break;
 	
 	default:
 		show_debug_message("ERROR! Dialogue type not defined in Draw GUI of Dialogue Controller");
@@ -101,10 +112,23 @@ switch (dialogue_current_type)
 // Draw Text
 if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 {
+	var _added_y_shift = 0;
+	// Draw speaker if the current layout needs it
+	if (should_dialogue_display_name)
+	{
+		// Draw Speaker's name
+		draw_set_font(font_dialogue)
+		var _formatted_str = "[" + current_speaker_color_str + "]" + current_speaker_str + "[/color]";
+		draw_text_scribble(inner_text_box_top_left.x, inner_text_box_top_left.y, _formatted_str);
+		// Add shift
+		_added_y_shift = const_speaker_name_shift_amount;
+	}
+	
+	// Draw dialogue text
 	scribble(page_list[current_page_idx])
 	.starting_format("font_dialogue", c_white)
 	.wrap(inner_text_box_width, const_inner_text_box_height, false)
-	.draw(inner_text_box_top_left.x, inner_text_box_top_left.y, dialogue_general_typist) // Draw should always be the last one
+	.draw(inner_text_box_top_left.x, inner_text_box_top_left.y + _added_y_shift, dialogue_general_typist) // Draw should always be the last one
 }
 
 

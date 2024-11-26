@@ -58,9 +58,6 @@ switch (dialogue_current_state)
 		break;
 }
 
-// Run timers
-event_user(3);
-
 // Set the typist state
 var _state = dialogue_general_typist.get_state();
 if (0 < _state && _state < 1)
@@ -72,6 +69,26 @@ else if (_state >= 1)
 {
 	// Typing finished
 	text_printing_state = PRINTING_STATE.FINISHED;
+
+	// Trigger the skip next page cooldown once printing is finished
+	if (!did_skip_cooldown_time_trigger_this_page)
+	{
+		// Start Skip cooldown timer 
+		is_skip_advance_on_cooldown = true;
+		run_func_after_delay_seconds_condition(const_skip_cooldown,
+		function()
+		{
+			// Finished cooldown
+			is_skip_advance_on_cooldown = false;
+		},
+		function()
+		{
+			// Only count when the dialogue is not paused
+			return !is_dialogue_paused;
+		});
+	
+		did_skip_cooldown_time_trigger_this_page = true;
+	}
 }
 
 // Function to check if the player performed the skip text / advance input
@@ -79,6 +96,19 @@ if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 {
 	// check for skip advance
 	try_text_skip_advance();
+}
+
+// Check if the timeline has run this frame
+if (is_timeline_running)
+{
+	// It did, stop it
+	timeline_running = false;
+	// null the timeline index
+	timeline_index = empty_timeline_dont_touch;
+	// Reset position
+	timeline_position = 0;
+	// Set the state bool
+	is_timeline_running = false;
 }
 
 // DEBUGGING
@@ -93,7 +123,4 @@ if (enable_debug_tools)
 		public_resume_dialogue();
 	}
 }
-
-
-
 

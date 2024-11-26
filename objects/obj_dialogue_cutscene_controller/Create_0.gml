@@ -18,6 +18,7 @@ receiver.add(MESSAGES.GAME_RESUMED, function() {
     public_resume_dialogue();
 });
 
+
 // <------------------------> CONSTANTS <------------------------>
 
 // Dialogue Space Settings
@@ -40,6 +41,7 @@ const_inner_text_box_height = const_dialogue_box_height - 2 * const_inner_text_b
 const_next_arrow_offset = new vector(sprite_get_width(spr_next_arrow) + 12, sprite_get_height(spr_next_arrow) + 10)
 const_next_arrow_sprite_width = sprite_get_width(spr_next_arrow);
 const_next_arrow_sprite_height = sprite_get_height(spr_next_arrow);
+const_speaker_name_shift_amount = 32
 
 // Portrait box constants
 const_portrait_box_width = const_dialogue_box_height;
@@ -52,6 +54,10 @@ const_dialogue_box_sprite_height = sprite_get_height(spr_dialogue_box);
 
 // Typewritter variables
 const_skip_cooldown = 0.4; // In seconds
+const_player_speaker_name = "Player"
+const_king_speaker_name = "King"
+const_player_speaker_color = "#ADD8E6"
+const_king_speaker_color = "#90EE90"
 
 // Opening animation variables
 const_opening_anim_duration = 0.2; // In seconds
@@ -64,21 +70,12 @@ is_dialogue_paused = false;
 dialogue_current_type = DIALOGUE_TYPE.ONLY_TEXT; 
 text_printing_state = PRINTING_STATE.FINISHED; // State of the typewritter
 is_checking_for_input = false; // bool to block user skip while false
+did_skip_cooldown_time_trigger_this_page = false;
 is_skip_advance_on_cooldown = false;
 is_skip_locked_by_event = false;
+should_dialogue_display_name = false;
 is_dialogue_visible = false;
-
-// <------------------------> TIMERS <------------------------>
-
-is_skip_advance_timer_running = false;
-is_screen_shake_timer_running = false;
-
-// Upper bounds, set my some events, and as such, not constants
-screen_shake_current_duration = 0;
-
-// Mutating timers
-skip_advance_timer = 0;
-screen_shake_timer = 0;
+is_timeline_running = false;
 
 // <------------------------> ANCHORS <------------------------>
 
@@ -110,6 +107,10 @@ outer_portrait_top_left = new vector(0,0);
 outer_portrait_top_right = new vector(0,0);
 inner_portrait_top_left = new vector(0,0);
 
+// Current speaker name and color strings
+current_speaker_str = "NULL!"
+current_speaker_color_str = "NULL!"
+
 // <------------------------> SPRITE VALUES <------------------------>
 
 // Current sprite to draw from
@@ -119,12 +120,32 @@ is_sprite_flipped = false;
 // Base animation speed
 base_anim_speed = 0.2
 
+
+
+
+
+// <------------------------> STRING TO SPRITE DICTIONARY <------------------------>
+
+// This dictionary is needed because the scribble library can only handle parameters with strings
+sprite_string_dict = ds_map_create();
+
+// King
+sprite_string_dict[? "spr_king_happy"] = spr_king_happy;
+sprite_string_dict[? "spr_king_neutral"] = spr_king_neutral;
+sprite_string_dict[? "spr_king_upset_angry"] = spr_king_upset_angry;
+
+// Player
+sprite_string_dict[? "spr_wiz_angry"] = spr_wiz_angry;
+sprite_string_dict[? "spr_wiz_neutral"] = spr_wiz_neutral;
+sprite_string_dict[? "spr_wiz_shocked"] = spr_wiz_shocked;
+
+
 // <------------------------> PORTRAIT SPRITE DIRECTIOND DICTIONARY <------------------------>
 
 // Dictionary of sprite and booleans to know which way they face and check if we need to flip them
 sprite_directions_dict = ds_map_create();
 
-// Add sprites and their respective directions (true for left, false for right)
+// Add sprites and their respective directions (true for looking left, false for looking right)
 
 // King
 sprite_directions_dict[? spr_king_happy] = true;
@@ -140,6 +161,8 @@ sprite_directions_dict[? spr_wiz_shocked] = false;
 
 // Dictionary to set the typewritter sound when we switch characters they play different sounds when they speak
 character_sound_dict = ds_map_create();
+
+// King
 character_sound_dict[? spr_king_happy] = snd_king_dialogue;
 character_sound_dict[? spr_king_neutral] = snd_king_dialogue;
 character_sound_dict[? spr_king_upset_angry] = snd_king_dialogue;
@@ -149,19 +172,37 @@ character_sound_dict[? spr_wiz_angry] = snd_player_dialogue;
 character_sound_dict[? spr_wiz_neutral] = snd_player_dialogue;
 character_sound_dict[? spr_wiz_shocked] = snd_player_dialogue;
 
-
-// <------------------------> STRING TO SPRITE DICTIONARY <------------------------>
+// <------------------------> SPRITE TO SPEAKER NAME DICTIONARY <------------------------>
 
 // This dictionary is needed because the scribble library can only handle parameters with strings
-sprite_string_dict = ds_map_create();
+speaker_name_dict = ds_map_create();
+speaker_color_dict = ds_map_create();
 
-sprite_string_dict[? "spr_king_happy"] = spr_king_happy;
-sprite_string_dict[? "spr_king_neutral"] = spr_king_neutral;
-sprite_string_dict[? "spr_king_upset_angry"] = spr_king_upset_angry;
+// King
+speaker_name_dict[? spr_king_happy] = const_king_speaker_name;
+speaker_name_dict[? spr_king_neutral] = const_king_speaker_name;
+speaker_name_dict[? spr_king_upset_angry] = const_king_speaker_name;
+speaker_color_dict[? const_king_speaker_name] = const_king_speaker_color;
 
-sprite_string_dict[? "spr_wiz_angry"] = spr_wiz_angry;
-sprite_string_dict[? "spr_wiz_neutral"] = spr_wiz_neutral;
-sprite_string_dict[? "spr_wiz_shocked"] = spr_wiz_shocked;
+// Player
+speaker_name_dict[? spr_wiz_angry] = const_player_speaker_name;
+speaker_name_dict[? spr_wiz_neutral] = const_player_speaker_name;
+speaker_name_dict[? spr_wiz_shocked] = const_player_speaker_name;
+speaker_color_dict[? const_player_speaker_name] = const_player_speaker_color;
+
+// <------------------------> STRING TO TIMELINE DICTIONARY <------------------------>
+
+// This dictionary is needed because the scribble library can only handle parameters with strings
+timeline_string_dict = ds_map_create();
+
+timeline_string_dict[? "tl_test"] = tl_test;
+
+
+
+
+
+
+
 
 
 // <------------------------> OPENING ANIMATION VALUES <------------------------>
@@ -195,15 +236,20 @@ page_amount = 0;
 
 // Dialogue Events variables
 is_dialogue_shaking = false;
+current_shake_func = 1;
 dialogue_shake_intensity = 0;
 
 
 
-// ****************************************************************** DEBUGGING DELETE ME
-// Test run
-//dialogue_current_state = DIALOGUE_STATE.OPENING;
-//is_skip_advance_on_cooldown = false;
-//set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
+// ****************************************************************** DEBUGGING
+if (enable_debug_tools)
+{
+	// Test run
+	dialogue_current_state = DIALOGUE_STATE.OPENING;
+	is_skip_advance_on_cooldown = false;
+	set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
+}
+
 // ******************************************************************
 
 // <------------------------> OBJECT WIDE FUNCTIONS <------------------------>
@@ -335,7 +381,35 @@ function check_and_perform_sprite_flip()
 	}
 }
 
+// function used to go to the next page of the dialogue
+function dialogue_go_to_next_page()
+{
+	// Re-new the skip cooldown
+	did_skip_cooldown_time_trigger_this_page = false;
+	// Check if there's a next Page
+	current_page_idx += 1
+	if (current_page_idx >= page_amount)
+	{
+		// No next page, close dialogue box
+		array_resize(page_list, 0);
+		current_page_idx = 0;
+		page_amount = 0;
+		close_dialogue_box();
+	}
+	// Else, Go to next page
+}
+
 // <------------------------> UPDATE FUNCTION DECLARATIONS <------------------------>
+
+// Function to stop shaking
+function stop_dialogue_shake()
+{
+	if (is_dialogue_shaking) 
+	{
+		// Variable handling is managed by the typer event at User Event 2
+		current_shake_func.override_timer(0);
+	}
+}
 
 // Function to execute to either skip or advance text
 function try_text_skip_advance()
@@ -365,24 +439,16 @@ function try_text_skip_advance()
 		case PRINTING_STATE.PRINTING:
 			// Skip to text printing complete
 			dialogue_general_typist.skip();
-			// Start Skip cooldown timer 
-			is_skip_advance_on_cooldown = true;
-			skip_advance_timer = 0;
-			is_skip_advance_timer_running = true;
+			// Stop shaking if its happening
+			stop_dialogue_shake();
+			
 			break;
 		
 		case PRINTING_STATE.FINISHED:
-			// Check if there's a next Page
-			current_page_idx += 1
-			if (current_page_idx >= page_amount)
-			{
-				// No next page, close dialogue box
-				array_resize(page_list, 0);
-				current_page_idx = 0;
-				page_amount = 0;
-				close_dialogue_box();
-			}
-			// Else, Go to next page	
+			// Stop dialogue shaking if its happening
+			stop_dialogue_shake();
+			// Go to next page
+			dialogue_go_to_next_page();
 			break;
 		
 		default:
