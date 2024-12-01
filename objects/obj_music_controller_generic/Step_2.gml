@@ -1,41 +1,51 @@
 /// @description Handle input and destroy arrows
 // You can write your code in this editor
 
-function spawn_feedback(_x, _y, _score) {
+function spawn_feedback(_x, _y, _delay) {
+	var _accuracy_score = 0
 	var _feedback_obj = obj_feedback_generic
 	
-	if (_score == 0) {
+	if (_delay > 0.5) { // Too soon!
 		_feedback_obj = obj_feedback_miss
 	}
-	else if (_score < 30) {
-		_feedback_obj = obj_feedback_bad	
+	else if (_delay < 0.05) {
+		_feedback_obj = obj_feedback_huzzah	
+		_accuracy_score = 100
 	}
-	else if (_score < 60) {
-		_feedback_obj = obj_feedback_good	
+	else if (_delay < 0.2) {
+		_feedback_obj = obj_feedback_great
+		_accuracy_score = 70
 	}
-	else if (_score < 80) {
-		_feedback_obj = obj_feedback_great	
+	else if (_delay < 0.3) {
+		_feedback_obj = obj_feedback_good
+		_accuracy_score = 30
 	}
 	else {
-		_feedback_obj = obj_feedback_huzzah
+		_feedback_obj = obj_feedback_bad
+		_accuracy_score = 10
 	}
 	
 	instance_create_layer(_x, _y, "Feedback", _feedback_obj)	// Spawn feedback object
+	return _accuracy_score
 }
 
 function click_last_arrow(_arrow_queue) {
 	if (!ds_queue_empty(_arrow_queue)) { // Make sure there are arrows in the channel
-		var _current_arrow = ds_queue_dequeue(_arrow_queue)
+		var _current_arrow = ds_queue_head(_arrow_queue)
 		var _note_delay = abs(global.music_timestamp - _current_arrow.desired_timestamp)
 		
-		_accuracy_score = 100 * sqr(clamp(1 - _note_delay, 0, 1))
-		score += _accuracy_score
-		health += ceil(10 * score / 100)
+		// _accuracy_score = 100 * sqr(clamp(1 - _note_delay, 0, 1))
+		var _accuracy_score = spawn_feedback(_current_arrow.x, _current_arrow.y, _note_delay)
+		health += _accuracy_score / 100
 		if (health > 100) {health = 100}
-		spawn_feedback(_current_arrow.x, _current_arrow.y, _accuracy_score)
-		
-		
-		instance_destroy(_current_arrow)
+		score += _accuracy_score
+		if (_accuracy_score == 0) {
+			health -= 10
+		}
+		else {
+			ds_queue_dequeue(_arrow_queue)
+			instance_destroy(_current_arrow)
+		}
 	}
 }
 
