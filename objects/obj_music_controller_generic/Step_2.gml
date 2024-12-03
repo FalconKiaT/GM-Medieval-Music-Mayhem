@@ -5,22 +5,25 @@ function spawn_feedback(_x, _y, _delay) {
 	var _accuracy_score = 0
 	var _feedback_obj = obj_feedback_generic
 	
-	if (_delay > 0.5) { // Too soon!
-		_feedback_obj = obj_feedback_miss
+	// In what percentage of the range was the arrow clicked? (Range 0-1)
+	var _range_percent = abs( _delay * arrow_velocity) / valid_arrow_range
+	
+	if (_range_percent > 1.2) { // Too soon! Nothing happens here
+		_feedback_obj = obj_empty
 	}
-	else if (_delay < 0.05) {
+	else if (_range_percent < 0.1) {
 		_feedback_obj = obj_feedback_huzzah	
 		_accuracy_score = 100
 	}
-	else if (_delay < 0.2) {
+	else if (_range_percent < 0.3) {
 		_feedback_obj = obj_feedback_great
 		_accuracy_score = 70
 	}
-	else if (_delay < 0.3) {
+	else if (_range_percent < 0.7) {
 		_feedback_obj = obj_feedback_good
 		_accuracy_score = 30
 	}
-	else {
+	else if (_range_percent < 1) {
 		_feedback_obj = obj_feedback_bad
 		_accuracy_score = 10
 	}

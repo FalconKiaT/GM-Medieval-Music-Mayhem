@@ -6,6 +6,10 @@ global.music_progress = 0;
 
 alarm_set(0, 100) // Delay until start of the song
 
+// What is the maximum valid pixel distance between the arrow and the slot?
+// Points will only be counted if the player clicks the arrow when it's inside the range
+valid_arrow_range = 100
+
 enum ARROW_DIRECTIONS {
 	UP,
 	LEFT,
