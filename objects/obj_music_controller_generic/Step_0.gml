@@ -1,69 +1,72 @@
-/// @description Check if should spawn arrow
+/// @description Handle input and destroy arrows
 // You can write your code in this editor
 
-var _dt = delta_time / 1000000 // delta time in seconds
-
-// Arrow creator function. Takes an array of mapped arrows, the array index to check, a queue, and arrow direction
-function spawn_arrow_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, _arrow_object, _arrow_direction) {
-	// Check mapping array boundary
-	if (_cur_arrow_index >= array_length(_mapping_array)) {
-		return false // Arrow was not spawned
+function spawn_feedback(_x, _y, _delay) {
+	var _accuracy_score = 0
+	var _feedback_obj = obj_feedback_generic
+	
+	// In what percentage of the range was the arrow clicked? (Range 0-1)
+	var _range_percent = abs( _delay * arrow_velocity) / valid_arrow_range
+	
+	if (_range_percent > 2) { // Too soon! Nothing happens here
+		_feedback_obj = obj_feedback_empty
+		_accuracy_score = -1
 	}
-	// Calculate how much earlier the arrow should be spawned
-	var _timestamp_offset = arrow_distance / arrow_velocity
-
-	_cur_arrow_timestamp = _mapping_array[_cur_arrow_index]
-	_cur_timestamp_offsetted = _cur_arrow_timestamp - _timestamp_offset
-	var _timestamp_delta = _cur_timestamp_offsetted - global.music_timestamp
-	// show_debug_message("The timestamp offset is " + string(_timestamp_delta))
-
-
-	if (sign(_timestamp_delta) == -1) { // If the arrow is "late" to be spawned
-		var _x_position = 0
-		var _y_position = 0
-		
-		switch(_arrow_direction) {
-			case ARROW_DIRECTIONS.UP:
-				_x_position = obj_up_arrow_slot.x
-				_y_position = obj_up_arrow_slot.y - arrow_distance
-				break
-			case ARROW_DIRECTIONS.LEFT:
-				_x_position = obj_left_arrow_slot.x - arrow_distance
-				_y_position = obj_left_arrow_slot.y
-				break
-			case ARROW_DIRECTIONS.RIGHT:
-				_x_position = obj_right_arrow_slot.x + arrow_distance
-				_y_position = obj_right_arrow_slot.y
-		}
-		show_debug_message("This is it!! I'm being spawned at " + string(_x_position) + " " + string(_y_position))
-		// Intantiate the chosen arrow and add to queue
-		ds_queue_enqueue(_arrow_queue,
-			instance_create_layer(_x_position, _y_position, "Arrows", _arrow_object, {
-				arrow_velocity: arrow_velocity,
-				desired_timestamp: _cur_arrow_timestamp}))
-		
-		return true // Arrow was spawned
+	else if (_range_percent < 0.15) {
+		_feedback_obj = obj_feedback_huzzah	
+		_accuracy_score = 100
+	}
+	else if (_range_percent < 0.3) {
+		_feedback_obj = obj_feedback_great
+		_accuracy_score = 70
+	}
+	else if (_range_percent < 0.7) {
+		_feedback_obj = obj_feedback_good
+		_accuracy_score = 30
+	}
+	else if (_range_percent < 1) {
+		_feedback_obj = obj_feedback_bad
+		_accuracy_score = 10
+	}
+	else { // This is in-between bad and too soon. You lose health and this counts as a miss
+		_feedback_obj = obj_feedback_miss
+		_accuracy_score = 0
 	}
 	
-	return false
+	instance_create_layer(_x, _y, "Feedback", _feedback_obj)	// Spawn feedback object
+	return _accuracy_score
 }
 
-if (spawn_arrow_on_time(mapped_timestamps_up, cur_arrow_index_up, global.current_spawned_up_arrows,
-	obj_up_arrow, ARROW_DIRECTIONS.UP)) {cur_arrow_index_up += 1} // Only check for next arrow once
-																  // the current one is spawned												  
-if (spawn_arrow_on_time(mapped_timestamps_left, cur_arrow_index_left, global.current_spawned_left_arrows,
-	obj_left_arrow, ARROW_DIRECTIONS.LEFT)) {cur_arrow_index_left += 1}
-																  
-if (spawn_arrow_on_time(mapped_timestamps_right, cur_arrow_index_right, global.current_spawned_right_arrows,
-	obj_right_arrow, ARROW_DIRECTIONS.RIGHT)) {cur_arrow_index_right += 1}
-
-// Music timestamp has ended
-// number one
-if(global.song_playing == snd_mus_minstrel_guild){
-	if (global.music_timestamp >= global.music_timestamp_max){
-		is_music_playing = false; 
+function click_last_arrow(_arrow_queue) {
+	if (!ds_queue_empty(_arrow_queue)) { // Make sure there are arrows in the channel
+		var _current_arrow = ds_queue_head(_arrow_queue)
+		var _note_delay = abs(global.music_timestamp - _current_arrow.desired_timestamp)
+		
+		var _accuracy_score = spawn_feedback(_current_arrow.x, _current_arrow.y, _note_delay)
+		health += _accuracy_score / 100 * health_recover_multiplier
+		if (health > 100) {health = 100}
+		if (_accuracy_score == 0) {
+			health -= 10	
 		}
+		if (_accuracy_score >= 0) {
+			score += _accuracy_score
+			ds_queue_dequeue(_arrow_queue)
+			instance_destroy(_current_arrow)
+		}
+	}
 }
 
-// progress bar
-global.music_progress = (global.music_timestamp/global.music_timestamp_max)*100
+if (keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W"))) { // Should destroy next up arrow
+	click_last_arrow(global.current_spawned_up_arrows)
+}
+
+if (keyboard_check_pressed(vk_left) or keyboard_check_pressed(ord("A"))) { // Destroy left arrow
+	click_last_arrow(global.current_spawned_left_arrows)
+}
+
+ if (keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord("D"))) { // Destroy right arrow
+ 	click_last_arrow(global.current_spawned_right_arrows)
+}
+
+
+

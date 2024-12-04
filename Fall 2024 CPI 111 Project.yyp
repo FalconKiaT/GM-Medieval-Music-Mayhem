@@ -123,7 +123,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1100.0.686",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Fall 2024 CPI 111 Project",
   "resources":[
@@ -155,9 +155,9 @@
     {"id":{"name":"obj_crowd","path":"objects/obj_crowd/obj_crowd.yy",},},
     {"id":{"name":"obj_curtains","path":"objects/obj_curtains/obj_curtains.yy",},},
     {"id":{"name":"obj_dialogue_controller","path":"objects/obj_dialogue_controller/obj_dialogue_controller.yy",},},
-    {"id":{"name":"obj_empty","path":"objects/obj_empty/obj_empty.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_feedback_bad","path":"objects/obj_feedback_bad/obj_feedback_bad.yy",},},
+    {"id":{"name":"obj_feedback_empty","path":"objects/obj_feedback_empty/obj_feedback_empty.yy",},},
     {"id":{"name":"obj_feedback_generic","path":"objects/obj_feedback_generic/obj_feedback_generic.yy",},},
     {"id":{"name":"obj_feedback_good","path":"objects/obj_feedback_good/obj_feedback_good.yy",},},
     {"id":{"name":"obj_feedback_great","path":"objects/obj_feedback_great/obj_feedback_great.yy",},},
