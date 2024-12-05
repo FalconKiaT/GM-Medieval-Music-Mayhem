@@ -7,6 +7,6 @@ anim_Spd = 1.1;
 old_score = 0;
 
 // The crowd jumps or stops
-AnimationAddFinite("YAY",image_xscale,image_yscale,anim_Spd,1,47,1);
+AnimationAddChained("YAY",noone,noone,anim_Spd,1,46,1, "STOP");
 AnimationAdd("STOP",noone,noone,0,1,1)
-
+AnimationSet("STOP")
