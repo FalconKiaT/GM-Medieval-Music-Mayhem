@@ -1,3 +1,2 @@
-
-// Switch to darkened sprite when pressed
-sprite_index = spr_tutorial_button_pressed
+health = 100;
+room_goto(rm_tutorial); //switch room
