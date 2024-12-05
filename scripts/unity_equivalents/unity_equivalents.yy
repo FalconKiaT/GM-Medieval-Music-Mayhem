@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"unity_equivalents",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"unity_equivalents",
+  "parent":{
+    "name":"Other",
+    "path":"folders/Scripts/Utilities/Other.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

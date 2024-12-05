@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scheduler_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scheduler_data",
+  "parent":{
+    "name":"Coroutine-Like",
+    "path":"folders/Scripts/Utilities/Coroutine-Like.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

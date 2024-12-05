@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Arrows",
-    "path":"folders/Sprites/Characters/Dialogue Icons/Arrows.yy",
+    "path":"folders/Sprites/Dialogue/Text Icons/Arrows.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"King",
-    "path":"folders/Sprites/Characters/Portraits/King.yy",
+    "path":"folders/Sprites/Dialogue/Portraits/King.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

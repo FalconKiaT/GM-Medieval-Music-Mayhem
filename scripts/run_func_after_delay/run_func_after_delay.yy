@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"run_func_after_delay",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"run_func_after_delay",
+  "parent":{
+    "name":"Coroutine-Like",
+    "path":"folders/Scripts/Utilities/Coroutine-Like.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"basic_vector",
   "parent":{
-    "name":"Utilities",
-    "path":"folders/Scripts/Utilities.yy",
+    "name":"2D Vector",
+    "path":"folders/Scripts/Utilities/2D Vector.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
