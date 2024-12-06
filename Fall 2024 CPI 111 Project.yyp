@@ -125,7 +125,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.0.169",
   },
   "name":"Fall 2024 CPI 111 Project",
   "resources":[
@@ -175,6 +175,7 @@
     {"id":{"name":"obj_level_one_dialogue","path":"objects/obj_level_one_dialogue/obj_level_one_dialogue.yy",},},
     {"id":{"name":"obj_music_controller","path":"objects/obj_music_controller/obj_music_controller.yy",},},
     {"id":{"name":"obj_music_level1","path":"objects/obj_music_level1/obj_music_level1.yy",},},
+    {"id":{"name":"obj_music_level2","path":"objects/obj_music_level2/obj_music_level2.yy",},},
     {"id":{"name":"obj_no_stars","path":"objects/obj_no_stars/obj_no_stars.yy",},},
     {"id":{"name":"obj_one_star","path":"objects/obj_one_star/obj_one_star.yy",},},
     {"id":{"name":"obj_player_anim","path":"objects/obj_player_anim/obj_player_anim.yy",},},
@@ -205,10 +206,11 @@
     {"id":{"name":"rm_ani_test","path":"rooms/rm_ani_test/rm_ani_test.yy",},},
     {"id":{"name":"rm_dialogue_level1_","path":"rooms/rm_dialogue_level1_/rm_dialogue_level1_.yy",},},
     {"id":{"name":"rm_dialogue_test","path":"rooms/rm_dialogue_test/rm_dialogue_test.yy",},},
+    {"id":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
+    {"id":{"name":"rm_level2","path":"rooms/rm_level2/rm_level2.yy",},},
     {"id":{"name":"rm_levelSelect","path":"rooms/rm_levelSelect/rm_levelSelect.yy",},},
     {"id":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
     {"id":{"name":"rm_mapping_prototype","path":"rooms/rm_mapping_prototype/rm_mapping_prototype.yy",},},
-    {"id":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
     {"id":{"name":"rm_prototype","path":"rooms/rm_prototype/rm_prototype.yy",},},
     {"id":{"name":"rm_results","path":"rooms/rm_results/rm_results.yy",},},
     {"id":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},},
@@ -456,7 +458,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_mainMenu","path":"rooms/rm_mainMenu/rm_mainMenu.yy",},},
     {"roomId":{"name":"rm_results","path":"rooms/rm_results/rm_results.yy",},},
-    {"roomId":{"name":"rm_mock_level1_prototype","path":"rooms/rm_mock_level1_prototype/rm_mock_level1_prototype.yy",},},
+    {"roomId":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
     {"roomId":{"name":"rm_ani_test","path":"rooms/rm_ani_test/rm_ani_test.yy",},},
     {"roomId":{"name":"rm_mapping_prototype","path":"rooms/rm_mapping_prototype/rm_mapping_prototype.yy",},},
     {"roomId":{"name":"rm_dialogue_test","path":"rooms/rm_dialogue_test/rm_dialogue_test.yy",},},
@@ -465,6 +467,7 @@
     {"roomId":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},},
     {"roomId":{"name":"rm_dialogue_level1_","path":"rooms/rm_dialogue_level1_/rm_dialogue_level1_.yy",},},
     {"roomId":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
+    {"roomId":{"name":"rm_level2","path":"rooms/rm_level2/rm_level2.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
