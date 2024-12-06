@@ -6,7 +6,13 @@ image_blend = make_color_rgb(200, 200, 200);
 switch global.current_level{
 	case 1:
 	health = 100;
-	room_goto(rm_mock_level1_prototype)// placeholder changes after implementing levels
+	score = 0;
+	room_goto(rm_mock_level1_prototype)
+	break;
+	case 2:
+	health = 100;
+	score = 0;
+	room_goto(rm_prototype)
 	break;
 	//so on 
 	
