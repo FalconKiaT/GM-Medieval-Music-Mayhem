@@ -138,6 +138,7 @@
     {"id":{"name":"TGMX_Terms_of_Use","path":"notes/TGMX_Terms_of_Use/TGMX_Terms_of_Use.yy",},},
     {"id":{"name":"TGMX_Update_Log","path":"notes/TGMX_Update_Log/TGMX_Update_Log.yy",},},
     {"id":{"name":"o_SharedTweener","path":"objects/o_SharedTweener/o_SharedTweener.yy",},},
+    {"id":{"name":"obj_arrow_generic","path":"objects/obj_arrow_generic/obj_arrow_generic.yy",},},
     {"id":{"name":"obj_bomb_left","path":"objects/obj_bomb_left/obj_bomb_left.yy",},},
     {"id":{"name":"obj_bomb_right","path":"objects/obj_bomb_right/obj_bomb_right.yy",},},
     {"id":{"name":"obj_bomb_sfx","path":"objects/obj_bomb_sfx/obj_bomb_sfx.yy",},},

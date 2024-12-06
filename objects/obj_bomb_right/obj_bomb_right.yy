@@ -12,7 +12,10 @@
     "name":"Bomb",
     "path":"folders/Objects/Arrows/Bomb.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_right_arrow",
+    "path":"objects/obj_right_arrow/obj_right_arrow.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
