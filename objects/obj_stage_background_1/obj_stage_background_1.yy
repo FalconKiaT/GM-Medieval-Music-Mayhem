@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_stage_background",
+  "%Name":"obj_stage_background_1",
   "eventList":[],
   "managed":true,
-  "name":"obj_stage_background",
+  "name":"obj_stage_background_1",
   "overriddenProperties":[],
   "parent":{
     "name":"Background",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_stage_background",
-    "path":"sprites/spr_stage_background/spr_stage_background.yy",
+    "name":"spr_stage_background_1",
+    "path":"sprites/spr_stage_background_1/spr_stage_background_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,
