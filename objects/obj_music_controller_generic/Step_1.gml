@@ -39,6 +39,32 @@ function spawn_arrow_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, _ar
 			case ARROW_DIRECTIONS.RIGHT:
 				_x_position = obj_right_arrow_slot.x + arrow_distance
 				_y_position = obj_right_arrow_slot.y
+				break
+			case ARROW_DIRECTIONS.BOMB:
+			cur_arrow_index_bombs += 1
+				var _random_value = random(1)
+				if (_random_value > 0.66) {
+					_x_position = obj_right_arrow_slot.x + arrow_distance
+					_y_position = obj_right_arrow_slot.y
+					_arrow_object = obj_bomb_right
+					_arrow_queue = global.current_spawned_right_arrows
+					cur_arrow_index_right += 1
+				}
+				else if (_random_value > 0.33) {
+					_x_position = obj_up_arrow_slot.x
+					_y_position = obj_up_arrow_slot.y - arrow_distance
+					_arrow_object = obj_bomb_up
+					_arrow_queue = global.current_spawned_up_arrows
+					cur_arrow_index_up += 1
+				}
+				else {
+					_x_position = obj_left_arrow_slot.x - arrow_distance
+					_y_position = obj_left_arrow_slot.y
+					_arrow_object = obj_bomb_left
+					_arrow_queue = global.current_spawned_left_arrows
+					cur_arrow_index_left += 1
+				}
+				break
 		}
 		show_debug_message("This is it!! I'm being spawned at " + string(_x_position) + " " + string(_y_position))
 		// Intantiate the chosen arrow and add to queue
@@ -61,6 +87,9 @@ if (spawn_arrow_on_time(mapped_timestamps_left, cur_arrow_index_left, global.cur
 																  
 if (spawn_arrow_on_time(mapped_timestamps_right, cur_arrow_index_right, global.current_spawned_right_arrows,
 	obj_right_arrow, ARROW_DIRECTIONS.RIGHT)) {cur_arrow_index_right += 1}
+	
+spawn_arrow_on_time(mapped_timestamps_bombs, cur_arrow_index_bombs, global.current_spawned_right_arrows,
+	obj_bomb_up, ARROW_DIRECTIONS.BOMB)
 
 // Music timestamp has ended
 // number one

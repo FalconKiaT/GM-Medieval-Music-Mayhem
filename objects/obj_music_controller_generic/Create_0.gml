@@ -14,7 +14,10 @@ health_recover_multiplier = 4
 enum ARROW_DIRECTIONS {
 	UP,
 	LEFT,
-	RIGHT
+	RIGHT,
+	BOMB,
+	SWITCH,
+	LIGHTNING
 }
 
 global.current_spawned_up_arrows = ds_queue_create()
