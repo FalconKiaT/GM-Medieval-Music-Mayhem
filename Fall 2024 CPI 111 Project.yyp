@@ -348,6 +348,7 @@
     {"id":{"name":"snd_button_clicked","path":"sounds/snd_button_clicked/snd_button_clicked.yy",},},
     {"id":{"name":"snd_coin_falling_test","path":"sounds/snd_coin_falling_test/snd_coin_falling_test.yy",},},
     {"id":{"name":"snd_coin_found_test","path":"sounds/snd_coin_found_test/snd_coin_found_test.yy",},},
+    {"id":{"name":"snd_countdown_one","path":"sounds/snd_countdown_one/snd_countdown_one.yy",},},
     {"id":{"name":"snd_crowd_audio","path":"sounds/snd_crowd_audio/snd_crowd_audio.yy",},},
     {"id":{"name":"snd_dialogue_next_page","path":"sounds/snd_dialogue_next_page/snd_dialogue_next_page.yy",},},
     {"id":{"name":"snd_general_dialogue","path":"sounds/snd_general_dialogue/snd_general_dialogue.yy",},},

@@ -12,8 +12,6 @@ show_debug_message(global.current_game_state)
 _pervious_game_state= global.current_game_state;
 
 
-
-
 // Used in pause surfaces
 pause_sur =-1;
 pause_sur_buffer = -1;

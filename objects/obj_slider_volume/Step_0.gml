@@ -20,5 +20,5 @@ if(!mouse_check_button(mb_left))
 if(selected)
 {
 	progress = clamp((mouse_x-x)/sprite_width, 0, max_value);
-	global.volume = progress * 100;
+	global.volume = progress * global.max_volume_slider;
 }

@@ -2,4 +2,4 @@
 // You can write your code in this editor
 
 is_music_playing = true // State management
-audio_play_sound(global.song_playing, 0, false) // Example song
+audio_play_sound(global.song_playing, 0, false, get_volume_scaled()) // Example song
