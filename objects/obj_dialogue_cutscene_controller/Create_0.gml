@@ -445,7 +445,7 @@ function try_text_skip_advance()
 			return;
 	}
 	// Play dialogue page switch sound
-	audio_play_sound(snd_dialogue_next_page, 1, false, 1, 0, 2);
+	audio_play_sound(snd_dialogue_next_page, 1, false, get_volume_scaled(), 0, 2);
 }
 
 // <------------------------> CUSTOM TYPEWRITTER EVENTS <------------------------>
