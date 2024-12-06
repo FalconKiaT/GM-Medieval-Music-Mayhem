@@ -1,3 +1,3 @@
 
-//tint button black when clicked
-image_blend = make_colour_rgb(200, 200, 200);
+audio_play_sound(snd_button_clicked, 1, false, 1, 0, 2);
+room_goto(rm_mainMenu); //switch room

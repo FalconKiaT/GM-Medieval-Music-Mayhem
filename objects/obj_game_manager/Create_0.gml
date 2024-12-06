@@ -1,3 +1,4 @@
+
 //checks what room its in to determine game state
 if (room_exists(rm_level1)){
 	
@@ -41,3 +42,28 @@ pos_pause=0
 if (room_exists(rm_level1)){
 	global.current_level = 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

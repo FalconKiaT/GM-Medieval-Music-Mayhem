@@ -15,7 +15,7 @@ receiver.add(MESSAGES.DIALOGUE_FINISHED, function()
 if (room_exists(rm_dialogue_level1_)){
 	
 	global.current_game_state = GAME_STATES.DIALOGUE
-	if (instance_exists(obj_dialogue_controller)){obj_dialogue_controller.public_trigger_dialogue("LEVEL1")}
+	if (instance_exists(obj_dialogue_cutscene_controller)){obj_dialogue_cutscene_controller.public_trigger_dialogue("LEVEL1")}
 	instance_activate_all()
 	
 }

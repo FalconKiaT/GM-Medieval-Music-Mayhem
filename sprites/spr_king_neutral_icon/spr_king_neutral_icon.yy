@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"King",
-    "path":"folders/Sprites/Characters/Dialogue Icons/King.yy",
+    "path":"folders/Sprites/Dialogue/Text Icons/King.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

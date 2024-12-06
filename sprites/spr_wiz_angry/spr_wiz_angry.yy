@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Player",
-    "path":"folders/Sprites/Characters/Portraits/Player.yy",
+    "path":"folders/Sprites/Dialogue/Portraits/Player.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

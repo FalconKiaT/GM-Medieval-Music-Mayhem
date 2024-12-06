@@ -7,6 +7,7 @@ if (!did_broadcast)
 {
 	if(global.current_game_state == GAME_STATES.WIN)
 	{
+		
 		//only shows this if its a win
 		broadcast(RESULT_SCREEN.DISABLE_TRY_AGAIN_SHIELD)
 	

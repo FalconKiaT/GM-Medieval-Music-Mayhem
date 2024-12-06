@@ -6,3 +6,4 @@ if (surface_exists(pause_sur)){
 if (buffer_exists(pause_sur_buffer)){
 	buffer_delete(pause_sur_buffer);
 }
+
