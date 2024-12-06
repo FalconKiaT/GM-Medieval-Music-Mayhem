@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bomb_up",
+  "%Name":"obj_arrow_generic",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bomb_up",
+  "name":"obj_arrow_generic",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bomb",
-    "path":"folders/Objects/Arrows/Bomb.yy",
+    "name":"Arrows",
+    "path":"folders/Objects/Arrows.yy",
   },
-  "parentObjectId":{
-    "name":"obj_up_arrow",
-    "path":"objects/obj_up_arrow/obj_up_arrow.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_bomb_up",
-    "path":"sprites/spr_bomb_up/spr_bomb_up.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

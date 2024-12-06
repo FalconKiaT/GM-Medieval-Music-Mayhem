@@ -4,3 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
+current_queue = global.current_spawned_right_arrows
+
+

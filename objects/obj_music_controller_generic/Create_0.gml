@@ -22,9 +22,10 @@ global.current_spawned_left_arrows = ds_queue_create()
 global.current_spawned_right_arrows = ds_queue_create()
 
 // When will arrows spawn? --- Debug array, you should be overwritting them in the level-specific music controllers
-mapped_timestamps_up = [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6] 
-mapped_timestamps_left = [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6]
-mapped_timestamps_right = [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6]
+mapped_timestamps_up = [] 
+mapped_timestamps_left = []
+mapped_timestamps_right = []
+mapped_timestamps_bombs = [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6]
 
 // current song --- Debug, please overwrite on level specific music controllers
 global.song_playing = snd_mus_mongrel_dance;
