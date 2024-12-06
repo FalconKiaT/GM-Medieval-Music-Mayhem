@@ -114,13 +114,13 @@ if (is_timeline_running)
 // DEBUGGING
 if (enable_debug_tools)
 {
-	if (keyboard_check_pressed(ord("P"))) 
+	if (keyboard_check_pressed(ord("2")))
 	{
-		public_pause_dialogue();
-	}
-	if (keyboard_check_pressed(ord("O"))) 
-	{
-		public_resume_dialogue();
+		// Skip the dialogue
+		array_resize(page_list, 0);
+		current_page_idx = 0;
+		page_amount = 0;
+		close_dialogue_box();
 	}
 }
 
