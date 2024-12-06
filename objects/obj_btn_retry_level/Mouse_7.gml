@@ -7,7 +7,7 @@ switch global.current_level{
 	case 1:
 	health = 100;
 	score = 0;
-	room_goto(rm_mock_level1_prototype)
+	room_goto(rm_level1)
 	break;
 	case 2:
 	health = 100;

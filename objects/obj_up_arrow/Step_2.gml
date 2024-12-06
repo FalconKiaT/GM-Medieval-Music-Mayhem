@@ -1,5 +1,9 @@
-/// @description Check for out of bounds
+/// @description Move and check for out of bounds
 // You can write your code in this editor
+
+var _dt = delta_time / 1000000 // delta time in seconds
+
+y += arrow_velocity * _dt
 
 if (y > obj_up_arrow_slot.y + 0.4 * sprite_height) {
 	image_alpha -= 0.5 * (1.1 - image_alpha)

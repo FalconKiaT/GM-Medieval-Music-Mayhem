@@ -98,7 +98,7 @@ else  if (global.current_game_state == GAME_STATES.PAUSE_TIMER){
 
 
 	instance_deactivate_layer("Arrows");
-	instance_deactivate_object(obj_music_controller);
+	instance_deactivate_object(obj_music_controller_generic);
 	
 	global.current_game_state = GAME_STATES.TIMER
 }
