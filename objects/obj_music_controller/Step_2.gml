@@ -34,7 +34,6 @@ function click_last_arrow(_arrow_queue) {
 		if (health > 100) {health = 100}
 		spawn_feedback(_current_arrow.x, _current_arrow.y, _accuracy_score)
 		
-		
 		instance_destroy(_current_arrow)
 	}
 }

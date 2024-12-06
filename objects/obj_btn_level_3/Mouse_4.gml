@@ -1,12 +1,7 @@
-//play the third level if unlocked, else flash red
+//play the second level if unlocked
 
 if(global.max_level >= 3)
 {
-	image_blend = make_colour_rgb(200, 200, 200); //black tint
-}
-else
-{
-	//make button red and then white again
-	image_blend = make_colour_rgb(255, 0, 0);
-	alarm[0] = game_get_speed(gamespeed_fps) * 0.2;
+	audio_play_sound(snd_button_clicked, 1, false, 1, 0, 2);
+	room_goto(rm_prototype); //replace with lvl 3
 }

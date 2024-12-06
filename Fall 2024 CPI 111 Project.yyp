@@ -359,6 +359,7 @@
     {"id":{"name":"bg_title_placeholder","path":"sprites/bg_title_placeholder/bg_title_placeholder.yy",},},
     {"id":{"name":"bg_white","path":"sprites/bg_white/bg_white.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
+    {"id":{"name":"spr_arrow_hit","path":"sprites/spr_arrow_hit/spr_arrow_hit.yy",},},
     {"id":{"name":"spr_bomb_left","path":"sprites/spr_bomb_left/spr_bomb_left.yy",},},
     {"id":{"name":"spr_bomb_right","path":"sprites/spr_bomb_right/spr_bomb_right.yy",},},
     {"id":{"name":"spr_bomb_sfx","path":"sprites/spr_bomb_sfx/spr_bomb_sfx.yy",},},

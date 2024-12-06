@@ -4,5 +4,5 @@ if(score >= old_score +2000){
 	audio_play_sound(snd_crowd_audio, 2, false)
 	AnimationSet("YAY");
 	//Run set animations
-	AnimationStep();
 }
+AnimationStep();
