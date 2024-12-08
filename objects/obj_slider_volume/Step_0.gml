@@ -22,3 +22,6 @@ if(selected)
 	progress = clamp((mouse_x-x)/sprite_width, 0, max_value);
 	global.volume = progress * global.max_volume_slider;
 }
+
+// Make sure main menu music gets scaled so the player can check the audio they just modified
+audio_sound_gain(snd_menu_music, get_volume_scaled(), 0)

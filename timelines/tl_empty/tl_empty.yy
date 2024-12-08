@@ -1,0 +1,12 @@
+{
+  "$GMTimeline":"",
+  "%Name":"tl_empty",
+  "momentList":[],
+  "name":"tl_empty",
+  "parent":{
+    "name":"Timelines",
+    "path":"folders/Timelines.yy",
+  },
+  "resourceType":"GMTimeline",
+  "resourceVersion":"2.0",
+}

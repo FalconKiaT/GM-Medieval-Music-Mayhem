@@ -56,8 +56,8 @@
   ],
   "name":"rm_level1",
   "parent":{
-    "name":"levels",
-    "path":"folders/Rooms/levels.yy",
+    "name":"One",
+    "path":"folders/Rooms/levels/One.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

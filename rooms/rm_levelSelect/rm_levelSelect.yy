@@ -27,8 +27,8 @@
   ],
   "name":"rm_levelSelect",
   "parent":{
-    "name":"menus",
-    "path":"folders/Rooms/menus.yy",
+    "name":"Main",
+    "path":"folders/Rooms/Menus/Main.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
