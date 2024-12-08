@@ -7,7 +7,7 @@ anim_Spd = 0.3333; //30fps * 0.333 = 10fps
 
 //Define an idle animation using only the first frame of the sprite
 AnimationAdd("LEFT",image_xscale,image_yscale,anim_Spd,1,2);
-AnimationAdd("RIGHT",-image_xscale,image_yscale,anim_Spd,1,2);
+AnimationAdd("RIGHT",image_xscale,image_yscale,anim_Spd,11,12);
 AnimationAdd("UP",noone,noone,anim_Spd,3,4);
 AnimationAdd("MISS",noone,noone,anim_Spd,5,6);
 AnimationAdd("IDLE", noone, noone, anim_Spd,7,10);

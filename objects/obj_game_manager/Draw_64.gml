@@ -97,7 +97,7 @@ else  if (global.current_game_state == GAME_STATES.PAUSE_TIMER){
 	audio_play_sound(snd_countdown_one, 1, false, get_volume_scaled(), 0);
 
 	instance_deactivate_layer("Arrows");
-	instance_deactivate_object(obj_music_controller);
+	instance_deactivate_object(obj_music_controller_generic);
 	
 	global.current_game_state = GAME_STATES.TIMER
 }

@@ -1,5 +1,5 @@
 //play the second level
-	
+show_debug_message(global.max_level)
 if(global.max_level >= 2)
 {
 	image_blend = make_colour_rgb(255, 255, 255); //make button white again

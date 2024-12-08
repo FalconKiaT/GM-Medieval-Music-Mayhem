@@ -1,5 +1,11 @@
-/// @description Check if should spawn arrow
+/// @description Count music timer and check if should spawn arrow
 // You can write your code in this editor
+
+// Music timestamp for mapping
+if (is_music_playing) {
+	global.music_timestamp += delta_time / 1000000 // Stored in seconds
+	global.music_timestamp_max = 185.81;
+}
 
 var _dt = delta_time / 1000000 // delta time in seconds
 
@@ -15,7 +21,6 @@ function spawn_arrow_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, _ar
 	_cur_arrow_timestamp = _mapping_array[_cur_arrow_index]
 	_cur_timestamp_offsetted = _cur_arrow_timestamp - _timestamp_offset
 	var _timestamp_delta = _cur_timestamp_offsetted - global.music_timestamp
-	// show_debug_message("The timestamp offset is " + string(_timestamp_delta))
 
 
 	if (sign(_timestamp_delta) == -1) { // If the arrow is "late" to be spawned
@@ -62,7 +67,7 @@ if (spawn_arrow_on_time(mapped_timestamps_right, cur_arrow_index_right, global.c
 if(global.song_playing == snd_mus_minstrel_guild){
 	if (global.music_timestamp >= global.music_timestamp_max){
 		is_music_playing = false; 
-		}
+	}
 }
 
 // progress bar

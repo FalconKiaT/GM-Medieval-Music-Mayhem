@@ -1,6 +1,6 @@
 
 //checks what room its in to determine game state
-if (room_exists(rm_mock_level1_prototype)){
+if (room_exists(rm_level1)){
 	
 	global.current_game_state = GAME_STATES.PLAY;
 	
@@ -37,7 +37,7 @@ pos_pause=0
 // pause menu end
 
 // detects level
-if (room_exists(rm_mock_level1_prototype)){
+if (room_exists(rm_level1)){
 	global.current_level = 1;
 }
 

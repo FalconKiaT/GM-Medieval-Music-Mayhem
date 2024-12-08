@@ -1,4 +1,4 @@
-// Make sure only one global manager objects exists at any given time
+//Make sure only one global manager objects exists at any given time
 if ( !variable_global_exists("global_manager_exists") || global.global_manager_exists == undefined )
 {
 	// First time this object ever called create, set it up
@@ -18,6 +18,3 @@ if(room_exists(rm_mainMenu)){
 if(global.current_game_state == GAME_STATES.MENU){
 	audio_play_sound(snd_menu_music,10,true, get_volume_scaled())
 }
-
-
-

@@ -14,7 +14,7 @@ if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 if(keyboard_check_pressed(vk_escape)){
 	if (global.current_game_state != GAME_STATES.OVER || global.current_game_state != GAME_STATES.WIN){
 		
-		if ((global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.DIALOGUE) && global.current_game_state != GAME_STATES.PAUSE){
+		if ((global.current_game_state == GAME_STATES.PLAY && global.current_game_state != GAME_STATES.PAUSE)){
 			show_debug_message("paused")
 			
 			show_debug_message(global.current_game_state)

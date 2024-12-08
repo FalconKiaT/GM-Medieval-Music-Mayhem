@@ -2,8 +2,8 @@
   "$GMObject":"",
   "%Name":"obj_right_arrow",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_right_arrow",
@@ -12,7 +12,10 @@
     "name":"Arrows",
     "path":"folders/Objects/Arrows.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_arrow_generic",
+    "path":"objects/obj_arrow_generic/obj_arrow_generic.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
