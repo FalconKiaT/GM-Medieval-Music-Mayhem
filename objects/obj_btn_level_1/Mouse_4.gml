@@ -4,5 +4,5 @@
 if(global.max_level >= 1)
 {
 	audio_play_sound(snd_button_clicked, 1, false, get_volume_scaled(), 0, 2);
-	room_goto(rm_dialogue_level1_);
+	room_goto(rm_dialogue_level1_intro);
 }

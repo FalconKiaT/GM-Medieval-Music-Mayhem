@@ -12,8 +12,8 @@
   "duration":5.25525,
   "name":"snd_crowd_audio",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Gameplay",
+    "path":"folders/Sounds/FX/Gameplay.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

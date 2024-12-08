@@ -17,10 +17,13 @@
 function run_func_after_delay_seconds_condition(_delay_seconds, _func_to_execute, _func_count_condition) 
 {
 	// Make sure scheduler timer object exists
-	if (global.global_scheduler_timer_exists == undefined)
+	if (global.scheduler_timer_obj == undefined)
 	{
-		instance_create_layer(0,0,"Instances", obj_sheduler_timer)
+		global.scheduler_timer_obj = instance_create_layer(0,0,"Instances", obj_sheduler_timer)
 	}
+	
+	// Make sure that the object is active and not disabled
+	instance_activate_object(global.scheduler_timer_obj);
 	
 	// Create it and add it to list
 	var _timed_func = delayed_func_seconds_constructor(_delay_seconds, _func_to_execute, _func_count_condition);
@@ -35,10 +38,13 @@ function run_func_after_delay_seconds_condition(_delay_seconds, _func_to_execute
 function run_func_after_delay_seconds(_delay_seconds, _func_to_execute) 
 {
 	// Make sure scheduler timer object exists
-	if (global.global_scheduler_timer_exists == undefined)
+	if (global.scheduler_timer_obj == undefined)
 	{
-		instance_create_layer(0,0,"Instances", obj_sheduler_timer)
+		global.scheduler_timer_obj = instance_create_layer(0,0,"Instances", obj_sheduler_timer)
 	}
+	
+	// Make sure that the object is active and not disabled
+	instance_activate_object(global.scheduler_timer_obj);
 	
 	// Create it and add it to list
 	var _timed_func = delayed_func_seconds_constructor(_delay_seconds, _func_to_execute, function(){return true});
@@ -61,10 +67,13 @@ function run_func_after_delay_seconds(_delay_seconds, _func_to_execute)
 function run_func_after_delay_frames_condition(_delay_frames, _func_to_execute, _func_count_condition) 
 {
 	// Make sure scheduler timer object exists
-	if (global.global_scheduler_timer_exists == undefined)
+	if (global.scheduler_timer_obj == undefined)
 	{
-		instance_create_layer(0,0,"Instances", obj_sheduler_timer)
+		global.scheduler_timer_obj = instance_create_layer(0,0,"Instances", obj_sheduler_timer)
 	}
+	
+	// Make sure that the object is active and not disabled
+	instance_activate_object(global.scheduler_timer_obj);
 	
 	// Else it was defined, create it and add it to list
 	var _timed_func = delayed_func_frames_constructor(_delay_frames, _func_to_execute, _func_count_condition);
@@ -79,10 +88,13 @@ function run_func_after_delay_frames_condition(_delay_frames, _func_to_execute, 
 function run_func_after_delay_frames(_delay_frames, _func_to_execute) 
 {
 	// Make sure scheduler timer object exists
-	if (global.global_scheduler_timer_exists == undefined)
+	if (global.scheduler_timer_obj == undefined)
 	{
-		instance_create_layer(0,0,"Instances", obj_sheduler_timer)
+		global.scheduler_timer_obj = instance_create_layer(0,0,"Instances", obj_sheduler_timer)
 	}
+	
+	// Make sure that the object is active and not disabled
+	instance_activate_object(global.scheduler_timer_obj);
 	
 	// Create it and add it to list
 	var _timed_func = delayed_func_frames_constructor(_delay_frames, _func_to_execute, function(){return true});
@@ -215,10 +227,13 @@ function delayed_func_frames_constructor(_delay_frames, _func_to_execute, _func_
 function run_func_after_delay_struct(_timed_func) 
 {
 	// Make sure scheduler timer object exists
-	if (global.global_scheduler_timer_exists == undefined)
+	if (global.scheduler_timer_obj == undefined)
 	{
-		instance_create_layer(0,0,"Instances", obj_sheduler_timer)
+		global.scheduler_timer_obj = instance_create_layer(0,0,"Instances", obj_sheduler_timer)
 	}
+	
+	// Make sure that the object is active and not disabled
+	instance_activate_object(global.scheduler_timer_obj);
 	
 	// Create it and add it to list
     ds_list_add(global.timed_func_list, _timed_func);
