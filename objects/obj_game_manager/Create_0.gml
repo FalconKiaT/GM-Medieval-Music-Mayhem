@@ -1,3 +1,10 @@
+// Debugging, block all actions on this object
+if (1 == 1)
+{
+	return;
+}
+
+
 //checks what room its in to determine game state
 if (room_exists(rm_level1)){
 	
@@ -24,7 +31,7 @@ text_border = 8
 text_dist = 100
 
 	// text options
-option[0] = spr_btn_resum
+option[0] = spr_button_resume
 option[1] = spr_btn_restart
 option[2] = spr_btn_main_menu
 	// options array size

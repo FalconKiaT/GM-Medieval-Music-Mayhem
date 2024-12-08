@@ -1,13 +1,14 @@
 {
   "$GMObject":"",
-  "%Name":"obj_countdown",
+  "%Name":"obj_btn_pause_main_menu",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":11,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_countdown",
+  "name":"obj_btn_pause_main_menu",
   "overriddenProperties":[],
   "parent":{
     "name":"Pause",
@@ -32,9 +33,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_countdown",
-    "path":"sprites/spr_countdown/spr_countdown.yy",
+    "name":"spr_btn_main_menu_1",
+    "path":"sprites/spr_btn_main_menu_1/spr_btn_main_menu_1.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

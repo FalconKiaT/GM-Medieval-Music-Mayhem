@@ -78,7 +78,7 @@ const_opening_anim_duration = 0.2; // In seconds
 // Create the skip button
 skip_button_x_offset = -90
 skip_button_y_offset = -35
-skip_button_id = instance_create_layer(0, 0, "Instances", obj_skip_button)
+skip_button_id = instance_create_layer(0, 0, "Meta", obj_skip_button)
 
 // <------------------------> STRING TO SPRITE DICTIONARY <------------------------>
 
@@ -398,8 +398,12 @@ function public_resume_dialogue()
 		return;
 	}
 	
-	dialogue_general_typist.unpause();
-	is_dialogue_paused = false;
+	run_func_after_delay_frames(3,
+	function()
+	{
+		dialogue_general_typist.unpause();
+		is_dialogue_paused = false;
+	})
 }
 
 // Function used internally to close the dialogue window when the pages are exhausted
@@ -445,6 +449,11 @@ function check_and_perform_sprite_flip()
 				is_sprite_flipped = true;
 			}
 			break;
+			
+			case DIALOGUE_TYPE.NO_BACKGROUND_ONLY_TEXT:
+			case DIALOGUE_TYPE.ONLY_TEXT:
+				// 
+				break;
 		
 		default:
 			show_debug_message("ERROR! Dialogue layout not defined. Thrown in check_and_perform_sprite_flip() -> Create -> obj_dialogue_controller");

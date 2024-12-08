@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_level_one_dialogue",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_pause_background",
+  "eventList":[],
   "managed":true,
-  "name":"obj_level_one_dialogue",
+  "name":"obj_pause_background",
   "overriddenProperties":[],
   "parent":{
-    "name":"Level_dialogue",
-    "path":"folders/Objects/Meta/Level_dialogue.yy",
+    "name":"Pause",
+    "path":"folders/Objects/Pause.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_pause_background",
+    "path":"sprites/spr_pause_background/spr_pause_background.yy",
+  },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

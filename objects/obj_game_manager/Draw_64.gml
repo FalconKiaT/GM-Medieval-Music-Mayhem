@@ -1,4 +1,13 @@
 // Feather disable GM2017
+
+// Debugging, block all actions on this object
+if (1 == 1)
+{
+	return;
+}
+
+
+
 function score_health_gui(){
 	
 	if (global.current_game_state == GAME_STATES.PLAY || global.current_game_state == GAME_STATES.PAUSE){
@@ -23,7 +32,7 @@ score_health_gui()
 // Pause system
 // This system is made so that we do not have to load a new room and only work with the one we are in
 
-
+/*
 if (global.current_game_state == GAME_STATES.PAUSE ){
 	// !! warining !!
 	// This code is the part that will draw a surface
@@ -101,7 +110,8 @@ else  if (global.current_game_state == GAME_STATES.PAUSE_TIMER){
 	
 	global.current_game_state = GAME_STATES.TIMER
 }
-else  if (global.current_game_state == GAME_STATES.TIMER){
+else  if (global.current_game_state == GAME_STATES.TIMER)
+{
 	//audio_pause_all();
 	// Pause countdown audio if playing
 	//audio_stop_sound(snd_countdown_one)
@@ -133,3 +143,4 @@ else if (global.current_game_state != GAME_STATES.PAUSE_TIMER || global.current_
 	
 }
 
+*/

@@ -3,9 +3,18 @@ enum MESSAGES
 {
 	 GAME_PAUSED,
 	 GAME_RESUMED,
+	 COUNTDOWN_FINISHED,
 	 DIALOGUE_STARTED,
 	 DIALOGUE_FINISHED,
 	 DIALOGUE_SKIP_CLICKED,
+}
+
+enum PAUSE_MENU
+{
+	dummy_var, // For some reason if this is not here, the game enters an infinite loop
+	RESTART_BTN_CLICKED,
+	RESUME_CLICKED,
+	MAIN_MENU_CLICKED,
 }
 
 enum ANIM_MESSAGES
