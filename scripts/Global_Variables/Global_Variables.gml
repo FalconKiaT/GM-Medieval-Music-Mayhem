@@ -3,16 +3,22 @@
 
 // <------------------------> Settings <------------------------>
 
+// Volume
 global.volume = 100; //a value 0-100 denoting game volume
 global.previous_volume = 100
 global.max_volume_slider = 100;
-global.note_timing_offset = 0.5;
 
 // Function to get the volume value scaled to a float from 0 to 1
 function get_volume_scaled()
 {
 	return global.volume / global.max_volume_slider;
 }
+
+// Timing
+global.note_timing_offset = 0.5;
+
+// Draw FPS
+global.do_draw_fps = false;
 
 // <------------------------> Menus <------------------------>
 global.max_level = 1.0; //controls what levels player can access
