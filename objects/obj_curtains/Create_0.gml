@@ -12,3 +12,4 @@ AnimationAddFinite("CLOSE_CURTAINS",noone,noone,anim_Spd,1,70, 1);
 AnimationSet("CLOSED");
 global.current_game_state = GAME_STATES.PAUSE_TIMER;
 AnimationSet("OPEN_CURTAINS");
+

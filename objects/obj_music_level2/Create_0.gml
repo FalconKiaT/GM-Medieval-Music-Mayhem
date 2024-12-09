@@ -12,3 +12,5 @@ mapped_timestamps_switch = [11.11640625, 39.398046875000006, 39.888281250000006,
 mapped_timestamps_lightning = []
 
 global.song_playing = snd_mus_rock
+
+global.music_timestamp_max = 104;
