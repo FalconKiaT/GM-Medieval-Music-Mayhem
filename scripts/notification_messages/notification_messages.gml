@@ -5,6 +5,7 @@ enum MESSAGES
 	 GAME_RESUMED,
 	 DIALOGUE_STARTED,
 	 DIALOGUE_FINISHED,
+	 DIALOGUE_SKIP_CLICKED,
 }
 
 enum ANIM_MESSAGES
@@ -13,6 +14,9 @@ enum ANIM_MESSAGES
 	BOMB_AVOIDED,
 	CHANNEL_SWITCH,
 	LIGHTNING,
+	KING_BOMB,
+	GUARD_BOMB,
+	GUARD_SWITCH,
 }
 
 // Enumerator used to disable certain UI elements on Results Screen

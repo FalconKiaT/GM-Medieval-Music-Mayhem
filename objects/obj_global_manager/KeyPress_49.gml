@@ -1,3 +1,3 @@
 instance_deactivate_all(true)
 instance_deactivate_object(obj_game_manager);
-room_goto(rm_level1)
+room_goto(rm_mock_level1_prototype)

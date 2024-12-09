@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_crowd",
-    "path":"sprites/spr_crowd/spr_crowd.yy",
+    "name":"spr_crowd_level_1",
+    "path":"sprites/spr_crowd_level_1/spr_crowd_level_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -18,6 +18,11 @@ receiver.add(MESSAGES.GAME_RESUMED, function() {
     public_resume_dialogue();
 });
 
+receiver.add(MESSAGES.DIALOGUE_SKIP_CLICKED, function()
+{
+	close_dialogue_box();
+});
+
 
 // <------------------------> CONSTANTS <------------------------>
 
@@ -55,19 +60,149 @@ const_dialogue_box_sprite_height = sprite_get_height(spr_dialogue_box);
 // Typewritter variables
 const_skip_cooldown = 0.4; // In seconds
 const_player_speaker_name = "Player"
-const_king_speaker_name = "King"
+const_king_speaker_name = "King Cappella"
+const_guard_speaker_name = "Guard"
+const_wizard_speaker_name = "Beathalzar"
+
 const_player_speaker_color = "#ADD8E6"
 const_king_speaker_color = "#90EE90"
+const_guard_speaker_color = "#FF7F7F"
+const_wizard_speaker_color = "#800080"
+
+// Other constant colors
+const_kingdom_text_color = "#0000FF"
 
 // Opening animation variables
 const_opening_anim_duration = 0.2; // In seconds
+
+// Create the skip button
+skip_button_x_offset = -90
+skip_button_y_offset = -35
+skip_button_id = instance_create_layer(0, 0, "Instances", obj_skip_button)
+
+// <------------------------> STRING TO SPRITE DICTIONARY <------------------------>
+
+// This dictionary is needed because the scribble library can only handle parameters with strings
+sprite_string_dict = ds_map_create();
+
+// King
+sprite_string_dict[? "spr_king_happy"] = spr_king_happy;
+sprite_string_dict[? "spr_king_neutral"] = spr_king_neutral;
+sprite_string_dict[? "spr_king_upset"] = spr_king_upset;
+
+// Player
+sprite_string_dict[? "spr_player_angry"] = spr_player_angry;
+sprite_string_dict[? "spr_player_neutral"] = spr_player_neutral;
+sprite_string_dict[? "spr_player_shocked"] = spr_player_shocked;
+
+// Guard
+sprite_string_dict[? "spr_guard_angry"] = spr_guard_angry;
+sprite_string_dict[? "spr_guard_neurtal"] = spr_guard_neurtal;
+sprite_string_dict[? "spr_guard_shocked"] = spr_guard_shocked;
+
+// Wizard
+sprite_string_dict[? "spr_wizard_angry"] = spr_wizard_angry;
+sprite_string_dict[? "spr_wizard_neutral"] = spr_wizard_neutral;
+sprite_string_dict[? "spr_wizard_shocked"] = spr_wizard_shocked;
+
+
+// <------------------------> PORTRAIT SPRITE DIRECTIOND DICTIONARY <------------------------>
+
+// Dictionary of sprite and booleans to know which way they face and check if we need to flip them
+sprite_directions_dict = ds_map_create();
+
+// Add sprites and their respective directions (true for looking left, false for looking right)
+
+// King
+sprite_directions_dict[? spr_king_happy] = true;
+sprite_directions_dict[? spr_king_neutral] = true;
+sprite_directions_dict[? spr_king_upset] = true;
+
+// Player
+sprite_directions_dict[? spr_player_angry] = false;
+sprite_directions_dict[? spr_player_neutral] = false;
+sprite_directions_dict[? spr_player_shocked] = false;
+
+// Guard
+sprite_directions_dict[? spr_guard_angry] = false;
+sprite_directions_dict[? spr_guard_neurtal] = false;
+sprite_directions_dict[? spr_guard_shocked] = false;
+
+// Wizard
+sprite_directions_dict[? spr_wizard_angry] = false;
+sprite_directions_dict[? spr_wizard_neutral] = false;
+sprite_directions_dict[? spr_wizard_shocked] = false;
+
+// <------------------------> PORTRAIT SPRITE SOUNDS DICTIONARY <------------------------>
+
+// Dictionary to set the typewritter sound when we switch characters they play different sounds when they speak
+character_sound_dict = ds_map_create();
+
+// King
+character_sound_dict[? spr_king_happy] = snd_king_dialogue;
+character_sound_dict[? spr_king_neutral] = snd_king_dialogue;
+character_sound_dict[? spr_king_upset] = snd_king_dialogue;
+
+// Player
+character_sound_dict[? spr_player_angry] = snd_player_dialogue;
+character_sound_dict[? spr_player_neutral] = snd_player_dialogue;
+character_sound_dict[? spr_player_shocked] = snd_player_dialogue;
+
+// Guard
+character_sound_dict[? spr_guard_angry] = snd_guard_dialogue;
+character_sound_dict[? spr_guard_neurtal] = snd_guard_dialogue;
+character_sound_dict[? spr_guard_shocked] = snd_guard_dialogue;
+
+// Wizard
+character_sound_dict[? spr_wizard_angry] = snd_wizard_dialogue;
+character_sound_dict[? spr_wizard_neutral] = snd_wizard_dialogue;
+character_sound_dict[? spr_wizard_shocked] = snd_wizard_dialogue;
+
+// <------------------------> SPRITE TO SPEAKER NAME DICTIONARY <------------------------>
+
+// This dictionary is needed because the scribble library can only handle parameters with strings
+speaker_name_dict = ds_map_create();
+speaker_color_dict = ds_map_create();
+
+// King
+speaker_name_dict[? spr_king_happy] = const_king_speaker_name;
+speaker_name_dict[? spr_king_neutral] = const_king_speaker_name;
+speaker_name_dict[? spr_king_upset] = const_king_speaker_name;
+speaker_color_dict[? const_king_speaker_name] = const_king_speaker_color;
+
+// Player
+speaker_name_dict[? spr_player_angry] = const_player_speaker_name;
+speaker_name_dict[? spr_player_neutral] = const_player_speaker_name;
+speaker_name_dict[? spr_player_shocked] = const_player_speaker_name;
+speaker_color_dict[? const_player_speaker_name] = const_player_speaker_color;
+
+// Guard
+speaker_name_dict[? spr_guard_angry] = const_guard_speaker_name;
+speaker_name_dict[? spr_guard_neurtal] = const_guard_speaker_name;
+speaker_name_dict[? spr_guard_shocked] = const_guard_speaker_name;
+speaker_color_dict[? const_guard_speaker_name] = const_guard_speaker_color;
+
+// Wizard
+speaker_name_dict[? spr_wizard_angry] = const_wizard_speaker_name;
+speaker_name_dict[? spr_wizard_neutral] = const_wizard_speaker_name;
+speaker_name_dict[? spr_wizard_shocked] = const_wizard_speaker_name;
+speaker_color_dict[? const_wizard_speaker_name] = const_wizard_speaker_color;
+
+// <------------------------> STRING TO TIMELINE DICTIONARY <------------------------>
+
+// This dictionary is needed because the scribble library can only handle parameters with strings
+timeline_string_dict = ds_map_create();
+
+timeline_string_dict[? "tl_test"] = tl_test;
+timeline_string_dict[? "tl_main_intro"] = tl_main_intro;
+timeline_string_dict[? "tl_epilogue"] = tl_epilogue;
 
 // <------------------------> MUTATING VARIABLES <------------------------>
 
 // <------------------------> STATES <------------------------>
 dialogue_current_state = DIALOGUE_STATE.INACTIVE;
 is_dialogue_paused = false;
-dialogue_current_type = DIALOGUE_TYPE.ONLY_TEXT; 
+dialogue_current_type = DIALOGUE_TYPE.NO_BACKGROUND_ONLY_TEXT; 
 text_printing_state = PRINTING_STATE.FINISHED; // State of the typewritter
 is_checking_for_input = false; // bool to block user skip while false
 did_skip_cooldown_time_trigger_this_page = false;
@@ -114,96 +249,11 @@ current_speaker_color_str = undefined
 // <------------------------> SPRITE VALUES <------------------------>
 
 // Current sprite to draw from
-current_potrait_sprite = spr_wiz_neutral;
+current_potrait_sprite = spr_player_neutral;
 // Is current sprite flipped
 is_sprite_flipped = false;
 // Base animation speed
 base_anim_speed = 0.2
-
-
-
-
-
-// <------------------------> STRING TO SPRITE DICTIONARY <------------------------>
-
-// This dictionary is needed because the scribble library can only handle parameters with strings
-sprite_string_dict = ds_map_create();
-
-// King
-sprite_string_dict[? "spr_king_happy"] = spr_king_happy;
-sprite_string_dict[? "spr_king_neutral"] = spr_king_neutral;
-sprite_string_dict[? "spr_king_upset_angry"] = spr_king_upset_angry;
-
-// Player
-sprite_string_dict[? "spr_wiz_angry"] = spr_wiz_angry;
-sprite_string_dict[? "spr_wiz_neutral"] = spr_wiz_neutral;
-sprite_string_dict[? "spr_wiz_shocked"] = spr_wiz_shocked;
-
-
-// <------------------------> PORTRAIT SPRITE DIRECTIOND DICTIONARY <------------------------>
-
-// Dictionary of sprite and booleans to know which way they face and check if we need to flip them
-sprite_directions_dict = ds_map_create();
-
-// Add sprites and their respective directions (true for looking left, false for looking right)
-
-// King
-sprite_directions_dict[? spr_king_happy] = true;
-sprite_directions_dict[? spr_king_neutral] = true;
-sprite_directions_dict[? spr_king_upset_angry] = true;
-
-// Player
-sprite_directions_dict[? spr_wiz_angry] = false;
-sprite_directions_dict[? spr_wiz_neutral] = false;
-sprite_directions_dict[? spr_wiz_shocked] = false;
-
-// <------------------------> PORTRAIT SPRITE SOUNDS DICTIONARY <------------------------>
-
-// Dictionary to set the typewritter sound when we switch characters they play different sounds when they speak
-character_sound_dict = ds_map_create();
-
-// King
-character_sound_dict[? spr_king_happy] = snd_king_dialogue;
-character_sound_dict[? spr_king_neutral] = snd_king_dialogue;
-character_sound_dict[? spr_king_upset_angry] = snd_king_dialogue;
-
-// Player
-character_sound_dict[? spr_wiz_angry] = snd_player_dialogue;
-character_sound_dict[? spr_wiz_neutral] = snd_player_dialogue;
-character_sound_dict[? spr_wiz_shocked] = snd_player_dialogue;
-
-// <------------------------> SPRITE TO SPEAKER NAME DICTIONARY <------------------------>
-
-// This dictionary is needed because the scribble library can only handle parameters with strings
-speaker_name_dict = ds_map_create();
-speaker_color_dict = ds_map_create();
-
-// King
-speaker_name_dict[? spr_king_happy] = const_king_speaker_name;
-speaker_name_dict[? spr_king_neutral] = const_king_speaker_name;
-speaker_name_dict[? spr_king_upset_angry] = const_king_speaker_name;
-speaker_color_dict[? const_king_speaker_name] = const_king_speaker_color;
-
-// Player
-speaker_name_dict[? spr_wiz_angry] = const_player_speaker_name;
-speaker_name_dict[? spr_wiz_neutral] = const_player_speaker_name;
-speaker_name_dict[? spr_wiz_shocked] = const_player_speaker_name;
-speaker_color_dict[? const_player_speaker_name] = const_player_speaker_color;
-
-// <------------------------> STRING TO TIMELINE DICTIONARY <------------------------>
-
-// This dictionary is needed because the scribble library can only handle parameters with strings
-timeline_string_dict = ds_map_create();
-
-timeline_string_dict[? "tl_test"] = tl_test;
-
-
-
-
-
-
-
-
 
 // <------------------------> OPENING ANIMATION VALUES <------------------------>
 
@@ -213,7 +263,7 @@ opening_anim_scaler = 0; // Mutating value
 // <------------------------> TYPIST SETTINGS <------------------------> 
 
 // Typist variables for the text typewritter
-text_speed = 1;
+text_speed = 0.7;
 text_smooth = 0; // from [0 to 1]. On 0 character appears instantly, on 1 it slowly fades in
 main_typist_min_pitch = 1;
 main_typist_max_pitch = 2;
@@ -254,8 +304,37 @@ function public_trigger_dialogue(target)
 		case "ONE_LINE":
 			set_up_dialogue_id(DIALOGUE_ID.ONE_LINE);
 			break;
-		case "LEVEL1":
-			set_up_dialogue_id(DIALOGUE_ID.LEVEL1);
+			
+		case "MAIN-INTRO":
+			set_up_dialogue_id(DIALOGUE_ID.MAIN_INTRO);
+			break;
+			
+		case "LEVEL-ONE-INTRO":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL_ONE_INTRO);
+			break;
+			
+		case "LEVEL-ONE-OUTRO":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL_ONE_OUTRO);
+			break;
+			
+		case "LEVEL-TWO-INTRO":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL_TWO_INTRO);
+			break;
+			
+		case "LEVEL-TWO-OUTRO":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL_TWO_OUTRO);
+			break;
+			
+		case "LEVEL-THREE-INTRO":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL_THREE_INTRO);
+			break;
+			
+		case "LEVEL-THREE-OUTRO":
+			set_up_dialogue_id(DIALOGUE_ID.LEVEL_THREE_OUTRO);
+			break;
+			
+		case "EPILOGUE":
+			set_up_dialogue_id(DIALOGUE_ID.EPILOGUE);
 			break;
 		
 		default:
@@ -326,6 +405,9 @@ function public_resume_dialogue()
 // Function used internally to close the dialogue window when the pages are exhausted
 function close_dialogue_box()
 {
+	array_resize(page_list, 0);
+	current_page_idx = 0;
+	page_amount = 0;
 	dialogue_current_state = DIALOGUE_STATE.CLOSING;
 }
 
@@ -380,9 +462,6 @@ function dialogue_go_to_next_page()
 	if (current_page_idx >= page_amount)
 	{
 		// No next page, close dialogue box
-		array_resize(page_list, 0);
-		current_page_idx = 0;
-		page_amount = 0;
 		close_dialogue_box();
 	}
 	// Else, Go to next page
@@ -445,7 +524,7 @@ function try_text_skip_advance()
 			return;
 	}
 	// Play dialogue page switch sound
-	audio_play_sound(snd_dialogue_next_page, 1, false, 1, 0, 2);
+	audio_play_sound(snd_dialogue_next_page, 1, false, get_volume_scaled(), 0, 2);
 }
 
 // <------------------------> CUSTOM TYPEWRITTER EVENTS <------------------------>

@@ -26,24 +26,6 @@ global.note_timing_offset = 0.5;
 //menus
 global.max_level = 1; //controls what levels player can access
 
-// possible game states
-enum GAME_STATES{
-	 PLAY =0,
-	 PAUSE =1,
-	 OVER=2,
-	 DIALOGUE=3,
-	 WIN=4,
-	 MENU=5,
-	 PAUSE_TIMER =6,
-	 TIMER =7,
-	 
-		 
-	
-	 
-	
-	
-}
-
 
 // Game state
 global.current_game_state = GAME_STATES.MENU;

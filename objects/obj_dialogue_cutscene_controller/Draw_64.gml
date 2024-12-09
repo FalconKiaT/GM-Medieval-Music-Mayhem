@@ -109,6 +109,10 @@ switch (dialogue_current_type)
 		break;
 }
 
+// Set the skip button position
+skip_button_id.x = diagzone_top_right.x + skip_button_x_offset
+skip_button_id.y = diagzone_top_right.y + skip_button_y_offset
+
 // Draw Text
 if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 {
@@ -116,10 +120,10 @@ if (dialogue_current_state == DIALOGUE_STATE.ACTIVE)
 	// Draw speaker if the current layout needs it
 	if (should_dialogue_display_name)
 	{
+		// Draw the speaker name in black before to make a neat shadow
+		scribble("[font_dialogue][#000000]" + current_speaker_str).draw(inner_text_box_top_left.x + 1, inner_text_box_top_left.y + 1);
 		// Draw Speaker's name
-		draw_set_font(font_dialogue)
-		var _formatted_str = "[" + current_speaker_color_str + "]" + current_speaker_str + "[/color]";
-		draw_text_scribble(inner_text_box_top_left.x, inner_text_box_top_left.y, _formatted_str);
+		scribble("[font_dialogue][" + current_speaker_color_str + "]" + current_speaker_str).draw(inner_text_box_top_left.x, inner_text_box_top_left.y);
 		// Add shift
 		_added_y_shift = const_speaker_name_shift_amount;
 	}
