@@ -9,7 +9,10 @@
     "name":"Level_music",
     "path":"folders/Objects/Meta/Level_music.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_music_controller_generic",
+    "path":"objects/obj_music_controller_generic/obj_music_controller_generic.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
