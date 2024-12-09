@@ -92,7 +92,7 @@ if(keyboard_check_pressed(vk_f1)){
 // win  condition
 if(global.current_game_state == GAME_STATES.PLAY && (global.music_timestamp >= global.music_timestamp_max)){
 	global.current_game_state = GAME_STATES.WIN
-	alarm[0] = game_get_speed(gamespeed_fps) * 1;
+	alarm[0] = game_get_speed(gamespeed_fps) * 3;
 }
 
 
