@@ -3,10 +3,6 @@
 
 // <------------------------> EVENTS <------------------------>
 
-
-
-
-
 // Function to lock the skip
 function lock_skip()
 {
@@ -201,7 +197,7 @@ scribble_typists_add_event("set_only_text", set_only_text_typist);
 // Function to set the dialogue to only text and no background
 function set_only_text_no_background()
 {
-	dialogue_general_typist.sound(snd_silent, main_typist_overlap, main_typist_min_pitch, main_typist_max_pitch, main_typist_gain);
+	dialogue_general_typist.sound(snd_general_dialogue, main_typist_overlap, main_typist_min_pitch, main_typist_max_pitch, main_typist_gain);
 	dialogue_current_type = DIALOGUE_TYPE.NO_BACKGROUND_ONLY_TEXT;
 	should_dialogue_display_name = false;
 }
@@ -391,7 +387,8 @@ scribble_typists_add_event("execute_timeline_moment", execute_timeline_moment_ty
 
 
 
-
+// Finished adding events
+global.typewritter_events_defined = true;
 
 
 
