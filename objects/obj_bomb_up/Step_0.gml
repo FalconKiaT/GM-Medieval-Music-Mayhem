@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-health_effect = 0
-broadcast_message = ANIM_MESSAGES.BOMB_AVOIDED
-queued = true
-feedback_object = obj_feedback_empty
+if (image_alpha < 1 and queued) {
+	queued = false
+	ds_queue_dequeue(global.current_spawned_left_arrows)
+}
