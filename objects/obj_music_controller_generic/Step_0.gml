@@ -57,27 +57,28 @@ function click_last_arrow(_arrow_queue) {
 				var _accuracy_score = spawn_feedback(_current_arrow.x, _current_arrow.y, _note_delay)
 				health += _accuracy_score / 100 * health_recover_multiplier
 				if (health > 100) {health = 100}
-				if (_accuracy_score == 0) {
-					health -= 10	
-				}
 				if (_current_arrow.broadcast_message == ANIM_MESSAGES.LIGHTNING) {
 					if (cur_lightning_streak == 0 and cur_lightning_delay == 0) {
 						cur_lightning_streak += 1
 					}
-					else if (_accuracy_score > 0) {
+					else if (cur_lightning_streak > 0 and cur_lightning_delay > 0) {
 						cur_lightning_streak += 1
 						if (cur_lightning_streak == 3) {
 							// FINISHED THE LIGHTNING COMBO SUCCESSFULLY
 							cur_lightning_streak = 0
+							cur_lightning_delay = 0
 							score += 2000
 							health = 100
 						}
 					}
 				}
-				score += _accuracy_score
-				ds_queue_dequeue(_arrow_queue)
-				instance_destroy(_current_arrow)
-				
+				if (_accuracy_score == 0) {
+					health -= 10	
+				} else if (_accuracy_score > 0) {
+					score += _accuracy_score
+					ds_queue_dequeue(_arrow_queue)
+					instance_destroy(_current_arrow)
+				}
 				break
 			case ANIM_MESSAGES.BOMB_AVOIDED:
 				var _range_percent = abs(_note_delay * arrow_velocity) / valid_arrow_range
