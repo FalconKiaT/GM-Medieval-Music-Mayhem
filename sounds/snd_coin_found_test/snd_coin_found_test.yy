@@ -12,8 +12,8 @@
   "duration":0.539002,
   "name":"snd_coin_found_test",
   "parent":{
-    "name":"Testing",
-    "path":"folders/Sounds/FX/Testing.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

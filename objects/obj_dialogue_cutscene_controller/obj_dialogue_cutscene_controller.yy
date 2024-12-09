@@ -14,8 +14,8 @@
   "name":"obj_dialogue_cutscene_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialogue-Cutscene",
-    "path":"folders/Objects/Meta/Dialogue-Cutscene.yy",
+    "name":"Meta",
+    "path":"folders/Objects/Meta.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -35,7 +35,6 @@
     {"$GMObjectProperty":"v1","%Name":"enable_debug_tools","filters":[],"listItems":[],"multiselect":false,"name":"enable_debug_tools","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"start_dialogue_on_create","filters":[],"listItems":[],"multiselect":false,"name":"start_dialogue_on_create","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"input_dialogue","filters":[],"listItems":[],"multiselect":false,"name":"input_dialogue","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"DEMO","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"do_skip_opening_anim","filters":[],"listItems":[],"multiselect":false,"name":"do_skip_opening_anim","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

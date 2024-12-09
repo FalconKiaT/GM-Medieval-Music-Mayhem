@@ -12,8 +12,8 @@
   "duration":0.604167,
   "name":"snd_coin_falling_test",
   "parent":{
-    "name":"Testing",
-    "path":"folders/Sounds/FX/Testing.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -123,7 +123,6 @@ switch (dialogue_current_type)
 		break;
 		
 	case DIALOGUE_TYPE.ONLY_TEXT:
-	case DIALOGUE_TYPE.NO_BACKGROUND_ONLY_TEXT:
 		// Its only the text box, so compute its coordinates
 		outer_text_box_top_left.x = diagzone_top_left.x;
 		outer_text_box_top_left.y = diagzone_top_left.y;

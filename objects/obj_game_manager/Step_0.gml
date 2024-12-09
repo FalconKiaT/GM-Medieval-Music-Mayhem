@@ -5,7 +5,7 @@
 // Health to gameover detection
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {
-	global.current_game_state = GAME_STATES.OVER; // game over
+	global.current_game_state = GAME_STATES.OVER;//game over
 	
 	alarm[0] = game_get_speed(gamespeed_fps) * 1;// timer
 }
@@ -16,7 +16,6 @@ if(keyboard_check_pressed(vk_escape)){
 		
 		if ((global.current_game_state == GAME_STATES.PLAY && global.current_game_state != GAME_STATES.PAUSE)){
 			show_debug_message("paused")
-			
 			show_debug_message(global.current_game_state)
 			_pervious_game_state = global.current_game_state;
 			global.current_game_state = GAME_STATES.PAUSE;
@@ -54,7 +53,7 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 	
 	if (down_key || up_key){
 		// Author: NenadSimic for the sound effect CC Attribution 3.0 Unported 
-		audio_play_sound(snd_button_clicked,1,false, get_volume_scaled());
+		audio_play_sound(snd_button_clicked,1,false);
 	}
 	if (enter_key){
 		switch(pos_pause){

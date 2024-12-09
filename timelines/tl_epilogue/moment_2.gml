@@ -1,1 +1,0 @@
-obj_epilogue_bg_set.sprite_index = spr_epilogue_08

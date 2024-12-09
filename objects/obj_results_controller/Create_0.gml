@@ -13,7 +13,7 @@ health_text_anchor = new vector(room_width/2 + healthbar_offset.x, room_height/2
 
 
 // Play background music
-//music_id = audio_play_sound(snd_menu_music, 1, true, get_volume_scaled())
+//music_id = audio_play_sound(snd_menu_music, 1, true)
 */
 
 // Boolean to only broadcast once

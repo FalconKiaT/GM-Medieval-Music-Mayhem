@@ -46,8 +46,8 @@
   ],
   "name":"rm_results",
   "parent":{
-    "name":"Menus",
-    "path":"folders/Rooms/Menus.yy",
+    "name":"menus",
+    "path":"folders/Rooms/menus.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

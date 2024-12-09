@@ -13,13 +13,10 @@
 function run_func_on_condition(_func_condition, _func_to_execute) 
 {
 	// Make sure scheduler timer object exists
-	if (global.scheduler_timer_obj == undefined)
+	if (global.global_scheduler_timer_exists == undefined)
 	{
-		global.scheduler_timer_obj = instance_create_layer(0,0,"Instances", obj_sheduler_timer)
+		instance_create_layer(0,0,"Instances", obj_sheduler_timer)
 	}
-	
-	// Make sure that the object is active and not disabled
-	instance_activate_object(global.scheduler_timer_obj);
 
 	// Create it and add it to list
 	var _condition_func = conditioned_func_constructor(_func_condition, _func_to_execute);

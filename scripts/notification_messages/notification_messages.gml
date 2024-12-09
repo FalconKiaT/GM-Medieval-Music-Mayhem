@@ -5,13 +5,11 @@ enum MESSAGES
 	 GAME_RESUMED,
 	 DIALOGUE_STARTED,
 	 DIALOGUE_FINISHED,
-	 DIALOGUE_SKIP_CLICKED,
 }
 
 enum ANIM_MESSAGES
 {
-	NOTE_MISSED,
-	BOMB_AVOIDED,
+	NOTE_MISSED
 }
 
 // Enumerator used to disable certain UI elements on Results Screen

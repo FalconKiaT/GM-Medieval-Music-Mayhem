@@ -2,7 +2,7 @@
 
 // STATES
 are_screens_moving = false
-num_of_tutorial_screens = 4;
+num_of_tutorial_screens = 3;
 current_screen = 1;
 
 // TIMER
@@ -30,12 +30,14 @@ reciever.add(TUTORIAL_SCREEN.PLAYER_CLICKED_LEFT, function()
 		
 		// Run timer
 		are_screens_moving = true;
-		start_timer();
+		is_timer_running = true;
+		timer_count = 0;
 	}
 });
 
 reciever.add(TUTORIAL_SCREEN.PLAYER_CLICKED_RIGHT, function() 
 {
+	show_debug_message("Hello")
 	// Only do a move if the current tutorial is not the rightmost one
 	if (current_screen < num_of_tutorial_screens && !are_screens_moving)
 	{
@@ -51,35 +53,7 @@ reciever.add(TUTORIAL_SCREEN.PLAYER_CLICKED_RIGHT, function()
 		
 		// Run timer
 		are_screens_moving = true;
-		start_timer();
+		is_timer_running = true;
+		timer_count = 0;
 	}
 });
-
-// Helper function to initiatie the timer
-function start_timer()
-{
-	run_func_after_delay_seconds(tutorial_switch_duration + 0.01,
-	function()
-	{
-		// Movement finished
-		are_screens_moving = false;
-		
-		// re-enable arrows depending on index
-		if (current_screen <= 1)
-		{
-			// No left screens left, only enable right
-			broadcast(TUTORIAL_SCREEN.ENABLE_RIGHT_ARROW)
-		}
-		else if (current_screen >= num_of_tutorial_screens)
-		{
-			// No more right screens, only enable left
-			broadcast(TUTORIAL_SCREEN.ENABLE_LEFT_ARROW)
-		}
-		else
-		{
-			// We have screens to both sides
-			broadcast(TUTORIAL_SCREEN.ENABLE_RIGHT_ARROW)
-			broadcast(TUTORIAL_SCREEN.ENABLE_LEFT_ARROW)
-		}
-	})
-}
