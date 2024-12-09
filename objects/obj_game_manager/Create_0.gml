@@ -38,11 +38,6 @@ pos_pause=0
 
 // pause menu end
 
-// detects level
-if (room_exists(rm_dialogue_level1_intro)){
-	global.current_level = 1;
-}
-
 
 
 

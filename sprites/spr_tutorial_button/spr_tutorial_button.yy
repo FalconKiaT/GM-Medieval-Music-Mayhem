@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_tutorial_button",
   "bboxMode":0,
-  "bbox_bottom":76,
+  "bbox_bottom":75,
   "bbox_left":0,
-  "bbox_right":235,
+  "bbox_right":234,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6d9370dd-f41d-48ca-ab1a-e7f82ce3c684","name":"6d9370dd-f41d-48ca-ab1a-e7f82ce3c684","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"bcf9d14a-2939-4f54-82db-81de1b193b8d","name":"bcf9d14a-2939-4f54-82db-81de1b193b8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"857fdf72-e436-487d-95bc-9fe269407ddd","name":"857fdf72-e436-487d-95bc-9fe269407ddd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":77,
+  "height":76,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ca93e23f-4dd4-487f-8708-d11e8784a6aa","blendMode":0,"displayName":"default","isLocked":false,"name":"ca93e23f-4dd4-487f-8708-d11e8784a6aa","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"99467e58-d4e1-46c1-931a-68fcdc84b129","blendMode":0,"displayName":"default","isLocked":false,"name":"99467e58-d4e1-46c1-931a-68fcdc84b129","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_tutorial_button",
   "nineSlice":null,
@@ -49,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -69,13 +70,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6d9370dd-f41d-48ca-ab1a-e7f82ce3c684","path":"sprites/spr_tutorial_button/spr_tutorial_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f5fb2f32-3691-495b-b1f3-659e9b139a5c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bcf9d14a-2939-4f54-82db-81de1b193b8d","path":"sprites/spr_tutorial_button/spr_tutorial_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ad3f41a1-8f32-4259-871d-733c030cc208","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"857fdf72-e436-487d-95bc-9fe269407ddd","path":"sprites/spr_tutorial_button/spr_tutorial_button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"6967b2ae-3e8b-4ca2-95c3-47319b50e013","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":118,
+    "xorigin":117,
     "yorigin":38,
   },
   "swatchColours":null,
@@ -86,5 +90,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":236,
+  "width":235,
 }

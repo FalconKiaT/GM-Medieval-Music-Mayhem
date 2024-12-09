@@ -2,12 +2,12 @@ health = 100;
 score = 0;
 switch global.current_level{
 	case 1:
-	
-	global.max_level = 2;
-	
+		if(global.max_level != 3){
+			global.max_level = 2;
+		}
 	break;
 	case 2:
-	global.max_level = 3;
+		global.max_level = 3;
 	break;
 	
 }

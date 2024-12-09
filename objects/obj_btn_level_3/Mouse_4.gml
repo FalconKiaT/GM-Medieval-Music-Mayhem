@@ -2,7 +2,8 @@
 
 if(global.max_level >= 3)
 {
+	global.current_level = 3;
 	audio_play_sound(snd_button_clicked, 1, false, 1, 0, 2);
 	audio_stop_all()
-	room_goto(rm_level2); //replace with lvl 3
+	room_goto(rm_dialogue_level3_intro); //replace with lvl 3
 }

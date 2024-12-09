@@ -12,8 +12,14 @@ switch global.current_level{
 	case 2:
 	health = 100;
 	score = 0;
-	room_goto(rm_prototype)
+	room_goto(rm_level2)
 	break;
+	case 3:
+	health = 100;
+	score = 0;
+	room_goto(rm_level3)
+	break;
+	
 	//so on 
 	
 }

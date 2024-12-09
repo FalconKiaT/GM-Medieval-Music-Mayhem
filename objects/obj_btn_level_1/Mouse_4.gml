@@ -3,6 +3,7 @@
 
 if(global.max_level >= 1)
 {
+	global.current_level =1;
 	audio_play_sound(snd_button_clicked, 1, false, 1, 0, 2);
 	audio_stop_all()
 	room_goto(rm_dialogue_level1_intro);
