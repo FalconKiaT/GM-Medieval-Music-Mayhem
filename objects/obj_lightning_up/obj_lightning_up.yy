@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bomb_right",
+  "%Name":"obj_lightning_up",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bomb_right",
+  "name":"obj_lightning_up",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bomb",
-    "path":"folders/Objects/Arrows/Bomb.yy",
+    "name":"Lightning",
+    "path":"folders/Objects/Arrows/Lightning.yy",
   },
   "parentObjectId":{
-    "name":"obj_right_arrow",
-    "path":"objects/obj_right_arrow/obj_right_arrow.yy",
+    "name":"obj_up_arrow",
+    "path":"objects/obj_up_arrow/obj_up_arrow.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bomb_right",
-    "path":"sprites/spr_bomb_right/spr_bomb_right.yy",
+    "name":"spr_bomb_up",
+    "path":"sprites/spr_bomb_up/spr_bomb_up.yy",
   },
   "spriteMaskId":null,
   "visible":true,

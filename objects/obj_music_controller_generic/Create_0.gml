@@ -20,6 +20,7 @@ arrow_velocity = 300 // In pixels per second
 arrow_distance = 500 // How far away from the slot does the arrow spawn?
 valid_arrow_range = 100 // How far away can the arrow be and still be counted as a hit? (pixels)
 health_recover_multiplier = 4 // How much health is recovered on hit?
+lightning_streak_maximum_time = 2.5 // In seconds. Maximum time for a streak from first to last lightning 
 
 // ---
 // How many arrows of each type are currently spawned?
@@ -29,6 +30,8 @@ cur_arrow_index_right = 0
 cur_arrow_index_bombs = 0
 cur_arrow_index_switch = 0
 cur_arrow_index_lightning = 0
+cur_lightning_streak = 0
+cur_lightning_delay = 0
 // ---
 
 alarm_set(0, 100) // Delay until start of the song
@@ -52,6 +55,9 @@ mapped_timestamps_up = []
 mapped_timestamps_left = []
 mapped_timestamps_right = []
 mapped_timestamps_bombs = [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6]
+mapped_timestamps_switch = []
+mapped_timestamps_lightning = []
+
 
 // current song --- (Debug, please overwrite on level specific music controllers)
 global.song_playing = snd_mus_mongrel_dance

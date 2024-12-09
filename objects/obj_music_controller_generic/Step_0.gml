@@ -1,6 +1,15 @@
 /// @description Handle input and destroy arrows
 // You can write your code in this editor
 
+// Lightning timer
+if (cur_lightning_streak > 0) {
+	cur_lightning_delay += delta_time / 1000000	
+}
+if (cur_lightning_delay > lightning_streak_maximum_time) {
+	cur_lightning_delay = 0
+	cur_lightning_streak = 0
+}
+
 function spawn_feedback(_x, _y, _delay) {
 	var _accuracy_score = 0
 	var _feedback_obj = obj_feedback_generic
@@ -41,17 +50,43 @@ function click_last_arrow(_arrow_queue) {
 	if (!ds_queue_empty(_arrow_queue)) { // Make sure there are arrows in the channel
 		var _current_arrow = ds_queue_head(_arrow_queue)
 		var _note_delay = abs(global.music_timestamp - _current_arrow.desired_timestamp)
-		
-		var _accuracy_score = spawn_feedback(_current_arrow.x, _current_arrow.y, _note_delay)
-		health += _accuracy_score / 100 * health_recover_multiplier
-		if (health > 100) {health = 100}
-		if (_accuracy_score == 0) {
-			health -= 10	
-		}
-		if (_accuracy_score >= 0) {
-			score += _accuracy_score
-			ds_queue_dequeue(_arrow_queue)
-			instance_destroy(_current_arrow)
+		switch(_current_arrow.broadcast_message) {
+			case ANIM_MESSAGES.CHANNEL_SWITCH:
+			case ANIM_MESSAGES.LIGHTNING:
+			case ANIM_MESSAGES.NOTE_MISSED: // If it's a normal arrow
+				var _accuracy_score = spawn_feedback(_current_arrow.x, _current_arrow.y, _note_delay)
+				health += _accuracy_score / 100 * health_recover_multiplier
+				if (health > 100) {health = 100}
+				if (_accuracy_score == 0) {
+					health -= 10	
+				}
+				if (_current_arrow.broadcast_message == ANIM_MESSAGES.LIGHTNING) {
+					if (cur_lightning_streak == 0 and cur_lightning_delay == 0) {
+						cur_lightning_streak += 1
+					}
+					else if (_accuracy_score > 0) {
+						cur_lightning_streak += 1
+						if (cur_lightning_streak == 3) {
+							// FINISHED THE LIGHTNING COMBO SUCCESSFULLY
+							cur_lightning_streak = 0
+							score += 2000
+							health = 100
+						}
+					}
+				}
+				score += _accuracy_score
+				ds_queue_dequeue(_arrow_queue)
+				instance_destroy(_current_arrow)
+				
+				break
+			case ANIM_MESSAGES.BOMB_AVOIDED:
+				var _range_percent = abs(_note_delay * arrow_velocity) / valid_arrow_range
+				if (_range_percent < 2) {
+					ds_queue_dequeue(_arrow_queue)
+					instance_destroy(_current_arrow)
+					health -= 20
+				}
+				break
 		}
 	}
 }

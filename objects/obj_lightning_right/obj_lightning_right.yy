@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bomb_right",
+  "%Name":"obj_lightning_right",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bomb_right",
+  "name":"obj_lightning_right",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bomb",
-    "path":"folders/Objects/Arrows/Bomb.yy",
+    "name":"Lightning",
+    "path":"folders/Objects/Arrows/Lightning.yy",
   },
   "parentObjectId":{
     "name":"obj_right_arrow",
