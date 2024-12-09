@@ -23,7 +23,8 @@ global.do_draw_fps = false;
 // <------------------------> Menus <------------------------>
 global.max_level = 1.0; //controls what levels player can access
 
-
+// Music system boolean
+global.do_run_music_system = true;
 
 // <------------------------> possible game states <------------------------>
 enum GAME_STATES{

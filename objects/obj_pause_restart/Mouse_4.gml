@@ -6,5 +6,8 @@ if (!visible)
 	return;
 }
 
-show_debug_message("Broadcaster Restart Clicked from object")
-broadcast(PAUSE_MENU.RESTART_BTN_CLICKED)
+//global.current_game_state = _pervious_game_state;
+audio_stop_all();
+score = 0;
+health = 100;
+room_restart();

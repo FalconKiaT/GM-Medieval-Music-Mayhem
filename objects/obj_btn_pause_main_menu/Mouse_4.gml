@@ -5,4 +5,8 @@ if (!visible)
 	return;
 }
 
-broadcast(PAUSE_MENU.MAIN_MENU_CLICKED)
+// Set vars
+health = 100;
+score = 0;
+audio_stop_all();
+room_goto(rm_mainMenu); //switch room

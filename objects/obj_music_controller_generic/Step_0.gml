@@ -1,6 +1,16 @@
 /// @description Handle input and destroy arrows
 // You can write your code in this editor
 
+// <-------------------> IAN ADDED <------------------->
+
+if (!global.do_run_music_system)
+{
+	return;
+}
+
+// <-------------------> END ADDED <------------------->
+
+
 function spawn_feedback(_x, _y, _delay) {
 	var _accuracy_score = 0
 	var _feedback_obj = obj_feedback_generic

@@ -7,57 +7,15 @@ current_pause_state = false
 // Broadcast System
 receiver = new Receiver();
 
-receiver.add(MESSAGES.COUNTDOWN_FINISHED, function() 
-{
-    global.current_game_state = GAME_STATES.PLAY;
-	audio_resume_all()
-	instance_activate_object(obj_music_controller_generic)
-	show_debug_message("Called COUNTDOWN FINISHED")
-	instance_activate_layer("Arrows");
-});
-
-receiver.add(PAUSE_MENU.RESTART_BTN_CLICKED, function() 
-{
-    //global.current_game_state = _pervious_game_state;
-	audio_stop_all();
-	score = 0;
-	health = 100;
-	show_debug_message("Called Restart Clicked")
-	//room_restart();
-});
 
 receiver.add(PAUSE_MENU.RESUME_CLICKED, function() 
 {
-    show_debug_message("Called RESUME CLICKED")
 	// Perform different behaviour depending on room
-	switch(room)
-	{
-		// Dont do countdown on non-game rooms
-		case rm_dialogue_level1_intro:
-			toggle_pause();
-			break;
-	
-		// Perform countdown if on level
-		case rm_level1:
-			//global.current_game_state = GAME_STATES.PAUSE_TIMER;
-			toggle_pause();
-			instance_create_layer(room_width/2,room_height/2,"Meta",obj_countdown)
-			break;
-	}
+	make_pause_visible(false);
+	on_game_resumed();
+	broadcast(MESSAGES.GAME_RESUMED)
+	current_pause_state = false
 });
-
-receiver.add(PAUSE_MENU.MAIN_MENU_CLICKED, function() 
-{
-    show_debug_message("Called MAIN_MENU_CLICKED")
-	health = 100;
-	score = 0;
-	audio_stop_all();
-	global.current_level = 1; // ?????
-	global.current_game_state = GAME_STATES.MENU;
-	room_goto(rm_mainMenu); //switch room
-});
-
-
 
 // Function that will toggle the pause
 function toggle_pause()
@@ -68,6 +26,7 @@ function toggle_pause()
 		// After finishing, broadcast pause
 		on_game_paused();
 		broadcast(MESSAGES.GAME_PAUSED)
+		broadcast(PAUSE_MENU.INTERRUPT_COUNTDOWN)
 		current_pause_state = true;
 	}
 	else
@@ -88,8 +47,6 @@ function on_game_paused()
 	{
 		// De-activate music controller on level specific rooms
 		case rm_level1:
-			instance_deactivate_object(obj_music_controller_generic)
-			instance_deactivate_layer("Arrows");
 			audio_pause_all()
 			break;
 	}
@@ -97,7 +54,17 @@ function on_game_paused()
 
 function on_game_resumed()
 {
+	switch(room)
+	{
+		// Dont do countdown on non-game rooms
+		case rm_dialogue_level1_intro:
+			break;
 	
+		// Perform countdown if on level
+		case rm_level1:
+			instance_create_layer(room_width/2,room_height/2,"Meta",obj_countdown)
+			break;
+	}
 }
 
 

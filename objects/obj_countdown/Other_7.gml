@@ -1,3 +1,3 @@
 /// @description Destory Object and Resume
-broadcast(MESSAGES.COUNTDOWN_FINISHED)
+audio_resume_all();
 instance_destroy()

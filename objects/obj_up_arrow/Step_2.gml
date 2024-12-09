@@ -1,6 +1,15 @@
 /// @description Move and check for out of bounds
 // You can write your code in this editor
 
+// <-------------------> IAN ADDED <------------------->
+
+if (!global.do_run_music_system)
+{
+	return;
+}
+
+// <-------------------> END ADDED <------------------->
+
 event_inherited()
 
 y += arrow_velocity * dt

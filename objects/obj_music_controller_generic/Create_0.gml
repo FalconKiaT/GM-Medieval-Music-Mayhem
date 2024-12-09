@@ -1,5 +1,26 @@
 /// @description Runtime variable definitions
 // You can write your code in this editor
+
+
+
+// <-------------------> IAN ADDED <------------------->
+
+receiver = new Receiver();
+
+receiver.add(MESSAGES.GAME_PAUSED, function() 
+{
+    global.do_run_music_system = false
+});
+
+receiver.add(MESSAGES.COUNTDOWN_FINISHED, function() 
+{
+    global.do_run_music_system = true
+});
+
+
+// <-------------------> END ADDED <------------------->
+
+
 global.music_timestamp = 0
 global.music_timestamp_max = 185.81;
 global.music_progress = 0;

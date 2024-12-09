@@ -2,7 +2,7 @@
 
 receiver = new Receiver();
 
-receiver.add(MESSAGES.GAME_PAUSED, function() 
+receiver.add(PAUSE_MENU.INTERRUPT_COUNTDOWN, function() 
 {
     // Interrupt countdown
 	instance_destroy();
