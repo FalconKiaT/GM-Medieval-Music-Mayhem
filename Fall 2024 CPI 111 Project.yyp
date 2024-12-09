@@ -460,7 +460,6 @@
     {"id":{"name":"spr_wiz_neutral","path":"sprites/spr_wiz_neutral/spr_wiz_neutral.yy",},},
     {"id":{"name":"spr_wiz_shocked","path":"sprites/spr_wiz_shocked/spr_wiz_shocked.yy",},},
     {"id":{"name":"spr_wizard","path":"sprites/spr_wizard/spr_wizard.yy",},},
-    {"id":{"name":"Sprite101","path":"sprites/Sprite101/Sprite101.yy",},},
     {"id":{"name":"temp_bg_menu","path":"sprites/temp_bg_menu/temp_bg_menu.yy",},},
     {"id":{"name":"temp_bg_results","path":"sprites/temp_bg_results/temp_bg_results.yy",},},
     {"id":{"name":"temp_bg","path":"sprites/temp_bg/temp_bg.yy",},},

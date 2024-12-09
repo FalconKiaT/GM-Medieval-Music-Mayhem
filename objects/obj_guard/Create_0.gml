@@ -2,12 +2,12 @@
 /// @description Initialize Animation System
 // <------------------------> ANIMATION SYSTEM <------------------------>
 AnimationInit(); //set up animation
-anim_Spd = 0.4; //30fps * 0.333 = 10fps
+anim_Spd = 0.4; //30fps * 0.4 = 12fps
 
 //Define an idle animation using only the first frame of the sprite
 AnimationAdd("IDLE",noone,noone,anim_Spd,1,7);
-AnimationAddFinite("BOMB",noone,noone,anim_Spd,8,18,1);
-AnimationAddFinite("SWITCH",noone,noone,anim_Spd,19,29,1);
+AnimationAddChained("BOMB",noone,noone,anim_Spd,8,18,1,"IDLE");
+AnimationAddChained("SWITCH",noone,noone,anim_Spd,19,29,1,"IDLE");
 
 AnimationSet("IDLE");
 
