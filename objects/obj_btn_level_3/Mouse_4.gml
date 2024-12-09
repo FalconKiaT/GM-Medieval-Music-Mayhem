@@ -7,5 +7,6 @@ if(global.max_level >= 3)
 	// Stop main menu music
 	audio_stop_sound(snd_menu_music)
 	// Go to level
+	global.current_level = 3;
 	room_goto(rm_prototype); //replace with lvl 3
 }

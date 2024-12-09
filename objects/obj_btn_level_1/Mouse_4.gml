@@ -8,5 +8,6 @@ if(global.max_level >= 1)
 	// Stop main menu music
 	audio_stop_sound(snd_menu_music)
 	// Go to level
+	global.current_level = 1;
 	room_goto(rm_dialogue_level1_intro);
 }
