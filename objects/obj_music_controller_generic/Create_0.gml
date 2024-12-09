@@ -54,7 +54,7 @@ global.current_spawned_right_arrows = ds_queue_create()
 mapped_timestamps_up = [] 
 mapped_timestamps_left = []
 mapped_timestamps_right = []
-mapped_timestamps_bombs = [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6]
+mapped_timestamps_bombs = []
 mapped_timestamps_switch = []
 mapped_timestamps_lightning = []
 

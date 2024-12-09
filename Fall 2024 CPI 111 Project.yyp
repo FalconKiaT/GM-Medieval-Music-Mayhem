@@ -407,6 +407,8 @@
     {"id":{"name":"snd_menu_music","path":"sounds/snd_menu_music/snd_menu_music.yy",},},
     {"id":{"name":"snd_mus_minstrel_guild","path":"sounds/snd_mus_minstrel_guild/snd_mus_minstrel_guild.yy",},},
     {"id":{"name":"snd_mus_mongrel_dance","path":"sounds/snd_mus_mongrel_dance/snd_mus_mongrel_dance.yy",},},
+    {"id":{"name":"snd_mus_rock","path":"sounds/snd_mus_rock/snd_mus_rock.yy",},},
+    {"id":{"name":"snd_mus_URB","path":"sounds/snd_mus_URB/snd_mus_URB.yy",},},
     {"id":{"name":"snd_player_dialogue","path":"sounds/snd_player_dialogue/snd_player_dialogue.yy",},},
     {"id":{"name":"snd_question_01","path":"sounds/snd_question_01/snd_question_01.yy",},},
     {"id":{"name":"snd_record_scratch","path":"sounds/snd_record_scratch/snd_record_scratch.yy",},},

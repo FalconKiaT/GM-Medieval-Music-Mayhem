@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_music_level3",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_music_level3",
   "overriddenProperties":[],
@@ -9,7 +11,10 @@
     "name":"Level_music",
     "path":"folders/Objects/Meta/Level_music.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_music_controller_generic",
+    "path":"objects/obj_music_controller_generic/obj_music_controller_generic.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
