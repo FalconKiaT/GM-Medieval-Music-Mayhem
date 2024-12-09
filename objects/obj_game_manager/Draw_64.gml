@@ -91,7 +91,6 @@ else  if (global.current_game_state == GAME_STATES.PAUSE_TIMER){
 	
 	instance_activate_all();
 	instance_create_layer(room_width/2,room_height/2,"Meta",obj_countdown)
-	audio_pause_all();
 
 	surface_free(pause_sur);
 	pause_sur = -1;
@@ -103,8 +102,8 @@ else  if (global.current_game_state == GAME_STATES.PAUSE_TIMER){
 	global.current_game_state = GAME_STATES.TIMER
 }
 else  if (global.current_game_state == GAME_STATES.TIMER){
-	audio_pause_all();
-
+	//audio_pause_all();
+	
 	surface_free(pause_sur);
 	pause_sur = -1;
 
