@@ -1,4 +1,4 @@
-//play the second level if unlocked
+//play the third level if unlocked
 
 if(global.max_level >= 3)
 {

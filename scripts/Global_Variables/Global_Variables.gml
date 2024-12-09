@@ -1,6 +1,6 @@
 /// @description Initialize global variables
 // might be better in a script
-
+/*
 //settings
 global.volume = 100; //a value 0-100 denoting game volume
 global.note_timing_offset = 0.5;
@@ -40,3 +40,4 @@ global.current_level= 0;
 
 // level scoring
 global.level_one_high_score =0;
+*/
