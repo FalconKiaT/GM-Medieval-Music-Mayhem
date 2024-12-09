@@ -18,8 +18,6 @@ for file in files:
     right_map = []
     up_map = []
     bomb_map = []
-    channel_switch_map = []
-    lightning_map = []
     current_tick = 0
 
     # Get tempo
@@ -49,12 +47,6 @@ for file in files:
                 case 63:
                     bomb_map.append(current_time)
                     continue
-                case 64:
-                    channel_switch_map.append(current_time)
-                    continue
-                case 65:
-                    lightning_map.append(current_time)
-                    continue
                 case _:
                     print("Invalid note")
         elif msg.type == "note_off":
@@ -64,6 +56,4 @@ for file in files:
     print(f"up map: {up_map}")
     print(f"right map: {right_map}")
     print(f"bomb map: {bomb_map}")
-    print(f"channel switch map: {channel_switch_map}")
-    print(f"lightning map: {lightning_map}")
 

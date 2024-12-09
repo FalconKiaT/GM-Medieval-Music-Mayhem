@@ -22,11 +22,6 @@ switch (dialogue_current_state)
 		{
 			break;
 		}
-		// Skip opening animation if set to do so
-		if (do_skip_opening_anim)
-		{
-			opening_anim_scaler = 1;
-		}
 		// Animate the dialogue box opening
 		var scale_speed = 1 / (game_get_speed(gamespeed_fps) * const_opening_anim_duration);
 		opening_anim_scaler += scale_speed;
@@ -34,10 +29,9 @@ switch (dialogue_current_state)
 		if (opening_anim_scaler >= 1)
 		{
 			// Finished
-			show_debug_message("finished")
 			opening_anim_scaler = 1;
 			dialogue_current_state = DIALOGUE_STATE.ACTIVE;
-			skip_button_id.visible = true;
+			// TODO: TRIGGER TEXT
 		}
 		break;
 		
@@ -47,8 +41,6 @@ switch (dialogue_current_state)
 		{
 			break;
 		}
-		// Disable skip button
-		skip_button_id.visible = false;
 		// Animate the dialogue box closing
 		var scale_speed = 1 / (game_get_speed(gamespeed_fps) * const_opening_anim_duration);
 		opening_anim_scaler -= scale_speed;
@@ -112,7 +104,7 @@ if (is_timeline_running)
 	// It did, stop it
 	timeline_running = false;
 	// null the timeline index
-	timeline_index = tl_empty;
+	timeline_index = undefined;
 	// Reset position
 	timeline_position = 0;
 	// Set the state bool
@@ -122,6 +114,13 @@ if (is_timeline_running)
 // DEBUGGING
 if (enable_debug_tools)
 {
-	
+	if (keyboard_check_pressed(ord("2")))
+	{
+		// Skip the dialogue
+		array_resize(page_list, 0);
+		current_page_idx = 0;
+		page_amount = 0;
+		close_dialogue_box();
+	}
 }
 

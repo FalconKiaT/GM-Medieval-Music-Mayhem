@@ -3,6 +3,7 @@
   "%Name":"obj_bomb_left",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_bomb_left",
@@ -11,10 +12,7 @@
     "name":"Bomb",
     "path":"folders/Objects/Arrows/Bomb.yy",
   },
-  "parentObjectId":{
-    "name":"obj_left_arrow",
-    "path":"objects/obj_left_arrow/obj_left_arrow.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

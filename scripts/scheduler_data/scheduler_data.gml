@@ -7,7 +7,7 @@ global.timed_func_list = ds_list_create();
 global.conditioned_func_list = ds_list_create();
 
 // Store a reference to the timer obj
-global.scheduler_timer_obj = undefined;
+global.global_scheduler_timer_exists = undefined;
 
 // Global seed counter
 global.current_seed_val = 1;

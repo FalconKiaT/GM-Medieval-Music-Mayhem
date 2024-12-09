@@ -12,8 +12,8 @@
   "duration":0.227687,
   "name":"snd_button_clicked",
   "parent":{
-    "name":"Menus",
-    "path":"folders/Sounds/FX/Menus.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
