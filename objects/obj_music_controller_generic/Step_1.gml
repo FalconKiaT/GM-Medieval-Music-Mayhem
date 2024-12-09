@@ -106,7 +106,6 @@ var _dt = delta_time / 1000000 // how many seconds have passed since the last fr
 // Update the current timestamp. How far along is the song?
 if (is_music_playing) {
 	global.music_timestamp += _dt // Stored in seconds
-	global.music_timestamp_max = 185.81;
 }
 
 // Check if a arrow should be spawned in the up channel (and spawn it if it's time)
