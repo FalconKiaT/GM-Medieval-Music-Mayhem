@@ -209,7 +209,6 @@
     {"id":{"name":"obj_lightning_up","path":"objects/obj_lightning_up/obj_lightning_up.yy",},},
     {"id":{"name":"obj_main_menu_music","path":"objects/obj_main_menu_music/obj_main_menu_music.yy",},},
     {"id":{"name":"obj_music_controller_generic","path":"objects/obj_music_controller_generic/obj_music_controller_generic.yy",},},
-    {"id":{"name":"obj_music_controller_level1","path":"objects/obj_music_controller_level1/obj_music_controller_level1.yy",},},
     {"id":{"name":"obj_music_level1","path":"objects/obj_music_level1/obj_music_level1.yy",},},
     {"id":{"name":"obj_music_level2","path":"objects/obj_music_level2/obj_music_level2.yy",},},
     {"id":{"name":"obj_music_level3","path":"objects/obj_music_level3/obj_music_level3.yy",},},
