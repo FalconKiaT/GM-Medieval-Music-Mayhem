@@ -11,6 +11,8 @@ AnimationAdd("RIGHT",image_xscale,image_yscale,anim_Spd,11,12);
 AnimationAdd("UP",noone,noone,anim_Spd,3,4);
 AnimationAdd("MISS",noone,noone,anim_Spd,5,6);
 AnimationAdd("IDLE", noone, noone, anim_Spd,7,10);
+AnimationAdd("DEATH",image_xscale,image_yscale,anim_Spd,13,26);
+
 
 AnimationSet("IDLE");
 

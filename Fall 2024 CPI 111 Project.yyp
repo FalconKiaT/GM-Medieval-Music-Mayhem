@@ -403,6 +403,7 @@
     {"id":{"name":"__shd_scribble_bake_outline_8dir","path":"shaders/__shd_scribble_bake_outline_8dir/__shd_scribble_bake_outline_8dir.yy",},},
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},},
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
+    {"id":{"name":"death_sound","path":"sounds/death_sound/death_sound.yy",},},
     {"id":{"name":"snd_button_clicked","path":"sounds/snd_button_clicked/snd_button_clicked.yy",},},
     {"id":{"name":"snd_coin_falling_test","path":"sounds/snd_coin_falling_test/snd_coin_falling_test.yy",},},
     {"id":{"name":"snd_coin_found_test","path":"sounds/snd_coin_found_test/snd_coin_found_test.yy",},},

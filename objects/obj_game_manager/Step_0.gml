@@ -6,7 +6,8 @@
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {
 	global.current_game_state = GAME_STATES.OVER;//game over
-	
+	audio_stop_all();
+	audio_play_sound(death_sound,10,false);
 	alarm[0] = game_get_speed(gamespeed_fps) * 1;// timer
 }
 

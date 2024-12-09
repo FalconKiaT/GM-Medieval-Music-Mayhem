@@ -13,7 +13,7 @@ else if(keyboard_check_pressed(vk_up))
 	AnimationSet("UP");
 }
 if(global.current_game_state == GAME_STATES.OVER){
-	AnimationSet("UP");
+	AnimationSet("DEATH");
 }
 //Run set animations
 AnimationStep();
