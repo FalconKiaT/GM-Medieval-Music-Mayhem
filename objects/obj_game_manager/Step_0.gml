@@ -6,7 +6,8 @@
 if((health <= 0) && global.current_game_state == GAME_STATES.PLAY)
 {
 	global.current_game_state = GAME_STATES.OVER;//game over
-	
+	audio_stop_all();
+	audio_play_sound(death_sound,10,false);
 	alarm[0] = game_get_speed(gamespeed_fps) * 1;// timer
 }
 
@@ -86,12 +87,13 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 
 // debug for ending song
 if(keyboard_check_pressed(vk_f1)){
-	global.music_timestamp = 185.81
-}
-
-if(global.current_game_state == GAME_STATES.PLAY && (global.music_timestamp >= 185.81)){
 	global.current_game_state = GAME_STATES.WIN
-	alarm[0] = game_get_speed(gamespeed_fps) * 1;
+	alarm[0] = game_get_speed(gamespeed_fps) * 3;
+}
+// win  condition
+if(global.current_game_state == GAME_STATES.PLAY && (global.music_timestamp >= global.music_timestamp_max)){
+	global.current_game_state = GAME_STATES.WIN
+	alarm[0] = game_get_speed(gamespeed_fps) * 3;
 }
 
 

@@ -12,3 +12,5 @@ mapped_timestamps_bombs = [42.75, 51.125, 55.5625, 58.9375, 60.8125, 66.9375, 82
 
 // Set level 1 specific song
 global.song_playing = snd_mus_minstrel_guild;
+
+global.music_timestamp_max = 185;

@@ -205,16 +205,13 @@
     {"id":{"name":"obj_level_one_dialogue_out","path":"objects/obj_level_one_dialogue_out/obj_level_one_dialogue_out.yy",},},
     {"id":{"name":"obj_level_one_dialogue","path":"objects/obj_level_one_dialogue/obj_level_one_dialogue.yy",},},
     {"id":{"name":"obj_level_select_banner","path":"objects/obj_level_select_banner/obj_level_select_banner.yy",},},
-
-    {"id":{"name":"obj_lightning_left","path":"objects/obj_lightning_left/obj_lightning_left.yy",},},
-    {"id":{"name":"obj_lightning_right","path":"objects/obj_lightning_right/obj_lightning_right.yy",},},
-    {"id":{"name":"obj_lightning_up","path":"objects/obj_lightning_up/obj_lightning_up.yy",},},
-
     {"id":{"name":"obj_level_three_dialogue_out","path":"objects/obj_level_three_dialogue_out/obj_level_three_dialogue_out.yy",},},
     {"id":{"name":"obj_level_three_dialogue","path":"objects/obj_level_three_dialogue/obj_level_three_dialogue.yy",},},
     {"id":{"name":"obj_level_two_dialogue_out","path":"objects/obj_level_two_dialogue_out/obj_level_two_dialogue_out.yy",},},
     {"id":{"name":"obj_level_two_dialogue","path":"objects/obj_level_two_dialogue/obj_level_two_dialogue.yy",},},
-
+    {"id":{"name":"obj_lightning_left","path":"objects/obj_lightning_left/obj_lightning_left.yy",},},
+    {"id":{"name":"obj_lightning_right","path":"objects/obj_lightning_right/obj_lightning_right.yy",},},
+    {"id":{"name":"obj_lightning_up","path":"objects/obj_lightning_up/obj_lightning_up.yy",},},
     {"id":{"name":"obj_main_menu_music","path":"objects/obj_main_menu_music/obj_main_menu_music.yy",},},
     {"id":{"name":"obj_music_controller_generic","path":"objects/obj_music_controller_generic/obj_music_controller_generic.yy",},},
     {"id":{"name":"obj_music_level1","path":"objects/obj_music_level1/obj_music_level1.yy",},},
@@ -407,6 +404,7 @@
     {"id":{"name":"__shd_scribble_bake_outline_8dir","path":"shaders/__shd_scribble_bake_outline_8dir/__shd_scribble_bake_outline_8dir.yy",},},
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},},
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
+    {"id":{"name":"death_sound","path":"sounds/death_sound/death_sound.yy",},},
     {"id":{"name":"snd_button_clicked","path":"sounds/snd_button_clicked/snd_button_clicked.yy",},},
     {"id":{"name":"snd_coin_falling_test","path":"sounds/snd_coin_falling_test/snd_coin_falling_test.yy",},},
     {"id":{"name":"snd_coin_found_test","path":"sounds/snd_coin_found_test/snd_coin_found_test.yy",},},
