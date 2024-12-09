@@ -11,7 +11,9 @@ enum MESSAGES
 enum ANIM_MESSAGES
 {
 	NOTE_MISSED,
-	BOMB_AVOIDED,
+	KING_BOMB,
+	GUARD_BOMB,
+	GUARD_SWITCH
 }
 
 // Enumerator used to disable certain UI elements on Results Screen

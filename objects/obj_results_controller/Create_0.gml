@@ -17,8 +17,5 @@ health_text_anchor = new vector(room_width/2 + healthbar_offset.x, room_height/2
 */
 
 // Boolean to only broadcast once
-if(global.current_game_state == GAME_STATES.WIN){
-	global.max_level+=1;
-	show_debug_message(global.max_level)
-}
+
 did_broadcast = false
