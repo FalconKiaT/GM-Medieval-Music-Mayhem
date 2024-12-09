@@ -61,8 +61,8 @@
   ],
   "name":"rm_level2",
   "parent":{
-    "name":"levels",
-    "path":"folders/Rooms/levels.yy",
+    "name":"Two",
+    "path":"folders/Rooms/levels/Two.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
