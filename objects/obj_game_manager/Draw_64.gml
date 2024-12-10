@@ -65,6 +65,7 @@ if (global.current_game_state == GAME_STATES.PAUSE ){
 		
 		// Menu GUI
 		draw_sprite(spr_pause_scrollUI_assets,0,room_width/2, room_height/2)
+		draw_text(room_width/2, room_height/2-80, "Use Keyboard")
 		for(var i = 0; i < text_array_length; i++){
 			sub_im = 0;
 			if (pos_pause == i){
