@@ -9,7 +9,7 @@ function save_game(){
 }
 
 function load_game(){
-	if(file_exists("save.txt")){
+	if(file_exists("save.dat")){
 		var _file = file_text_open_read("save.dat");
 		
 		global.max_level = file_text_read_real(_file);
