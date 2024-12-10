@@ -2,7 +2,7 @@
 
 // STATES
 are_screens_moving = false
-num_of_tutorial_screens = 4;
+num_of_tutorial_screens = 6;
 current_screen = 1;
 
 // TIMER
