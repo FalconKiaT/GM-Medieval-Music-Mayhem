@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bomb_up",
-    "path":"sprites/spr_bomb_up/spr_bomb_up.yy",
+    "name":"spr_arrow_lightning_up",
+    "path":"sprites/spr_arrow_lightning_up/spr_arrow_lightning_up.yy",
   },
   "spriteMaskId":null,
   "visible":true,

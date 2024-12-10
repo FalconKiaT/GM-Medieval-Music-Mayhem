@@ -5,3 +5,6 @@ dt = 0
 health_effect = -10
 broadcast_message = ANIM_MESSAGES.NOTE_MISSED
 current_queue = global.current_spawned_up_arrows
+feedback_object = obj_feedback_miss
+arrow_switching_distance = 200
+arrow_switching_speed = 0.15
