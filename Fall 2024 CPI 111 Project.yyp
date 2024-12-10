@@ -319,6 +319,7 @@
     {"id":{"name":"notification_system","path":"scripts/notification_system/notification_system.yy",},},
     {"id":{"name":"run_func_after_delay","path":"scripts/run_func_after_delay/run_func_after_delay.yy",},},
     {"id":{"name":"run_func_on_condition","path":"scripts/run_func_on_condition/run_func_on_condition.yy",},},
+    {"id":{"name":"Save_Game_System","path":"scripts/Save_Game_System/Save_Game_System.yy",},},
     {"id":{"name":"scheduler_data","path":"scripts/scheduler_data/scheduler_data.yy",},},
     {"id":{"name":"scribble_add_macro","path":"scripts/scribble_add_macro/scribble_add_macro.yy",},},
     {"id":{"name":"scribble_anim_blink","path":"scripts/scribble_anim_blink/scribble_anim_blink.yy",},},
