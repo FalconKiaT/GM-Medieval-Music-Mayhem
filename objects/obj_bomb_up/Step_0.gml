@@ -6,5 +6,5 @@ event_inherited();
 
 if (image_alpha < 1 and queued) {
 	queued = false
-	ds_queue_dequeue(global.current_spawned_left_arrows)
+	ds_queue_dequeue(global.current_spawned_up_arrows)
 }
