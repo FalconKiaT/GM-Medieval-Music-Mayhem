@@ -5,10 +5,12 @@ if (global.current_game_state == GAME_STATES.WIN){
 		case 1:
 			if(global.max_level != 3){
 				global.max_level = 2;
+				save_game()
 			}
 		break;
 		case 2:
 			global.max_level = 3;
+			save_game()
 		break;
 	
 	}
