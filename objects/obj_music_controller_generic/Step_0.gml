@@ -60,6 +60,7 @@ function click_last_arrow(_arrow_queue) {
 				if (_current_arrow.broadcast_message == ANIM_MESSAGES.LIGHTNING) {
 					if (cur_lightning_streak == 0 and cur_lightning_delay == 0) {
 						cur_lightning_streak += 1
+						instance_create_layer(_current_arrow.x, _current_arrow.y, "Feedback", obj_lightning_explosion)
 					}
 					else if (cur_lightning_streak > 0 and cur_lightning_delay > 0) {
 						cur_lightning_streak += 1

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bomb_left",
-    "path":"sprites/spr_bomb_left/spr_bomb_left.yy",
+    "name":"spr_arrow_lightning_left",
+    "path":"sprites/spr_arrow_lightning_left/spr_arrow_lightning_left.yy",
   },
   "spriteMaskId":null,
   "visible":true,
