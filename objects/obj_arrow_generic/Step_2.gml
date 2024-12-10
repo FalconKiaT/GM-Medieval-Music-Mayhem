@@ -1,7 +1,7 @@
 /// @description Check if transparent and destroy
 // You can write your code in this editor
 
-if (image_alpha < 0.2) {
+if (image_alpha < 0) {
 	if(!ds_queue_empty(current_queue) and queued) {
 		ds_queue_dequeue(current_queue)
 	}
