@@ -60,7 +60,6 @@ function click_last_arrow(_arrow_queue) {
 				if (_current_arrow.broadcast_message == ANIM_MESSAGES.LIGHTNING) {
 					if (cur_lightning_streak == 0 and cur_lightning_delay == 0) {
 						cur_lightning_streak += 1
-						instance_create_layer(_current_arrow.x, _current_arrow.y, "Feedback", obj_lightning_explosion)
 					}
 					else if (cur_lightning_streak > 0 and cur_lightning_delay > 0) {
 						cur_lightning_streak += 1
@@ -68,6 +67,15 @@ function click_last_arrow(_arrow_queue) {
 							// FINISHED THE LIGHTNING COMBO SUCCESSFULLY
 							cur_lightning_streak = 0
 							cur_lightning_delay = 0
+							var _angle = 0
+							if (_current_arrow.object_index == obj_lightning_right) {
+								_angle = -90
+							}
+							else if (_current_arrow.object_index == obj_lightning_left) {
+								_angle = 90	
+							}
+							instance_create_layer(_current_arrow.x, _current_arrow.y, "Feedback", obj_lightning_explosion,
+								{image_angle: _angle})
 							score += 2000
 							health = 100
 						}
