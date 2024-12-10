@@ -60,6 +60,7 @@ function click_last_arrow(_arrow_queue) {
 				if (_current_arrow.broadcast_message == ANIM_MESSAGES.LIGHTNING) {
 					if (cur_lightning_streak == 0 and cur_lightning_delay == 0) {
 						cur_lightning_streak += 1
+						instance_create_layer(_current_arrow.x, _current_arrow.y, "Feedback", obj_lightning_explosion)
 					}
 					else if (cur_lightning_streak > 0 and cur_lightning_delay > 0) {
 						cur_lightning_streak += 1
@@ -84,6 +85,7 @@ function click_last_arrow(_arrow_queue) {
 				var _range_percent = abs(_note_delay * arrow_velocity) / valid_arrow_range
 				if (_range_percent < 2) {
 					ds_queue_dequeue(_arrow_queue)
+					instance_create_layer(_current_arrow.x, _current_arrow.y, "Feedback", obj_bomb_arrow_explosion)
 					instance_destroy(_current_arrow)
 					health -= 20
 				}
