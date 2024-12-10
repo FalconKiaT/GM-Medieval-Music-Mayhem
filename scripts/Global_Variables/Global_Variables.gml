@@ -21,7 +21,7 @@ global.note_timing_offset = 0.5;
 global.do_draw_fps = false;
 
 // <------------------------> Menus <------------------------>
-global.max_level = 1.0; //controls what levels player can access
+global.max_level = 1.0; // controls what levels player can access
 
 
 
