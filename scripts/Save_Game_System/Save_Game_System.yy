@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Save_Game_System",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Save_Game_System",
+  "parent":{
+    "name":"Global",
+    "path":"folders/Scripts/Global.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
