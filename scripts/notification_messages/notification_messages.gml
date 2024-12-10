@@ -23,6 +23,10 @@ enum ANIM_MESSAGES
 
 	GUARD_BOMB,
 	GUARD_SWITCH,
+	
+	WIZARD_BOMB,
+	WIZARD_SWITCH,
+	WIZARD_LIGHTNING
 }
 
 // Enumerator used to disable certain UI elements on Results Screen
