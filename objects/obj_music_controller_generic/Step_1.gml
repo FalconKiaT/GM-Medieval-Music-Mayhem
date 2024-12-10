@@ -13,10 +13,12 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 	// This is the desired timestamp for the arrow to be clicked
 	_cur_arrow_timestamp = _mapping_array[_cur_arrow_index]
 	_cur_timestamp_offsetted = _cur_arrow_timestamp - _timestamp_offset // This is when it should be spawned
+	_cur_timestamp_throw = _cur_arrow_timestamp - 2.5 * _timestamp_offset
 	// How long will it be until the arrows should be spawned?
 	var _timestamp_delta = _cur_timestamp_offsetted - global.music_timestamp
-
-
+	var _throw_delta = _cur_timestamp_throw - global.music_timestamp
+	var _direction = ARROW_DIRECTIONS.UP;
+	
 	if (sign(_timestamp_delta) == -1) { // If the arrow is "late" to be spawned, spawn them!
 		var _x_position = 0
 		var _y_position = 0
@@ -46,18 +48,21 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 				var _random_value = random(1) // Random float from 0 to 1. Determines which channel
 											  // the arrow will be spawned at.
 				if (_random_value > 0.66) { // CASE RIGHT CHANNEL
+					_direction = ARROW_DIRECTIONS.RIGHT
 					_x_position = obj_right_arrow_slot.x + arrow_distance
 					_y_position = obj_right_arrow_slot.y
 					_arrow_object = obj_bomb_right
 					_arrow_queue = global.current_spawned_right_arrows
 				}
 				else if (_random_value > 0.33) { // CASE UP CHANNEL
+					_direction = ARROW_DIRECTIONS.UP
 					_x_position = obj_up_arrow_slot.x
 					_y_position = obj_up_arrow_slot.y - arrow_distance
 					_arrow_object = obj_bomb_up
 					_arrow_queue = global.current_spawned_up_arrows
 				}
 				else { // CASE LEFT CHANNEL
+					_direction = ARROW_DIRECTIONS.LEFT
 					_x_position = obj_left_arrow_slot.x - arrow_distance
 					_y_position = obj_left_arrow_slot.y
 					_arrow_object = obj_bomb_left
@@ -69,18 +74,21 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 				var _random_value = random(1) // Random float from 0 to 1. Determines which channel
 											  // the arrow will be spawned at.
 				if (_random_value > 0.66) { // CASE RIGHT CHANNEL
+					_direction = ARROW_DIRECTIONS.RIGHT
 					_x_position = obj_right_arrow_slot.x + arrow_distance
 					_y_position = obj_right_arrow_slot.y
 					_arrow_object = obj_lightning_right
 					_arrow_queue = global.current_spawned_right_arrows
 				}
 				else if (_random_value > 0.33) { // CASE UP CHANNEL
+					_direction = ARROW_DIRECTIONS.UP
 					_x_position = obj_up_arrow_slot.x
 					_y_position = obj_up_arrow_slot.y - arrow_distance
 					_arrow_object = obj_lightning_up
 					_arrow_queue = global.current_spawned_up_arrows
 				}
 				else { // CASE LEFT CHANNEL
+					_direction = ARROW_DIRECTIONS.LEFT
 					_x_position = obj_left_arrow_slot.x - arrow_distance
 					_y_position = obj_left_arrow_slot.y
 					_arrow_object = obj_lightning_left
@@ -92,6 +100,7 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 				var _random_value = random(1) // Random float from 0 to 1. Determines which channel
 											  // the arrow will be spawned at.
 				if (_random_value > 0.66) { // CASE RIGHT CHANNEL
+					_direction = ARROW_DIRECTIONS.RIGHT
 					_x_position = obj_right_arrow_slot.x + arrow_distance
 					_y_position = obj_right_arrow_slot.y
 					_arrow_object = obj_switch_right
@@ -110,6 +119,7 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 					}
 				}
 				else if (_random_value > 0.33) { // CASE UP CHANNEL
+					_direction = ARROW_DIRECTIONS.UP
 					_x_position = obj_up_arrow_slot.x
 					_y_position = obj_up_arrow_slot.y - arrow_distance
 					_arrow_object = obj_switch_up
@@ -128,6 +138,7 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 					}
 				}
 				else { // CASE LEFT CHANNEL
+					_direction = ARROW_DIRECTIONS.LEFT
 					_x_position = obj_left_arrow_slot.x - arrow_distance
 					_y_position = obj_left_arrow_slot.y
 					_arrow_object = obj_switch_left
@@ -156,10 +167,37 @@ function spawn_arrow_if_on_time(_mapping_array, _cur_arrow_index, _arrow_queue, 
 				desired_timestamp: _cur_arrow_timestamp,
 				queued: true}))
 		
-		return true // Arrow was spawned
 	}
 	
-	return false
+	if (sign(_throw_delta) == -1) {
+		switch (_arrow_direction) {
+			case ARROW_DIRECTIONS.BOMB:
+				switch (direction){
+					case ARROW_DIRECTIONS.UP:
+						broadcast(ANIM_MESSAGES.KING_BOMB_UP)
+						broadcast(ANIM_MESSAGES.GUARD_BOMB)
+						broadcast(ANIM_MESSAGES.WIZARD_BOMB)
+						break
+					case ARROW_DIRECTIONS.LEFT:
+						broadcast(ANIM_MESSAGES.KING_BOMB_LEFT)
+						break
+					case ARROW_DIRECTIONS.RIGHT:
+						broadcast(ANIM_MESSAGES.KING_BOMB_RIGHT)
+						break
+				}
+				break
+			case ARROW_DIRECTIONS.SWITCH:
+				broadcast(ANIM_MESSAGES.GUARD_SWITCH)
+				broadcast(ANIM_MESSAGES.WIZARD_SWITCH)
+				break
+			case ARROW_DIRECTIONS.LIGHTNING:
+				broadcast(ANIM_MESSAGES.WIZARD_LIGHTNING)
+				break
+		}
+	}
+
+	
+	
 }
 
 var _dt = delta_time / 1000000 // how many seconds have passed since the last frame?
