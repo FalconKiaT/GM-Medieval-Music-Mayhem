@@ -85,11 +85,12 @@ if (global.current_game_state == GAME_STATES.PAUSE){
 	}
 }
 
-// debug for ending song
+/*/ debug for ending song
 if(keyboard_check_pressed(vk_f1)){
 	global.current_game_state = GAME_STATES.WIN
 	alarm[0] = game_get_speed(gamespeed_fps) * 3;
 }
+*/
 // win  condition
 if(global.current_game_state == GAME_STATES.PLAY && (global.music_timestamp >= global.music_timestamp_max)){
 	global.current_game_state = GAME_STATES.WIN
