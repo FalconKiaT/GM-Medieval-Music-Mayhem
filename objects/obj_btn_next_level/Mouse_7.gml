@@ -9,6 +9,7 @@ switch global.current_level{
 	score = 0;
 	global.current_level = 2;
 	global.max_level = 2;
+	save_game()
 	room_goto(rm_dialogue_level1_outro)// placeholder change after implementing levels
 	break;
 	
@@ -17,6 +18,7 @@ switch global.current_level{
 	health = 100;
 	score = 0;
 	global.max_level = 3;
+	save_game()
 	room_goto(rm_dialogue_level2_outro)// placeholder change after implementing levels
 	break;
 	

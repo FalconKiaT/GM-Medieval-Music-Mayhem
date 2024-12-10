@@ -37,8 +37,8 @@ if(keyboard_check_pressed(vk_escape)){
 if (global.current_game_state == GAME_STATES.PAUSE){
 	
 	// Pause menu inputs
-	up_key = keyboard_check_pressed(vk_up);
-	down_key = keyboard_check_pressed(vk_down);
+	up_key = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+	down_key = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
 	enter_key = keyboard_check_pressed(vk_enter);
 
 	// running menu inputs

@@ -2,7 +2,7 @@
 /// @description Initialize Animation System
 // <------------------------> ANIMATION SYSTEM <------------------------>
 AnimationInit(); //set up animation
-anim_Spd = 0.4; //30fps * 0.4 = 12fps
+anim_Spd = 0.5; //30fps * 0.5 = 15fps
 
 //Define an idle animation using only the first frame of the sprite
 AnimationAdd("IDLE",noone,noone,anim_Spd,1,7);
